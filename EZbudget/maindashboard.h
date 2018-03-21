@@ -31,9 +31,11 @@ private:
     //QBarSet *m_set;
 //    spendingChart *SpendingChart;
     QtCharts::QPieSeries *m_pieSeries;
+    QtCharts::QPieSeries *yearSeries;
+    QtCharts::QPieSeries *cat_series;
     QtCharts::QBarSet *m_set0;
     QtCharts::QBarSet *m_set1;
-    QtCharts::QBarSet *m_set2;
+    //QtCharts::QBarSet *m_set2;
 };
 
 #endif // MAINDASHBOARD_H

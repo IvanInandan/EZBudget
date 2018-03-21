@@ -3,14 +3,17 @@
 #include <QObject>
 #include <iostream>
 #include "account.h"
-#include "testsignal.h"
+#include "loginscreen.h"
+//#include "testsignal.h"
 using namespace std;
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    mainDashboard w;
-    w.show();
+    loginScreen l;
+    l.show();
+    //mainDashboard w;
+    //w.show();
 
 /*
     Account *PcurrentAccount = Account::Instance();

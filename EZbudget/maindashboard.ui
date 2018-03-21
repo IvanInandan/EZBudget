@@ -14,84 +14,22 @@
    <string>mainDashboard</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QWidget" name="spendSaveChartPlaceholder" native="true">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>30</y>
-      <width>901</width>
-      <height>211</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QWidget" name="spendingChartPlaceholder" native="true">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>310</y>
-      <width>901</width>
-      <height>341</height>
+      <x>140</x>
+      <y>110</y>
+      <width>681</width>
+      <height>301</height>
      </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>670</y>
-      <width>113</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>+Budget</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>420</x>
-      <y>670</y>
-      <width>113</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>+Transaction</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_3">
-    <property name="geometry">
-     <rect>
-      <x>540</x>
-      <y>670</y>
-      <width>113</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>+ % to Save</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_4">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>710</y>
-      <width>113</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Budget</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_5">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>710</y>
-      <width>113</width>
+      <x>350</x>
+      <y>670</y>
+      <width>141</width>
       <height>32</height>
      </rect>
     </property>
@@ -102,14 +40,50 @@
    <widget class="QPushButton" name="pushButton_6">
     <property name="geometry">
      <rect>
-      <x>540</x>
-      <y>710</y>
-      <width>113</width>
+      <x>490</x>
+      <y>670</y>
+      <width>141</width>
       <height>32</height>
      </rect>
     </property>
     <property name="text">
-     <string>Categories</string>
+     <string>Income/Savings</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="spendSaveChartPlaceholder" native="true">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>440</y>
+      <width>901</width>
+      <height>191</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="budgetLabel">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>40</y>
+      <width>81</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Budget Left:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="budgetLabelUpdate">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>40</y>
+      <width>91</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
     </property>
    </widget>
   </widget>

@@ -29,16 +29,23 @@ SOURCES += \
         account.cpp \
     transaction.cpp \
     category.cpp \
-    maindashboard.cpp
+    maindashboard.cpp \
+    spendingsbreakdownchart.cpp \
+    spendingsbreakdownslice.cpp \
+    loginscreen.cpp
 
 HEADERS += \
         account.h \
     transaction.h \
     category.h \
-    maindashboard.h
+    maindashboard.h \
+    spendingsbreakdownchart.h \
+    spendingsbreakdownslice.h \
+    loginscreen.h
 
 FORMS += \
-    maindashboard.ui
+    maindashboard.ui \
+    loginscreen.ui
 
 
 target.path = $$[QT_INSTALL_EXAMPLES]/charts/donutchart
