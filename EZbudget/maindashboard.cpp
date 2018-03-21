@@ -28,6 +28,9 @@ mainDashboard::mainDashboard(QWidget *parent) :
     ui->setupUi(this);
     {
         //Monthly Budget BEGIN
+
+        int var = 1; //test
+
         m_set0 = new QBarSet("Expenses");
         m_set1 = new QBarSet("Budget Left");
 
