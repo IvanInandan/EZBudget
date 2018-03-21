@@ -22,7 +22,7 @@ Account::Account()
     monthlyBudget = 2000;
     monthlySavings = 1000;
     savingsPercentage = 50;
-    budgetLeft = 500;
+    budgetLeft = 550;
 
     addCategory("Bills");
     addCategory("Grocery/Food");
