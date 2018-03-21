@@ -5,6 +5,8 @@
 #include "account.h"
 #include "loginscreen.h"
 //#include "testsignal.h"
+=======
+>>>>>>> 9f569f7e4cae5f6ba88cb02b8616dd216728345a
 using namespace std;
 
 int main(int argc, char *argv[])
