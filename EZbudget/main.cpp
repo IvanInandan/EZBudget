@@ -3,7 +3,6 @@
 #include <QObject>
 #include <iostream>
 #include "account.h"
-#include "testsignal.h"
 using namespace std;
 
 int main(int argc, char *argv[])
