@@ -3,8 +3,9 @@
 #include <QObject>
 #include <iostream>
 #include "account.h"
+<<<<<<< HEAD
 #include "loginscreen.h"
-//#include "testsignal.h"
+#include "testsignal.h"
 =======
 >>>>>>> 9f569f7e4cae5f6ba88cb02b8616dd216728345a
 using namespace std;
