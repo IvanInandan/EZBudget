@@ -20,13 +20,15 @@ Account::Account()
     // I hardcoded some numbers so that we dont have to use setters for testing purposes
     monthlyIncome = 4000;
     monthlyBudget = 2000;
-    monthlySavings = 1000;
+    monthlySavings = 2000;
     savingsPercentage = 50;
 
     addCategory("Bills");
     addCategory("Grocery/Food");
     addCategory("Gas");
     addCategory( "Misc");
+
+
 }
 
 /*PURPOSE: This function is used to make sure there is only one account per user?(probably a better way to
@@ -235,4 +237,13 @@ void Account::setCategory(int index, Category &section)
 QString Account::getCategoryTitle(int index) const
 {
     return expenditures[index].getCategoryName();
+}
+
+//PURPOSE: It will calculate and return the budget left by subtracting the total transaction amount
+//         from the budget they inputted.
+//Author: Jose Quirarte
+//Date: 3/21/2018
+int Account::calculateBudgetLeft() const
+{
+    return (getBudget() - getTotalSpendingsFromAllCategories());
 }
