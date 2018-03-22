@@ -28,6 +28,15 @@ Account::Account()
     addCategory("Gas");
     addCategory( "Misc");
 
+    expenditures[0].addTransaction("Bills", "Electricity", "4/03/17", 50.00,"expenses");
+    expenditures[0].addTransaction("Bills", "Gas", "4/03/17", 30.00,"expenses");
+    expenditures[1].addTransaction("Grocery/Food", "Groceries", "4/02/17", 70.00,"expenses");
+    expenditures[1].addTransaction("Grocery/Food", "Milk", "4/03/17", 3.00,"expenses");
+    expenditures[2].addTransaction("Gas", "Fuel for the week", "4/04/17", 60.00, "expenses");
+    expenditures[3].addTransaction("Misc", "Gym Membership", "4/10/17", 12.00, "expenses");
+    expenditures[3].addTransaction("Misc", "Movie Ticket", "4/10/17", 16.00, "expenses");
+
+
 
 }
 

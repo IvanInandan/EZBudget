@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     cout << "budget: " << PcurrentAccount -> getBudget() << endl;
     cout << "savings: " << PcurrentAccount -> getSavings() << endl;
     cout << "Percent: " << PcurrentAccount -> getSavingsPercent() << " % " << endl;
-
+    cout << "Budget Left: " << PcurrentAccount -> calculateBudgetLeft() << endl;
 
     //testing to see if negative numbers dont work
     cout << PcurrentAccount ->setBudget(-1) << endl;
@@ -45,6 +45,7 @@ int main(int argc, char *argv[])
     cout << "budget: " << PcurrentAccount -> getBudget() << endl;
     cout << "savings: " << PcurrentAccount -> getSavings() << endl;
     cout << "Percent: " << PcurrentAccount -> getSavingsPercent() << " % " << endl;
+
 
 
     return 0;
