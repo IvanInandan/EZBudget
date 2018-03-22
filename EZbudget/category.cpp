@@ -62,3 +62,5 @@ void Category::removeTransaction(int index)
 {
     Transactions.erase(Transactions.begin() + index);
 }
+
+

@@ -28,7 +28,6 @@ private:
     int monthlyBudget;                     //stores monthly budget
     int savingsPercentage;                 //will be used to calculate monthly savings
     int monthlySavings;                    //stores monthly savings
-    int budgetLeft;
     vector<Category> expenditures;         //spendings
     //vector<Category> revenue;            //income transactions
     static bool failure;
@@ -50,6 +49,7 @@ public:
     int getTotalSpendingsFromAllCategories() const;
     int getIncome() const;
     QString getCategoryTitle(int index) const;                  //will retrieve the name of the category at a specified index
+    int calculateBudgetLeft() const;                            // will figure out how much budget is left
 
 public slots:
     //setters
