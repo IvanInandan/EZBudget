@@ -32,6 +32,7 @@ SOURCES += \
     maindashboard.cpp \
     spendingsbreakdownchart.cpp \
     spendingsbreakdownslice.cpp \
+    accountdatabase.cpp \
     loginscreen.cpp
 
 HEADERS += \
@@ -41,6 +42,7 @@ HEADERS += \
     maindashboard.h \
     spendingsbreakdownchart.h \
     spendingsbreakdownslice.h \
+    accountdatabase.h \
     loginscreen.h
 
 FORMS += \
