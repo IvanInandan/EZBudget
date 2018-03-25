@@ -57,6 +57,10 @@ Account* Account::Instance()
     return _instance;
 }
 
+QString Account::getAccountName() const
+{
+    return accountName;
+}
 
 /* PURPOSE:  verifyNumber will check to see if the user inputted
  * value is valid. It will return failure if the value is negative.
@@ -255,4 +259,9 @@ QString Account::getCategoryTitle(int index) const
 int Account::calculateBudgetLeft() const
 {
     return (getBudget() - getTotalSpendingsFromAllCategories());
+}
+
+void Account::populateExpenditures(QString ecat, QString ename, QString edate, float eamt, QString eflag)
+{
+    //expenditures[0].addTransaction("Bills", "Electricity", "4/03/17", 50.00,"expenses");
 }

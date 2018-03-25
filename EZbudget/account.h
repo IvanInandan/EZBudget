@@ -13,6 +13,7 @@
 #include <vector>
 #include <QObject> //allows usage of signals and slots
 #include <QString>
+
 using namespace std;
 
 #include "category.h"
@@ -24,10 +25,11 @@ class Account : public QObject
 protected:
     Account();
 private:
+    QString accountName;
     int monthlyIncome;                     //monthly income
     int monthlyBudget;                     //stores monthly budget
     int savingsPercentage;                 //will be used to calculate monthly savings
-    int monthlySavings;                    //stores monthly savings
+    int monthlySavings;                     //stores monthly savings
     vector<Category> expenditures;         //spendings
     //vector<Category> revenue;            //income transactions
     static bool failure;
@@ -41,6 +43,7 @@ public:
     void addCategory(QString s);           //adds a category to one of the vectors
 
     //getters
+    QString getAccountName() const;
     int getBudget() const;
     int getSavings() const;
     int getSavingsPercent() const;
@@ -57,6 +60,7 @@ public slots:
     bool setSavings(int savingPercent);
     bool setIncome(int i);
     void setCategory(int index, Category &section);             //makes changes made to categories permanent
+    void populateExpenditures(QString ecat, QString ename, QString edate, float eamt, QString eflag);
 
 signals:
     //the following function will send out a signal to inform diagrams to update themselves

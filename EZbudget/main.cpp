@@ -4,14 +4,17 @@
 #include <iostream>
 #include "account.h"
 #include "loginscreen.h"
-
+#include "directories.h"
 using namespace std;
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    Directories* d = Directories::Instance();
+    d -> createNewAccount("ripichip");
     loginScreen l;
     l.show();
+
     //mainDashboard w;
     //w.show();
 
