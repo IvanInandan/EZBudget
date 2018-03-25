@@ -182,7 +182,7 @@ void mainDashboard::updateUi()
 
     m_set0->replace(0, pCurrentAcount->getTotalSpendingsFromAllCategories());
     m_set1->replace(0, 10);
-    //m_set1->replace(0, pCurrentAcount->getBudget());
+    //m_set1->replace(0, pCurrentAcount->getSpendings());
     // we got rid of spendings, we can use getTotalSpendingsFromAllCategories()
     // but we need to add transactions to our categories first or we could hardcode something
 

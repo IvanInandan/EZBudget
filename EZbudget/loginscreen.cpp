@@ -5,12 +5,11 @@
 loginScreen::loginScreen(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::loginScreen)
-{   
+{
     ui->setupUi(this);
     ui->invalidLogin->hide();
-
-
 }
+
 loginScreen::~loginScreen()
 {
     delete ui;

@@ -13,7 +13,6 @@ class loginScreen : public QDialog
     Q_OBJECT
 
 public:
-    void func();
     explicit loginScreen(QWidget *parent = 0);
     ~loginScreen();
 
