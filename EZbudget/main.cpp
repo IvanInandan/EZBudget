@@ -10,10 +10,11 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    loginScreen l;
-    l.show();
-    //mainDashboard w;
-    //w.show();
+    //loginScreen l;
+    //l.show();
+    mainDashboard w;
+    w.show();
+    w.updateUi();
 
 /*
     Account *PcurrentAccount = Account::Instance();

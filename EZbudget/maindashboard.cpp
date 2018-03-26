@@ -26,17 +26,19 @@ mainDashboard::mainDashboard(QWidget *parent) :
     ui(new Ui::mainDashboard)
 {
     ui->setupUi(this);
+    ui->budgetLabelUpdate->setText("100.00");
     {
         //Monthly Budget BEGIN
 
         //int var = 1; //test
 
+        //ui->budgetLabelUpdate->setText("100.00");
+
         m_set0 = new QBarSet("Expenses");
         m_set1 = new QBarSet("Budget Left");
 
-
         m_set0->append(5);
-        m_set1->append(7);
+        m_set1->append(10);
 
         m_set0->setLabel("Expenses");
         m_set1->setLabel("Budget Left");
@@ -176,12 +178,17 @@ mainDashboard::~mainDashboard()
 
 void mainDashboard::updateUi()
 {
-
     // lets get the account
     Account *pCurrentAcount = Account::Instance();
 
+    QString updatedBudgetLeft = QString::number(pCurrentAcount->calculateBudgetLeft());
+    ui->budgetLabelUpdate->clear();
+    ui->budgetLabelUpdate->setText(updatedBudgetLeft);
+
     m_set0->replace(0, pCurrentAcount->getTotalSpendingsFromAllCategories());
-    m_set1->replace(0, 10);
+    m_set1->replace(0, pCurrentAcount->calculateBudgetLeft());
+
+
     //m_set1->replace(0, pCurrentAcount->getSpendings());
     // we got rid of spendings, we can use getTotalSpendingsFromAllCategories()
     // but we need to add transactions to our categories first or we could hardcode something
@@ -202,9 +209,9 @@ void mainDashboard::updateUi()
 
     // Now lets do the same for the series
 
-    yearSeries->clear();
-    cat_series->clear();
-    QStringList categories;
+    //yearSeries->clear();
+    //cat_series->clear();
+    //QStringList categories;
 
 //    for (const QString &category : categories) {
 //            //cat_series->setName("Spendings by Category " + name);

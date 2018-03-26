@@ -57,6 +57,7 @@ SOURCES       = ../EZbudget/main.cpp \
 		../EZbudget/maindashboard.cpp \
 		../EZbudget/spendingsbreakdownchart.cpp \
 		../EZbudget/spendingsbreakdownslice.cpp \
+		../EZbudget/accountdatabase.cpp \
 		../EZbudget/loginscreen.cpp moc_account.cpp \
 		moc_maindashboard.cpp \
 		moc_spendingsbreakdownchart.cpp \
@@ -69,6 +70,7 @@ OBJECTS       = main.o \
 		maindashboard.o \
 		spendingsbreakdownchart.o \
 		spendingsbreakdownslice.o \
+		accountdatabase.o \
 		loginscreen.o \
 		moc_account.o \
 		moc_maindashboard.o \
@@ -267,6 +269,7 @@ DIST          = ../../../../Qt/5.10.0/clang_64/mkspecs/features/spec_pre.prf \
 		../EZbudget/maindashboard.h \
 		../EZbudget/spendingsbreakdownchart.h \
 		../EZbudget/spendingsbreakdownslice.h \
+		../EZbudget/accountdatabase.h \
 		../EZbudget/loginscreen.h ../EZbudget/main.cpp \
 		../EZbudget/account.cpp \
 		../EZbudget/transaction.cpp \
@@ -274,6 +277,7 @@ DIST          = ../../../../Qt/5.10.0/clang_64/mkspecs/features/spec_pre.prf \
 		../EZbudget/maindashboard.cpp \
 		../EZbudget/spendingsbreakdownchart.cpp \
 		../EZbudget/spendingsbreakdownslice.cpp \
+		../EZbudget/accountdatabase.cpp \
 		../EZbudget/loginscreen.cpp
 QMAKE_TARGET  = budget
 DESTDIR       = 
@@ -705,8 +709,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../../Qt/5.10.0/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../EZbudget/account.h ../EZbudget/transaction.h ../EZbudget/category.h ../EZbudget/maindashboard.h ../EZbudget/spendingsbreakdownchart.h ../EZbudget/spendingsbreakdownslice.h ../EZbudget/loginscreen.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../EZbudget/main.cpp ../EZbudget/account.cpp ../EZbudget/transaction.cpp ../EZbudget/category.cpp ../EZbudget/maindashboard.cpp ../EZbudget/spendingsbreakdownchart.cpp ../EZbudget/spendingsbreakdownslice.cpp ../EZbudget/loginscreen.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../EZbudget/account.h ../EZbudget/transaction.h ../EZbudget/category.h ../EZbudget/maindashboard.h ../EZbudget/spendingsbreakdownchart.h ../EZbudget/spendingsbreakdownslice.h ../EZbudget/accountdatabase.h ../EZbudget/loginscreen.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../EZbudget/main.cpp ../EZbudget/account.cpp ../EZbudget/transaction.cpp ../EZbudget/category.cpp ../EZbudget/maindashboard.cpp ../EZbudget/spendingsbreakdownchart.cpp ../EZbudget/spendingsbreakdownslice.cpp ../EZbudget/accountdatabase.cpp ../EZbudget/loginscreen.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../EZbudget/maindashboard.ui ../EZbudget/loginscreen.ui $(DISTDIR)/
 
 
@@ -880,6 +884,17 @@ spendingsbreakdownchart.o: ../EZbudget/spendingsbreakdownchart.cpp ../EZbudget/s
 spendingsbreakdownslice.o: ../EZbudget/spendingsbreakdownslice.cpp ../EZbudget/spendingsbreakdownchart.h \
 		../EZbudget/spendingsbreakdownslice.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o spendingsbreakdownslice.o ../EZbudget/spendingsbreakdownslice.cpp
+
+accountdatabase.o: ../EZbudget/accountdatabase.cpp ../EZbudget/accountdatabase.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QDir \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qdir.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QDebug \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QVector \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qvector.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o accountdatabase.o ../EZbudget/accountdatabase.cpp
 
 loginscreen.o: ../EZbudget/loginscreen.cpp ../EZbudget/loginscreen.h \
 		../EZbudget/maindashboard.h \
