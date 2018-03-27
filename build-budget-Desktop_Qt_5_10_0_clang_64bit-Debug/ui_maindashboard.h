@@ -70,10 +70,10 @@ public:
         spendSaveChartPlaceholder->setGeometry(QRect(40, 440, 901, 191));
         budgetLabel = new QLabel(centralWidget);
         budgetLabel->setObjectName(QStringLiteral("budgetLabel"));
-        budgetLabel->setGeometry(QRect(50, 40, 81, 41));
+        budgetLabel->setGeometry(QRect(50, 40, 111, 41));
         budgetLabelUpdate = new QLabel(centralWidget);
         budgetLabelUpdate->setObjectName(QStringLiteral("budgetLabelUpdate"));
-        budgetLabelUpdate->setGeometry(QRect(150, 40, 91, 41));
+        budgetLabelUpdate->setGeometry(QRect(150, 40, 131, 41));
         mainDashboard->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(mainDashboard);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -106,8 +106,8 @@ public:
         actionQuit->setText(QApplication::translate("mainDashboard", "Quit", nullptr));
         pushButton_5->setText(QApplication::translate("mainDashboard", "Spendings", nullptr));
         pushButton_6->setText(QApplication::translate("mainDashboard", "Income/Savings", nullptr));
-        budgetLabel->setText(QApplication::translate("mainDashboard", "Budget Left:", nullptr));
-        budgetLabelUpdate->setText(QApplication::translate("mainDashboard", "TextLabel", nullptr));
+        budgetLabel->setText(QApplication::translate("mainDashboard", "<html><head/><body><p><span style=\" font-size:12pt;\">Budget Left:</span></p></body></html>", nullptr));
+        budgetLabelUpdate->setText(QApplication::translate("mainDashboard", "<html><head/><body><p><span style=\" font-size:18pt; font-weight:600;\">TextLabel</span></p></body></html>", nullptr));
         menuSettings->setTitle(QApplication::translate("mainDashboard", "Settings", nullptr));
     } // retranslateUi
 

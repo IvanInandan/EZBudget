@@ -183,6 +183,7 @@ void mainDashboard::updateUi()
 
     QString updatedBudgetLeft = QString::number(pCurrentAcount->calculateBudgetLeft());
     ui->budgetLabelUpdate->clear();
+    updatedBudgetLeft += "$";
     ui->budgetLabelUpdate->setText(updatedBudgetLeft);
 
     m_set0->replace(0, pCurrentAcount->getTotalSpendingsFromAllCategories());
@@ -209,9 +210,9 @@ void mainDashboard::updateUi()
 
     // Now lets do the same for the series
 
-    //yearSeries->clear();
-    //cat_series->clear();
-    //QStringList categories;
+    yearSeries->clear();
+    cat_series->clear();
+    QStringList categories;
 
 //    for (const QString &category : categories) {
 //            //cat_series->setName("Spendings by Category " + name);
@@ -221,15 +222,16 @@ void mainDashboard::updateUi()
 
 //            //QObject::connect(cat_series, &QPieSeries::clicked, spendingsBreakdownChartDisplay, &spendingsBreakDownChart::handleSliceClicked);
 
-//            yearSeries->append(new spendingsBreakdownSlice(13, , cat_series));
+//            yearSeries->append(new spendingsBreakdownSlice(13, category, cat_series));
 //    }
 
-//    for(int i = 0; i < pCurrentAcount->getNumCategories(); i++)
-//    {
-//         QString pCategoryTitle= pCurrentAcount->getCategoryTitle(i);
-//         categories << pCategoryTitle;
-//         yearSeries->append(new spendingsBreakdownSlice(QRandomGenerator::global()->bounded(1000), pCategoryTitle, cat_series));
-//    }
+    for(int i = 0; i < pCurrentAcount->getNumCategories(); i++)
+    {
+         QString pCategoryTitle= pCurrentAcount->getCategoryTitle(i);
+         categories << pCategoryTitle;
+         int pCategoryTotal = pCurrentAcount->getTotalFromOneCategory(i);
+         yearSeries->append(new spendingsBreakdownSlice(pCategoryTotal, pCategoryTitle, cat_series));
+    }
 
 //    for (const QString &category : categories) {
 //        cat_series = new QPieSeries();

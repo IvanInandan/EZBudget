@@ -65,12 +65,12 @@
      <rect>
       <x>50</x>
       <y>40</y>
-      <width>81</width>
+      <width>111</width>
       <height>41</height>
      </rect>
     </property>
     <property name="text">
-     <string>Budget Left:</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Budget Left:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="budgetLabelUpdate">
@@ -78,12 +78,12 @@
      <rect>
       <x>150</x>
       <y>40</y>
-      <width>91</width>
+      <width>131</width>
       <height>41</height>
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:600;&quot;&gt;TextLabel&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
   </widget>
