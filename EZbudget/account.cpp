@@ -199,8 +199,7 @@ void Account::addCategory(QString s)
 int Account::getTotalSpendingsFromAllCategories() const
 {
     int total = 0;
-    //used unsigned to get rid of warning qt threw for comparison between signed and unsigned numbers
-    for(int i = 0; (unsigned)i < expenditures.size();i++)
+    for(int i = 0; i < expenditures.size();i++)
         total+=expenditures[i].totalTransactions();
 
     return total;
@@ -232,7 +231,7 @@ int Account::getIncome() const
 void Account::setCategory(int index, Category &section)
 {
     // we make index unsigned to get rid of warning
-    if ((unsigned) index >= expenditures.size())
+    if (index >= expenditures.size())
         return;   // output some error message here
 
     expenditures[index] = section;
@@ -258,7 +257,9 @@ int Account::calculateBudgetLeft() const
     return (getBudget() - getTotalSpendingsFromAllCategories());
 }
 
-
+//PURPOSE: It will retrieve the total amount spent in one category
+//Author: Jose Quirarte
+//Date: 3/26/18
 int Account::getTotalFromOneCategory(int index) const
 {
     return expenditures[index].totalTransactions();

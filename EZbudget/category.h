@@ -10,17 +10,15 @@
 
 #ifndef CATEGORY_H
 #define CATEGORY_H
-#include <vector>
+#include <QVector>
 #include <QString>
-using namespace std;
-
 #include "transaction.h"
 
 class Category
 {
 private:
     QString name;                     //name of category
-    vector<Transaction> Transactions;
+    QVector<Transaction> Transactions;
 
 public:
     Category();

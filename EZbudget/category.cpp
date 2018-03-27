@@ -36,7 +36,7 @@ int Category::totalTransactions() const
 {
     int   total = 0;
 
-    for(int i = 0; (unsigned) i < Transactions.size(); i++)
+    for(int i = 0; i < Transactions.size(); i++)
         total += Transactions[i].getTransactionAmount();
 
     return total;

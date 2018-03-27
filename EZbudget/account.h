@@ -10,11 +10,9 @@
 
 #ifndef ACCOUNT_H
 #define ACCOUNT_H
-#include <vector>
+#include <QVector>
 #include <QObject> //allows usage of signals and slots
 #include <QString>
-using namespace std;
-
 #include "category.h"
 
 class Account : public QObject
@@ -28,7 +26,7 @@ private:
     int monthlyBudget;                     //stores monthly budget
     int savingsPercentage;                 //will be used to calculate monthly savings
     int monthlySavings;                    //stores monthly savings
-    vector<Category> expenditures;         //spendings
+    QVector<Category> expenditures;         //spendings
     //vector<Category> revenue;            //income transactions
     static bool failure;
     static bool success;
