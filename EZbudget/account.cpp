@@ -257,3 +257,9 @@ int Account::calculateBudgetLeft() const
 {
     return (getBudget() - getTotalSpendingsFromAllCategories());
 }
+
+
+int Account::getTotalFromOneCategory(int index) const
+{
+    return expenditures[index].totalTransactions();
+}

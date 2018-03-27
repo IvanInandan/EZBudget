@@ -50,6 +50,7 @@ public:
     int getIncome() const;
     QString getCategoryTitle(int index) const;                  //will retrieve the name of the category at a specified index
     int calculateBudgetLeft() const;                            // will figure out how much budget is left
+    int getTotalFromOneCategory(int index) const;
 
 public slots:
     //setters
