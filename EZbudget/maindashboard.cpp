@@ -2,7 +2,9 @@
 #include "ui_maindashboard.h"
 #include "spendingsbreakdownchart.h"
 #include "spendingsbreakdownslice.h"
-
+#include "tablewidget.h"
+#include <QApplication>
+#include <QTableWidget>
 using namespace std;
 
 #include <QtWidgets/QApplication>
@@ -26,32 +28,38 @@ mainDashboard::mainDashboard(QWidget *parent) :
     ui(new Ui::mainDashboard)
 {
     ui->setupUi(this);
+    ui->budgetLabelUpdate->setText("100.00");
     {
-        //bar chart: spendings vs budget left
-        spendingsBarSet = new QBarSet("Spendings");
-        budgetLeftBarSet = new QBarSet("Budget Left");
+        //Monthly Budget BEGIN
 
-        spendingsBarSet->append(5);
-        budgetLeftBarSet->append(10);
+        //int var = 1; //test
 
-        spendingsBarSet->setLabel("Spendings");
-        budgetLeftBarSet->setLabel("Budget Left");
+        //ui->budgetLabelUpdate->setText("100.00");
 
-        QHorizontalPercentBarSeries *barSeries = new QHorizontalPercentBarSeries();
-        barSeries->append(spendingsBarSet);
-        barSeries->append(budgetLeftBarSet);
+        m_set0 = new QBarSet("Expenses");
+        m_set1 = new QBarSet("Budget Left");
+
+        m_set0->append(5);
+        m_set1->append(10);
+
+        m_set0->setLabel("Expenses");
+        m_set1->setLabel("Budget Left");
+
+        QHorizontalPercentBarSeries *series = new QHorizontalPercentBarSeries();
+        series->append(m_set0);
+        series->append(m_set1);
 
         QChart *spendSaveChart = new QChart();
-        spendSaveChart->addSeries(barSeries);
-        spendSaveChart->setTitle("Spendings vs. Budget Left");
+        spendSaveChart->addSeries(series);
+        spendSaveChart->setTitle("Budget Left");
         spendSaveChart->setAnimationOptions(QChart::SeriesAnimations);
 
-        QStringList chartForMonth;  //label on the side
-        chartForMonth << "Month";
+        QStringList categories;
+        categories << "Month";
         QBarCategoryAxis *axis = new QBarCategoryAxis();
-        axis->append(chartForMonth);
+        axis->append(categories);
         spendSaveChart->createDefaultAxes();
-        spendSaveChart->setAxisY(axis, barSeries);
+        spendSaveChart->setAxisY(axis, series);
 
         spendSaveChart->legend()->setVisible(true);
         spendSaveChart->legend()->setAlignment(Qt::AlignBottom);
@@ -62,54 +70,106 @@ mainDashboard::mainDashboard(QWidget *parent) :
         spendSaveChartView->setGeometry(ui->spendSaveChartPlaceholder->geometry());
         spendSaveChartView->showNormal();
 
+        //new
 
-        //drilldown pie chart: spendings breakdown
-        spendingsBreakDownChart *spendingsBreakdown = new spendingsBreakDownChart();
-        spendingsBreakdown->setTheme(QChart::ChartThemeLight);
-        spendingsBreakdown->setAnimationOptions(QChart::AllAnimations);
-        spendingsBreakdown->legend()->setVisible(true);
-        spendingsBreakdown->legend()->setAlignment(Qt::AlignRight);
+        //QMainWindow window;
 
-        spendSeries= new QtCharts::QPieSeries();
-        spendSeries->setName("Spendings Breakdown");
+        spendingsBreakDownChart *spendingsBreakdownChartDisplay = new spendingsBreakDownChart();
+        spendingsBreakdownChartDisplay->setTheme(QChart::ChartThemeLight);
+            spendingsBreakdownChartDisplay->setAnimationOptions(QChart::AllAnimations);
+            spendingsBreakdownChartDisplay->legend()->setVisible(true);
+            spendingsBreakdownChartDisplay->legend()->setAlignment(Qt::AlignRight);
 
-        //catSeries = new QPieSeries(); //take this out
+            yearSeries = new QtCharts::QPieSeries();
+            yearSeries->setName("Spendings by Category");
 
-        QStringList months = {
-            "T1", "T2", "T3", "T4", "T5", "T6"
-        };
+            QStringList months = {
+                "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+            };
 
-        QStringList categories = {
-            "Bills", "Gas", "Food", "Entertainment"
-        };
+            QStringList names = {
+                "Jane", "John", "Axel", "Mary", "Susan", "Bob"
+            };
 
-//        for(int i = 0; i < categories.size(); i++)
-//        {
-//            spendSeries->append(new spendingsBreakdownSlice(QRandomGenerator::global()->bounded(1000), categories.at(i), catSeries));
-//        }
 
-        for (const QString &category : categories) {
-            catSeries = new QPieSeries();
-            catSeries->setName("Spendings - " + category);
+            for (const QString &name : names) {
+                cat_series = new QPieSeries();
+                cat_series->setName("Spendings by Category " + name);
 
-            for (const QString &month : months)
-                catSeries->append(new spendingsBreakdownSlice(QRandomGenerator::global()->bounded(1000), month, spendSeries));
+                for (const QString &month : months)
+                    cat_series->append(new spendingsBreakdownSlice(QRandomGenerator::global()->bounded(1000), month, yearSeries));
 
-            QObject::connect(catSeries, &QPieSeries::clicked, spendingsBreakdown, &spendingsBreakDownChart::handleSliceClicked);
+                //QObject::connect(cat_series, &QPieSeries::clicked, spendingsBreakdownChartDisplay, &spendingsBreakDownChart::handleSliceClicked);
 
-            spendSeries->append(new spendingsBreakdownSlice(catSeries->sum(), category, catSeries));
-        }
+                yearSeries->append(new spendingsBreakdownSlice(cat_series->sum(), name, cat_series));
+            }
 
-        QObject::connect(spendSeries, &QPieSeries::clicked, spendingsBreakdown, &spendingsBreakDownChart::handleSliceClicked);
+            //QObject::connect(yearSeries, &QPieSeries::clicked, spendingsBreakdownChartDisplay, &spendingsBreakDownChart::handleSliceClicked);
 
-        spendingsBreakdown->changeSeries(spendSeries);
+            spendingsBreakdownChartDisplay->changeSeries(yearSeries);
 
-        QChartView *spendBreakdownChartView = new QChartView(spendingsBreakdown);
-        spendBreakdownChartView->setRenderHint(QPainter::Antialiasing);
-        spendBreakdownChartView->setParent(this);
-        spendBreakdownChartView->setGeometry(ui->spendingChartPlaceholder->geometry());
-        spendBreakdownChartView->showNormal();
+            QChartView *chartView1 = new QChartView(spendingsBreakdownChartDisplay);
+            chartView1->setRenderHint(QPainter::Antialiasing);
+            chartView1->setParent(this);
+            chartView1->setGeometry(ui->spendingChartPlaceholder->geometry());
+            chartView1->showNormal();
 
+
+        //BEGIN SPENDING CHART
+//        m_pieSeries = new QPieSeries();
+//        m_pieSeries->setHoleSize(0.35);
+//        m_pieSeries->append("Protein 4.2%", 4.2);
+//        QPieSlice *slice = m_pieSeries->append("Fat 15.6%", 15.6);
+//        slice->setExploded();
+//        slice->setLabelVisible();
+//        m_pieSeries->append("Other 23.8%", 23.8);
+//        m_pieSeries->append("Carbs 56.4%", 56.4);
+
+//        QChart *chart2 = new QChart();
+//        chart2->addSeries(m_pieSeries);
+//        chart2->setTitle("Expenses");
+//        chart2->legend()->hide();
+
+//        QChartView *chartView2 = new QChartView(chart2);
+//        chartView2->setRenderHint(QPainter::Antialiasing);
+//        chartView2->chart()->setTitle("Monthly Spending");
+//        chartView2->chart()->addSeries(m_pieSeries);
+//        chartView2->chart()->legend()->setAlignment(Qt::AlignBottom);
+//        chartView2->chart()->setTheme(QChart::ChartThemeBlueCerulean);
+//        chartView2->chart()->legend()->setFont(QFont("Arial", 7));
+//        chartView2->setParent(this);
+//        chartView2->setGeometry(ui->spendingChartPlaceholder->geometry());
+//        chartView2->showNormal();
+        //END SPENDING CHART
+
+        //start monthly budget
+//        QBarSet *set1 = new QBarSet("Jane");
+
+//        *set1 << 1 << 2 << 3 << 4 << 5 << 6;
+
+//        QHorizontalPercentBarSeries *series3 = new QHorizontalPercentBarSeries();
+//        series3->append(set1);
+
+//        QChart *chart3 = new QChart();
+//        chart3->addSeries(series3);
+//        chart3->setTitle("Monthly Budget");
+//        chart3->setAnimationOptions(QChart::SeriesAnimations);
+
+//        QStringList categories3;
+//        categories3 << "Jan";
+//        QBarCategoryAxis *axis3 = new QBarCategoryAxis();
+//        axis3->append(categories3);
+//        chart3->createDefaultAxes();
+//        chart3->setAxisY(axis3, series3);
+
+//        chart3->legend()->setVisible(true);
+//        chart3->legend()->setAlignment(Qt::AlignBottom);
+
+//        QChartView *chartView3 = new QChartView(chart3);
+//        chartView3->setRenderHint(QPainter::Antialiasing);
+//        chartView3->setParent(this);
+//        chartView3->setGeometry(ui->monthlyBudgetChartPlaceholder->geometry());
+//        chartView3->showNormal();
     }
 }
 
@@ -128,11 +188,11 @@ void mainDashboard::updateUi()
     updatedBudgetLeft += "$";
     ui->budgetLabelUpdate->setText(updatedBudgetLeft);
 
-    spendingsBarSet->replace(0, pCurrentAcount->getTotalSpendingsFromAllCategories());
-    budgetLeftBarSet->replace(0, pCurrentAcount->calculateBudgetLeft());
+    m_set0->replace(0, pCurrentAcount->getTotalSpendingsFromAllCategories());
+    m_set1->replace(0, pCurrentAcount->calculateBudgetLeft());
 
 
-    //budgetLeftBarSet->replace(0, pCurrentAcount->getSpendings());
+    //m_set1->replace(0, pCurrentAcount->getSpendings());
     // we got rid of spendings, we can use getTotalSpendingsFromAllCategories()
     // but we need to add transactions to our categories first or we could hardcode something
 
@@ -141,42 +201,59 @@ void mainDashboard::updateUi()
 
     // Now we will call methods in Account and update the series
     // First lets clear the series
-    //    m_pieSeries->clear();
-    //    int numExpenses = pCurrentAcount->getNumExpenses();
-    //    for(int i=0; i<numExpenses; ++i)
-    //    {
-    //        Expense *pExpense = pCurrentAcount->getExpense(i);
-    //        m_pieSeries->add(pCurrentAcount->getFirstExpense());
-    //        m_pieSeries->append(pExpense->getCategoryName(), pExpense->getTotalExpense());
-    //    }
+//    m_pieSeries->clear();
+//    int numExpenses = pCurrentAcount->getNumExpenses();
+//    for(int i=0; i<numExpenses; ++i)
+//    {
+//        Expense *pExpense = pCurrentAcount->getExpense(i);
+//        m_pieSeries->add(pCurrentAcount->getFirstExpense());
+//        m_pieSeries->append(pExpense->getCategoryName(), pExpense->getTotalExpense());
+//    }
 
     // Now lets do the same for the series
 
-    spendSeries->clear();
-    //catSeries->clear();
+    yearSeries->clear();
+    cat_series->clear();
     QStringList categories;
+
+//    for (const QString &category : categories) {
+//            //cat_series->setName("Spendings by Category " + name);
+
+//            //for (const QString &month : months)
+//            //    cat_series->append(new spendingsBreakdownSlice(QRandomGenerator::global()->bounded(1000), month, yearSeries));
+
+//            //QObject::connect(cat_series, &QPieSeries::clicked, spendingsBreakdownChartDisplay, &spendingsBreakDownChart::handleSliceClicked);
+
+//            yearSeries->append(new spendingsBreakdownSlice(13, category, cat_series));
+//    }
 
     for(int i = 0; i < pCurrentAcount->getNumCategories(); i++)
     {
-        QString pCategoryTitle= pCurrentAcount->getCategoryTitle(i);
-        categories << pCategoryTitle;
-        int pCategoryTotal = pCurrentAcount->getTotalFromOneCategory(i);
-        spendSeries->append(new spendingsBreakdownSlice(pCategoryTotal, pCategoryTitle, catSeries));
+         QString pCategoryTitle= pCurrentAcount->getCategoryTitle(i);
+         categories << pCategoryTitle;
+         int pCategoryTotal = pCurrentAcount->getTotalFromOneCategory(i);
+         yearSeries->append(new spendingsBreakdownSlice(pCategoryTotal, pCategoryTitle, cat_series));
     }
 
+//    for (const QString &category : categories) {
+//        cat_series = new QPieSeries();
+//        //cat_series->setName("Spendings by Category " + name);
 
-    //    for (const QString &category : categories) {
-    //        catSeries = new QPieSeries();
-    //        //catSeries->setName("Spendings by Category " + name);
+//        //for (const QString &month : months)
+//        //    cat_series->append(new spendingsBreakdownSlice(QRandomGenerator::global()->bounded(1000), month, yearSeries));
 
-    //        //for (const QString &month : months)
-    //        //    catSeries->append(new spendingsBreakdownSlice(QRandomGenerator::global()->bounded(1000), month, spendSeries));
+//        //QObject::connect(cat_series, &QPieSeries::clicked, spendingsBreakdownChartDisplay, &spendingsBreakDownChart::handleSliceClicked);
 
-    //        //QObject::connect(catSeries, &QPieSeries::clicked, spendingsBreakdown, &spendingsBreakDownChart::handleSliceClicked);
-
-    //        spendSeries->append(new spendingsBreakdownSlice(13, category, catSeries));
-    //    }
+//        yearSeries->append(new spendingsBreakdownSlice(13, category, cat_series));
+//    }
 
 
+}
+
+
+
+void mainDashboard::on_spendingsButton_clicked()
+{
+       table.show();
 }
 
