@@ -33,7 +33,7 @@ public:
     QAction *actionQuit;
     QWidget *centralWidget;
     QWidget *spendingChartPlaceholder;
-    QPushButton *pushButton_5;
+    QPushButton *spendingsButton;
     QPushButton *pushButton_6;
     QWidget *spendSaveChartPlaceholder;
     QLabel *budgetLabel;
@@ -59,9 +59,9 @@ public:
         spendingChartPlaceholder = new QWidget(centralWidget);
         spendingChartPlaceholder->setObjectName(QStringLiteral("spendingChartPlaceholder"));
         spendingChartPlaceholder->setGeometry(QRect(160, 100, 641, 301));
-        pushButton_5 = new QPushButton(centralWidget);
-        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
-        pushButton_5->setGeometry(QRect(350, 670, 141, 32));
+        spendingsButton = new QPushButton(centralWidget);
+        spendingsButton->setObjectName(QStringLiteral("spendingsButton"));
+        spendingsButton->setGeometry(QRect(350, 670, 141, 32));
         pushButton_6 = new QPushButton(centralWidget);
         pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
         pushButton_6->setGeometry(QRect(490, 670, 141, 32));
@@ -104,7 +104,7 @@ public:
         actionUser_Settings->setText(QApplication::translate("mainDashboard", "User Settings", nullptr));
         actionLog_Out->setText(QApplication::translate("mainDashboard", "Log Out", nullptr));
         actionQuit->setText(QApplication::translate("mainDashboard", "Quit", nullptr));
-        pushButton_5->setText(QApplication::translate("mainDashboard", "Spendings", nullptr));
+        spendingsButton->setText(QApplication::translate("mainDashboard", "Spendings", nullptr));
         pushButton_6->setText(QApplication::translate("mainDashboard", "Income/Savings", nullptr));
         budgetLabel->setText(QApplication::translate("mainDashboard", "<html><head/><body><p><span style=\" font-size:12pt;\">Budget Left:</span></p></body></html>", nullptr));
         budgetLabelUpdate->setText(QApplication::translate("mainDashboard", "<html><head/><body><p><span style=\" font-size:18pt; font-weight:600;\">TextLabel</span></p></body></html>", nullptr));

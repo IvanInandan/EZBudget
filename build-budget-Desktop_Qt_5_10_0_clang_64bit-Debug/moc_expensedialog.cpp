@@ -1,16 +1,16 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'maindashboard.h'
+** Meta object code from reading C++ file 'expensedialog.h'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.10.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../EZbudget/maindashboard.h"
+#include "../EZbudget/expensedialog.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'maindashboard.h' doesn't include <QObject>."
+#error "The header file 'expensedialog.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.10.0. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -20,29 +20,29 @@
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-struct qt_meta_stringdata_mainDashboard_t {
+struct qt_meta_stringdata_ExpenseDialog_t {
     QByteArrayData data[4];
-    char stringdata0[51];
+    char stringdata0[59];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_mainDashboard_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_ExpenseDialog_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_mainDashboard_t qt_meta_stringdata_mainDashboard = {
+static const qt_meta_stringdata_ExpenseDialog_t qt_meta_stringdata_ExpenseDialog = {
     {
-QT_MOC_LITERAL(0, 0, 13), // "mainDashboard"
-QT_MOC_LITERAL(1, 14, 8), // "updateUi"
-QT_MOC_LITERAL(2, 23, 0), // ""
-QT_MOC_LITERAL(3, 24, 26) // "on_spendingsButton_clicked"
+QT_MOC_LITERAL(0, 0, 13), // "ExpenseDialog"
+QT_MOC_LITERAL(1, 14, 21), // "on_buttonBox_accepted"
+QT_MOC_LITERAL(2, 36, 0), // ""
+QT_MOC_LITERAL(3, 37, 21) // "on_buttonBox_rejected"
 
     },
-    "mainDashboard\0updateUi\0\0"
-    "on_spendingsButton_clicked"
+    "ExpenseDialog\0on_buttonBox_accepted\0"
+    "\0on_buttonBox_rejected"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_mainDashboard[] = {
+static const uint qt_meta_data_ExpenseDialog[] = {
 
  // content:
        7,       // revision
@@ -56,7 +56,7 @@ static const uint qt_meta_data_mainDashboard[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   24,    2, 0x0a /* Public */,
+       1,    0,   24,    2, 0x08 /* Private */,
        3,    0,   25,    2, 0x08 /* Private */,
 
  // slots: parameters
@@ -66,42 +66,42 @@ static const uint qt_meta_data_mainDashboard[] = {
        0        // eod
 };
 
-void mainDashboard::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void ExpenseDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        mainDashboard *_t = static_cast<mainDashboard *>(_o);
+        ExpenseDialog *_t = static_cast<ExpenseDialog *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->updateUi(); break;
-        case 1: _t->on_spendingsButton_clicked(); break;
+        case 0: _t->on_buttonBox_accepted(); break;
+        case 1: _t->on_buttonBox_rejected(); break;
         default: ;
         }
     }
     Q_UNUSED(_a);
 }
 
-const QMetaObject mainDashboard::staticMetaObject = {
-    { &QMainWindow::staticMetaObject, qt_meta_stringdata_mainDashboard.data,
-      qt_meta_data_mainDashboard,  qt_static_metacall, nullptr, nullptr}
+const QMetaObject ExpenseDialog::staticMetaObject = {
+    { &QDialog::staticMetaObject, qt_meta_stringdata_ExpenseDialog.data,
+      qt_meta_data_ExpenseDialog,  qt_static_metacall, nullptr, nullptr}
 };
 
 
-const QMetaObject *mainDashboard::metaObject() const
+const QMetaObject *ExpenseDialog::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *mainDashboard::qt_metacast(const char *_clname)
+void *ExpenseDialog::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_mainDashboard.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_ExpenseDialog.stringdata0))
         return static_cast<void*>(this);
-    return QMainWindow::qt_metacast(_clname);
+    return QDialog::qt_metacast(_clname);
 }
 
-int mainDashboard::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int ExpenseDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QMainWindow::qt_metacall(_c, _id, _a);
+    _id = QDialog::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {

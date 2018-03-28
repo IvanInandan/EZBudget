@@ -33,22 +33,38 @@ SOURCES += \
     spendingsbreakdownchart.cpp \
     spendingsbreakdownslice.cpp \
     accountdatabase.cpp \
-    loginscreen.cpp
+    loginscreen.cpp \
+    expensedialog.cpp \
+    removedialog.cpp \
+    tablewidget.cpp
 
 HEADERS += \
         account.h \
     transaction.h \
     category.h \
-    maindashboard.h \
     spendingsbreakdownchart.h \
     spendingsbreakdownslice.h \
     accountdatabase.h \
-    loginscreen.h
+    loginscreen.h \
+    expensedialog.h \
+    maindashboard.h \
+    removedialog.h \
+    tablewidget.h \
+    ui_expensedialog.h \
+    ui_removedialog.h \
+    ui_tablewidget.h
 
 FORMS += \
     maindashboard.ui \
-    loginscreen.ui
+    loginscreen.ui \
+    expensedialog.ui \
+    maindashboard.ui \
+    removedialog.ui \
+    tablewidget.ui
 
 
 target.path = $$[QT_INSTALL_EXAMPLES]/charts/donutchart
 INSTALLS += target
+
+SUBDIRS += \
+    budget.pro

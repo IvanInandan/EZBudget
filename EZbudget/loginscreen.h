@@ -1,6 +1,7 @@
-#include "maindashboard.h"
 #ifndef LOGINSCREEN_H
 #define LOGINSCREEN_H
+
+#include "maindashboard.h"
 
 #include <QDialog>
 
