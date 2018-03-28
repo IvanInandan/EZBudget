@@ -58,7 +58,7 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         spendingChartPlaceholder = new QWidget(centralWidget);
         spendingChartPlaceholder->setObjectName(QStringLiteral("spendingChartPlaceholder"));
-        spendingChartPlaceholder->setGeometry(QRect(140, 110, 681, 301));
+        spendingChartPlaceholder->setGeometry(QRect(160, 100, 641, 301));
         pushButton_5 = new QPushButton(centralWidget);
         pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
         pushButton_5->setGeometry(QRect(350, 670, 141, 32));
