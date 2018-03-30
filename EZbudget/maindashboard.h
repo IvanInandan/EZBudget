@@ -24,7 +24,7 @@ public:
     ~mainDashboard(); 
 
 public slots:
-    void updateUi();
+    void updateUi(Account *ref);
 
 private slots:
     void on_spendingsButton_clicked();

@@ -120,10 +120,10 @@ mainDashboard::~mainDashboard()
     delete ui;
 }
 
-void mainDashboard::updateUi()
+void mainDashboard::updateUi(Account* ref)
 {
     // lets get the account
-    Account *pCurrentAcount = Account::Instance();
+    Account *pCurrentAcount = ref;//new Account();
 
     QString updatedBudgetLeft = QString::number(pCurrentAcount->calculateBudgetLeft());
     ui->budgetLabelUpdate->clear();

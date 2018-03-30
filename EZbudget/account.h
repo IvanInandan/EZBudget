@@ -19,8 +19,8 @@ class Account : public QObject
 {
     Q_OBJECT
 
-protected:
-    Account();
+//protected:
+    //Account();
 private:
     int monthlyIncome;                     //monthly income
     int monthlyBudget;                     //stores monthly budget
@@ -30,15 +30,16 @@ private:
     //vector<Category> revenue;            //income transactions
     static bool failure;
     static bool success;
-    static Account* _instance;             //used to point to a new or existing account
+    //static Account* _instance;             //used to point to a new or existing account
 
 
 public:
-    static Account* Instance();            //will be used to make sure there is only one account
+    //static Account* Instance();            //will be used to make sure there is only one account
     bool verifyNumber(int input);          //will make sure inputs are not negative
     void addCategory(QString s);           //adds a category to one of the vectors
 
     //getters
+    Account();
     int getBudget() const;
     int getSavings() const;
     int getSavingsPercent() const;

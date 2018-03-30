@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui \
+QT       += core gui sql \
             charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -32,8 +32,8 @@ SOURCES += \
     maindashboard.cpp \
     spendingsbreakdownchart.cpp \
     spendingsbreakdownslice.cpp \
-    accountdatabase.cpp \
-    loginscreen.cpp \
+    login.cpp \
+    databasereaderwriter.cpp \
     expensedialog.cpp \
     removedialog.cpp \
     tablewidget.cpp
@@ -44,21 +44,21 @@ HEADERS += \
     category.h \
     spendingsbreakdownchart.h \
     spendingsbreakdownslice.h \
-    accountdatabase.h \
-    loginscreen.h \
-    expensedialog.h \
+    databasereaderwriter.h \
     maindashboard.h \
+    expensedialog.h \
     removedialog.h \
     tablewidget.h \
+    login.h \
     ui_expensedialog.h \
     ui_removedialog.h \
     ui_tablewidget.h
 
 FORMS += \
     maindashboard.ui \
-    loginscreen.ui \
     expensedialog.ui \
     maindashboard.ui \
+    login.ui \
     removedialog.ui \
     tablewidget.ui
 

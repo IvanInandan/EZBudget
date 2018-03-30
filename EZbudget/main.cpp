@@ -3,18 +3,20 @@
 #include <QObject>
 #include <iostream>
 #include "account.h"
-#include "loginscreen.h"
+#include "login.h"
 
 using namespace std;
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    login l;
+    l.show();
     //loginScreen l;
     //l.show();
-    mainDashboard w;
-    w.show();
-    w.updateUi();
+//    mainDashboard w;
+//    w.show();
+//    w.updateUi();
 
 /*
     Account *PcurrentAccount = Account::Instance();

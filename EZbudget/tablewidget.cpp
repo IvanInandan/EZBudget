@@ -23,7 +23,7 @@ tableWidget::~tableWidget()
 
 void tableWidget::on_addTransactionButton_clicked()
 {
-  Account *currentAccount = Account::Instance();
+  Account *currentAccount = new Account();
     int res;
     int row = ui->tableView->rowCount();
     QString transacName;

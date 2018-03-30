@@ -8,7 +8,7 @@
 
 bool Account::failure = false;
 bool Account::success = true;
-Account* Account::_instance = 0;
+//Account* Account::_instance = 0;
 
 /* PURPOSE:  The default constructor of Account.
  * Author: Jose Quirarte
@@ -18,10 +18,13 @@ Account::Account()
 {
 
     // I hardcoded some numbers so that we dont have to use setters for testing purposes
-    monthlyIncome = 4000;
-    monthlyBudget = 2000;
-    monthlySavings = 2000;
-    savingsPercentage = 50;
+//    monthlyIncome = 4000;
+//    monthlyBudget = 2000;
+//    monthlySavings = 2000;
+//    savingsPercentage = 50;
+//    setIncome(4000);
+//    setBudget(2000);
+//    setSavings(50);
 
     addCategory("Bills");
     addCategory("Grocery/Food");
@@ -36,9 +39,6 @@ Account::Account()
     expenditures[3].addTransaction("Misc", "Gym Membership", "4/10/17", 12.00, "expenses");
     expenditures[3].addTransaction("Misc", "Movie Ticket", "4/10/17", 16.00, "expenses");
 
-
-
-
 }
 
 /*PURPOSE: This function is used to make sure there is only one account per user?(probably a better way to
@@ -49,14 +49,14 @@ Account::Account()
  * Date: 3/3/18
  *
  * */
-Account* Account::Instance()
-{
+//Account* Account::Instance()
+//{
 
-    if(_instance == 0)
-        _instance = new Account();
+//    if(_instance == 0)
+//        _instance = new Account();
 
-    return _instance;
-}
+//    return _instance;
+//}
 
 
 /* PURPOSE:  verifyNumber will check to see if the user inputted
