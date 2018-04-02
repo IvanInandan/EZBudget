@@ -62,13 +62,13 @@ void DatabaseReaderWriter::loadProfile()
            savings = qry1.value(4).toString().toInt();
         }
     }
-    c_account -> setBudget(budget);
+    c_account ->setBudget(budget);
     c_account ->setIncome(income);
     c_account ->setSavings(savings);
 
     //Temp variables
     QString category, name, date, type;
-    //int amount;
+    float amount;
 
     //Query for getting information about transactions
 
@@ -80,10 +80,28 @@ void DatabaseReaderWriter::loadProfile()
             name = qry2.value(1).toString();
             date = qry2.value(2).toString();
             type = qry2.value(3).toString();
+            amount = qry2.value(4).toFloat();
+            c_account -> addTransaction(category, name, date, amount, type);
         }
     }
+
     mainDash = new mainDashboard();
     mainDash->show();
     mainDash->updateUi(c_account);
 
+}
+//Contains quieries to save the data user entered into the database
+void DatabaseReaderWriter::saveProfile()
+{
+
+//    int tempBudget, tempIncome, tempSavings;
+//    c_account->getBudget();
+//    c_account->getIncome();
+//    c_account->getSavings();
+//    QSqlQuery qryUpdateUserData, qryUpdateTransactions;
+//    Updating all user data within the users table
+//    qryUpdateUserData.exec("update users set monthlyIncome='"+tempIncome +"', monthlyBudget='"+tempBudget +"', monthlySavings='"+tempSavings +"' where name='"+user +"'");
+
+//    Updating all transactions, will use a for loop here;
+//    qryUpdateTransactions.exec("update transaction set category='""', tName='""', tDate='""', type='""', tAmount='""' where userID='"+user +"'");
 }

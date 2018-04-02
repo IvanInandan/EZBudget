@@ -64,3 +64,12 @@ void Category::removeTransaction(int index)
 }
 
 
+//bool Category::exist(QString cName)
+//{
+//    for(int i = 0; i < Transactions.size();i++)
+//    {
+//        if(Transactions[i].getTransactionCategory() == cName)
+//            return true;
+//    }
+//    return false;
+//}

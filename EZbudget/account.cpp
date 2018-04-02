@@ -8,7 +8,7 @@
 
 bool Account::failure = false;
 bool Account::success = true;
-//Account* Account::_instance = 0;
+
 
 /* PURPOSE:  The default constructor of Account.
  * Author: Jose Quirarte
@@ -26,38 +26,51 @@ Account::Account()
 //    setBudget(2000);
 //    setSavings(50);
 
-    addCategory("Bills");
-    addCategory("Grocery/Food");
-    addCategory("Gas");
-    addCategory( "Misc");
 
-    expenditures[0].addTransaction("Bills", "Electricity", "4/03/17", 50.00,"expenses");
-    expenditures[0].addTransaction("Bills", "Gas", "4/03/17", 30.00,"expenses");
-    expenditures[1].addTransaction("Grocery/Food", "Groceries", "4/02/17", 70.00,"expenses");
-    expenditures[1].addTransaction("Grocery/Food", "Milk", "4/03/17", 3.00,"expenses");
-    expenditures[2].addTransaction("Gas", "Fuel for the week", "4/04/17", 60.00, "expenses");
-    expenditures[3].addTransaction("Misc", "Gym Membership", "4/10/17", 12.00, "expenses");
-    expenditures[3].addTransaction("Misc", "Movie Ticket", "4/10/17", 16.00, "expenses");
+//      addCategory("Bills");
+//      addCategory("Grocery/Food");
+//      addCategory("Gas");
+//      addCategory( "Misc");
+
+//    expenditures[0].addTransaction("Bills", "Electricity", "4/03/17", 50.00,"expenses");
+//    expenditures[0].addTransaction("Bills", "Gas", "4/03/17", 30.00,"expenses");
+//    expenditures[1].addTransaction("Grocery/Food", "Groceries", "4/02/17", 70.00,"expenses");
+//    expenditures[1].addTransaction("Grocery/Food", "Milk", "4/03/17", 3.00,"expenses");
+//    expenditures[2].addTransaction("Gas", "Fuel for the week", "4/04/17", 60.00, "expenses");
+//    expenditures[3].addTransaction("Misc", "Gym Membership", "4/10/17", 12.00, "expenses");
+//    expenditures[3].addTransaction("Misc", "Movie Ticket", "4/10/17", 16.00, "expenses");
 
 }
 
-/*PURPOSE: This function is used to make sure there is only one account per user?(probably a better way to
- * state this)
- * if an account has not been created make _instance point to a new account and return the pointer
- * otherwise just return instance since an account already exists
- * Author: Jose Quirarte
- * Date: 3/3/18
- *
- * */
-//Account* Account::Instance()
-//{
+//This function adds a transaction and labels it to the appropriate category based on information
+//received from the database
+//Author: Alex Shershnov
+//Date: 4/2/2018
+void Account::addTransaction(QString tCategory, QString tName, QString tDate, float num, QString type)
+{
+    if(expenditures.size() == 0)
+    {
+        addCategory(tCategory);
+        expenditures[0].addTransaction(tCategory, tName, tDate, num, type);
+        spendingIndex++;
+        return;
+    }
+    for(int i = 0; i < expenditures.size(); i++)
+    {
+        if(expenditures[i].getCategoryName() == tCategory)
+        {
+            expenditures[i].addTransaction(tCategory, tName, tDate, num, type);
+            return;
+        }
+    }
+        //return ++spendingIndex;
 
-//    if(_instance == 0)
-//        _instance = new Account();
+    addCategory(tCategory);
+    expenditures[spendingIndex].addTransaction(tCategory, tName, tDate, num, type);
+    spendingIndex++;
+    return;
 
-//    return _instance;
-//}
-
+}
 
 /* PURPOSE:  verifyNumber will check to see if the user inputted
  * value is valid. It will return failure if the value is negative.
@@ -264,3 +277,4 @@ int Account::getTotalFromOneCategory(int index) const
 {
     return expenditures[index].totalTransactions();
 }
+
