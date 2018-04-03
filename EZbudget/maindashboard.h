@@ -29,6 +29,8 @@ public slots:
 private slots:
     void on_spendingsButton_clicked();
 
+    void on_incomeButton_clicked();
+
 private:
     Ui::mainDashboard *ui;
     //QBarSet *m_set;

@@ -21,6 +21,8 @@ private slots:
 
     void on_removeTransactionButton_clicked();
 
+    void on_editTransactionButton_clicked();
+
 private:
     Ui::tableWidget *ui;
 

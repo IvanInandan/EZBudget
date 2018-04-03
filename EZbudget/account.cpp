@@ -27,10 +27,10 @@ Account::Account()
 //    setSavings(50);
 
 
-//      addCategory("Bills");
-//      addCategory("Grocery/Food");
-//      addCategory("Gas");
-//      addCategory( "Misc");
+        addCategory("Bills");
+        addCategory("Grocery/Food");
+        addCategory("Gas");
+        addCategory( "Misc");
 
 //    expenditures[0].addTransaction("Bills", "Electricity", "4/03/17", 50.00,"expenses");
 //    expenditures[0].addTransaction("Bills", "Gas", "4/03/17", 30.00,"expenses");

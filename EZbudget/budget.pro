@@ -36,7 +36,9 @@ SOURCES += \
     databasereaderwriter.cpp \
     expensedialog.cpp \
     removedialog.cpp \
-    tablewidget.cpp
+    tablewidget.cpp \
+    rowselection.cpp \
+    edittransaction.cpp
 
 HEADERS += \
         account.h \
@@ -52,7 +54,9 @@ HEADERS += \
     login.h \
     ui_expensedialog.h \
     ui_removedialog.h \
-    ui_tablewidget.h
+    ui_tablewidget.h \
+    rowselection.h \
+    edittransaction.h
 
 FORMS += \
     maindashboard.ui \
@@ -60,7 +64,9 @@ FORMS += \
     maindashboard.ui \
     login.ui \
     removedialog.ui \
-    tablewidget.ui
+    tablewidget.ui \
+    rowselection.ui \
+    edittransaction.ui
 
 
 target.path = $$[QT_INSTALL_EXAMPLES]/charts/donutchart

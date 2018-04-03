@@ -15,6 +15,18 @@ public:
     explicit editTransaction(QWidget *parent = 0);
     ~editTransaction();
 
+    QString transactionName() const;
+    QString transactionCategory() const;
+    QDate transactionDate() const;
+    double transactionAmount() const;
+    QString transactionType() const; // Check
+
+private slots:
+
+    void on_buttonBox_accepted();
+
+    void on_buttonBox_rejected();
+
 private:
     Ui::editTransaction *ui;
 };
