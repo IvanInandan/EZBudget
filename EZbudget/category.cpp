@@ -39,13 +39,13 @@ void Category::addTransaction(QString category, QString Name, QString date, doub
  */
 void Category::editTransaction(QString category, QString Name, QString date, double amount, QString type, int row)
 {
-    Transaction temp;
-    Transactions.push_back(temp);
+ /*
     Transactions[row].setTransactionCategory(category);
     Transactions[row].setTransactionName(Name);
     Transactions[row].setTransactionDate(date);
     Transactions[row].setTransactionAmount(amount);
     Transactions[row].setTransactionType(type);
+  */
 }
 
 /*PURPOSE: It will add up the amounts of every transaction and return it.
