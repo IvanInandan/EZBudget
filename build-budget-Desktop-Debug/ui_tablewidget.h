@@ -32,13 +32,14 @@ public:
     QVBoxLayout *verticalLayout;
     QPushButton *addTransactionButton;
     QPushButton *removeTransactionButton;
+    QPushButton *editTransactionButton;
     QSpacerItem *verticalSpacer;
 
     void setupUi(QWidget *tableWidget)
     {
         if (tableWidget->objectName().isEmpty())
             tableWidget->setObjectName(QStringLiteral("tableWidget"));
-        tableWidget->resize(400, 215);
+        tableWidget->resize(458, 218);
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -63,6 +64,7 @@ public:
         tableView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
         tableView->setAlternatingRowColors(true);
+        tableView->setSelectionMode(QAbstractItemView::SingleSelection);
         tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
         tableView->setHorizontalScrollMode(QAbstractItemView::ScrollPerPixel);
         tableView->horizontalHeader()->setCascadingSectionResizes(true);
@@ -86,6 +88,11 @@ public:
         removeTransactionButton->setObjectName(QStringLiteral("removeTransactionButton"));
 
         verticalLayout->addWidget(removeTransactionButton);
+
+        editTransactionButton = new QPushButton(tableWidget);
+        editTransactionButton->setObjectName(QStringLiteral("editTransactionButton"));
+
+        verticalLayout->addWidget(editTransactionButton, 0, Qt::AlignLeft);
 
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
@@ -116,6 +123,7 @@ public:
         ___qtablewidgetitem3->setText(QApplication::translate("tableWidget", "Amount", nullptr));
         addTransactionButton->setText(QApplication::translate("tableWidget", "Add Transaction", nullptr));
         removeTransactionButton->setText(QApplication::translate("tableWidget", "Remove Transaction", nullptr));
+        editTransactionButton->setText(QApplication::translate("tableWidget", "Edit Transaction", nullptr));
     } // retranslateUi
 
 };

@@ -34,7 +34,7 @@ public:
     QWidget *centralWidget;
     QWidget *spendingChartPlaceholder;
     QPushButton *spendingsButton;
-    QPushButton *pushButton_6;
+    QPushButton *incomeButton;
     QWidget *spendSaveChartPlaceholder;
     QLabel *budgetLabel;
     QLabel *budgetLabelUpdate;
@@ -62,9 +62,9 @@ public:
         spendingsButton = new QPushButton(centralWidget);
         spendingsButton->setObjectName(QStringLiteral("spendingsButton"));
         spendingsButton->setGeometry(QRect(350, 670, 141, 32));
-        pushButton_6 = new QPushButton(centralWidget);
-        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
-        pushButton_6->setGeometry(QRect(490, 670, 141, 32));
+        incomeButton = new QPushButton(centralWidget);
+        incomeButton->setObjectName(QStringLiteral("incomeButton"));
+        incomeButton->setGeometry(QRect(490, 670, 141, 32));
         spendSaveChartPlaceholder = new QWidget(centralWidget);
         spendSaveChartPlaceholder->setObjectName(QStringLiteral("spendSaveChartPlaceholder"));
         spendSaveChartPlaceholder->setGeometry(QRect(40, 440, 901, 191));
@@ -77,7 +77,7 @@ public:
         mainDashboard->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(mainDashboard);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 973, 22));
+        menuBar->setGeometry(QRect(0, 0, 973, 21));
         menuSettings = new QMenu(menuBar);
         menuSettings->setObjectName(QStringLiteral("menuSettings"));
         mainDashboard->setMenuBar(menuBar);
@@ -105,7 +105,7 @@ public:
         actionLog_Out->setText(QApplication::translate("mainDashboard", "Log Out", nullptr));
         actionQuit->setText(QApplication::translate("mainDashboard", "Quit", nullptr));
         spendingsButton->setText(QApplication::translate("mainDashboard", "Spendings", nullptr));
-        pushButton_6->setText(QApplication::translate("mainDashboard", "Income/Savings", nullptr));
+        incomeButton->setText(QApplication::translate("mainDashboard", "Income/Savings", nullptr));
         budgetLabel->setText(QApplication::translate("mainDashboard", "<html><head/><body><p><span style=\" font-size:12pt;\">Budget Left:</span></p></body></html>", nullptr));
         budgetLabelUpdate->setText(QApplication::translate("mainDashboard", "<html><head/><body><p><span style=\" font-size:18pt; font-weight:600;\">TextLabel</span></p></body></html>", nullptr));
         menuSettings->setTitle(QApplication::translate("mainDashboard", "Settings", nullptr));
