@@ -29,13 +29,13 @@
     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>9</x>
      <y>9</y>
      <width>484</width>
-     <height>43</height>
+     <height>66</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
@@ -63,28 +63,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QComboBox" name="transactionCategoryEdit">
-        <item>
-         <property name="text">
-          <string>Bills</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Grocery/Food</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Gas</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Entertainment/Misc</string>
-         </property>
-        </item>
-       </widget>
+       <widget class="QLineEdit" name="transactionCategoryEdit"/>
       </item>
      </layout>
     </item>
