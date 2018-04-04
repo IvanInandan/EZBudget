@@ -12,10 +12,10 @@ MAKEFILE      = Makefile
 
 CC            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
 CXX           = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
-DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_CHARTS_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_CHARTS_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk -mmacosx-version-min=10.10 -Wall -W -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -stdlib=libc++ -g -std=gnu++11 $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk -mmacosx-version-min=10.10 -Wall -W -fPIC $(DEFINES)
-INCPATH       = -I../EZbudget -I. -I../../../../Qt/5.10.0/clang_64/lib/QtCharts.framework/Headers -I../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers -I../../../../Qt/5.10.0/clang_64/lib/QtGui.framework/Headers -I../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -I../../../../Qt/5.10.0/clang_64/mkspecs/macx-clang -F/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib
+INCPATH       = -I../EZbudget -I. -I../../../../Qt/5.10.0/clang_64/lib/QtCharts.framework/Headers -I../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers -I../../../../Qt/5.10.0/clang_64/lib/QtGui.framework/Headers -I../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers -I../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -I../../../../Qt/5.10.0/clang_64/mkspecs/macx-clang -F/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib
 QMAKE         = /Users/elainejoymutuc/Qt/5.10.0/clang_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -38,7 +38,7 @@ DISTNAME      = budget1.0.0
 DISTDIR = /Users/elainejoymutuc/Documents/qtprojects/EZBudget/build-budget-Desktop_Qt_5_10_0_clang_64bit-Debug/.tmp/budget1.0.0
 LINK          = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
 LFLAGS        = -stdlib=libc++ -headerpad_max_install_names $(EXPORT_ARCH_ARGS) -Wl,-syslibroot,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk -mmacosx-version-min=10.10 -Wl,-rpath,@executable_path/Frameworks -Wl,-rpath,/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib
-LIBS          = $(SUBLIBS) -F/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib -framework QtCharts -framework QtWidgets -framework QtGui -framework QtCore -framework DiskArbitration -framework IOKit -framework OpenGL -framework AGL 
+LIBS          = $(SUBLIBS) -F/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib -framework QtCharts -framework QtWidgets -framework QtGui -framework QtCore -framework DiskArbitration -framework IOKit -framework QtSql -framework OpenGL -framework AGL 
 AR            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar cq
 RANLIB        = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib -s
 SED           = sed
@@ -57,18 +57,18 @@ SOURCES       = ../EZbudget/main.cpp \
 		../EZbudget/maindashboard.cpp \
 		../EZbudget/spendingsbreakdownchart.cpp \
 		../EZbudget/spendingsbreakdownslice.cpp \
-		../EZbudget/accountdatabase.cpp \
-		../EZbudget/loginscreen.cpp \
+		../EZbudget/login.cpp \
+		../EZbudget/databasereaderwriter.cpp \
 		../EZbudget/expensedialog.cpp \
 		../EZbudget/removedialog.cpp \
 		../EZbudget/tablewidget.cpp moc_account.cpp \
 		moc_spendingsbreakdownchart.cpp \
 		moc_spendingsbreakdownslice.cpp \
-		moc_loginscreen.cpp \
-		moc_expensedialog.cpp \
 		moc_maindashboard.cpp \
+		moc_expensedialog.cpp \
 		moc_removedialog.cpp \
-		moc_tablewidget.cpp
+		moc_tablewidget.cpp \
+		moc_login.cpp
 OBJECTS       = main.o \
 		account.o \
 		transaction.o \
@@ -76,19 +76,19 @@ OBJECTS       = main.o \
 		maindashboard.o \
 		spendingsbreakdownchart.o \
 		spendingsbreakdownslice.o \
-		accountdatabase.o \
-		loginscreen.o \
+		login.o \
+		databasereaderwriter.o \
 		expensedialog.o \
 		removedialog.o \
 		tablewidget.o \
 		moc_account.o \
 		moc_spendingsbreakdownchart.o \
 		moc_spendingsbreakdownslice.o \
-		moc_loginscreen.o \
-		moc_expensedialog.o \
 		moc_maindashboard.o \
+		moc_expensedialog.o \
 		moc_removedialog.o \
-		moc_tablewidget.o
+		moc_tablewidget.o \
+		moc_login.o
 DIST          = ../../../../Qt/5.10.0/clang_64/mkspecs/features/spec_pre.prf \
 		../../../../Qt/5.10.0/clang_64/mkspecs/qdevice.pri \
 		../../../../Qt/5.10.0/clang_64/mkspecs/features/device_config.prf \
@@ -280,12 +280,12 @@ DIST          = ../../../../Qt/5.10.0/clang_64/mkspecs/features/spec_pre.prf \
 		../EZbudget/category.h \
 		../EZbudget/spendingsbreakdownchart.h \
 		../EZbudget/spendingsbreakdownslice.h \
-		../EZbudget/accountdatabase.h \
-		../EZbudget/loginscreen.h \
-		../EZbudget/expensedialog.h \
+		../EZbudget/databasereaderwriter.h \
 		../EZbudget/maindashboard.h \
+		../EZbudget/expensedialog.h \
 		../EZbudget/removedialog.h \
 		../EZbudget/tablewidget.h \
+		../EZbudget/login.h \
 		../EZbudget/ui_expensedialog.h \
 		../EZbudget/ui_removedialog.h \
 		../EZbudget/ui_tablewidget.h ../EZbudget/main.cpp \
@@ -295,8 +295,8 @@ DIST          = ../../../../Qt/5.10.0/clang_64/mkspecs/features/spec_pre.prf \
 		../EZbudget/maindashboard.cpp \
 		../EZbudget/spendingsbreakdownchart.cpp \
 		../EZbudget/spendingsbreakdownslice.cpp \
-		../EZbudget/accountdatabase.cpp \
-		../EZbudget/loginscreen.cpp \
+		../EZbudget/login.cpp \
+		../EZbudget/databasereaderwriter.cpp \
 		../EZbudget/expensedialog.cpp \
 		../EZbudget/removedialog.cpp \
 		../EZbudget/tablewidget.cpp
@@ -313,7 +313,7 @@ EXPORT_ARCH_ARGS = $(foreach arch, $(if $(EXPORT_ACTIVE_ARCHS), $(EXPORT_ACTIVE_
 first: all
 ####### Build rules
 
-$(TARGET): ui_maindashboard.h ui_loginscreen.h ui_expensedialog.h ui_removedialog.h ui_tablewidget.h $(OBJECTS)  
+$(TARGET): ui_maindashboard.h ui_expensedialog.h ui_login.h ui_removedialog.h ui_tablewidget.h $(OBJECTS)  
 	@test -d budget.app/Contents/MacOS/ || mkdir -p budget.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -507,6 +507,7 @@ Makefile: ../EZbudget/budget.pro ../../../../Qt/5.10.0/clang_64/mkspecs/macx-cla
 		../../../../Qt/5.10.0/clang_64/lib/QtCharts.framework/QtCharts.prl \
 		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/QtWidgets.prl \
 		../../../../Qt/5.10.0/clang_64/lib/QtGui.framework/QtGui.prl \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/QtSql.prl \
 		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/QtCore.prl
 	$(QMAKE) -o Makefile ../EZbudget/budget.pro -spec macx-clang CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug
 ../../../../Qt/5.10.0/clang_64/mkspecs/features/spec_pre.prf:
@@ -699,6 +700,7 @@ Makefile: ../EZbudget/budget.pro ../../../../Qt/5.10.0/clang_64/mkspecs/macx-cla
 ../../../../Qt/5.10.0/clang_64/lib/QtCharts.framework/QtCharts.prl:
 ../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/QtWidgets.prl:
 ../../../../Qt/5.10.0/clang_64/lib/QtGui.framework/QtGui.prl:
+../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/QtSql.prl:
 ../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/QtCore.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ../EZbudget/budget.pro -spec macx-clang CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug
@@ -730,9 +732,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../../Qt/5.10.0/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../EZbudget/account.h ../EZbudget/transaction.h ../EZbudget/category.h ../EZbudget/spendingsbreakdownchart.h ../EZbudget/spendingsbreakdownslice.h ../EZbudget/accountdatabase.h ../EZbudget/loginscreen.h ../EZbudget/expensedialog.h ../EZbudget/maindashboard.h ../EZbudget/removedialog.h ../EZbudget/tablewidget.h ../EZbudget/ui_expensedialog.h ../EZbudget/ui_removedialog.h ../EZbudget/ui_tablewidget.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../EZbudget/main.cpp ../EZbudget/account.cpp ../EZbudget/transaction.cpp ../EZbudget/category.cpp ../EZbudget/maindashboard.cpp ../EZbudget/spendingsbreakdownchart.cpp ../EZbudget/spendingsbreakdownslice.cpp ../EZbudget/accountdatabase.cpp ../EZbudget/loginscreen.cpp ../EZbudget/expensedialog.cpp ../EZbudget/removedialog.cpp ../EZbudget/tablewidget.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../EZbudget/maindashboard.ui ../EZbudget/loginscreen.ui ../EZbudget/expensedialog.ui ../EZbudget/maindashboard.ui ../EZbudget/removedialog.ui ../EZbudget/tablewidget.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../EZbudget/account.h ../EZbudget/transaction.h ../EZbudget/category.h ../EZbudget/spendingsbreakdownchart.h ../EZbudget/spendingsbreakdownslice.h ../EZbudget/databasereaderwriter.h ../EZbudget/maindashboard.h ../EZbudget/expensedialog.h ../EZbudget/removedialog.h ../EZbudget/tablewidget.h ../EZbudget/login.h ../EZbudget/ui_expensedialog.h ../EZbudget/ui_removedialog.h ../EZbudget/ui_tablewidget.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../EZbudget/main.cpp ../EZbudget/account.cpp ../EZbudget/transaction.cpp ../EZbudget/category.cpp ../EZbudget/maindashboard.cpp ../EZbudget/spendingsbreakdownchart.cpp ../EZbudget/spendingsbreakdownslice.cpp ../EZbudget/login.cpp ../EZbudget/databasereaderwriter.cpp ../EZbudget/expensedialog.cpp ../EZbudget/removedialog.cpp ../EZbudget/tablewidget.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../EZbudget/maindashboard.ui ../EZbudget/expensedialog.ui ../EZbudget/maindashboard.ui ../EZbudget/login.ui ../EZbudget/removedialog.ui ../EZbudget/tablewidget.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -764,9 +766,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: ../../../../Qt/5.10.0/clang_64/mkspecs/features/data/dummy.cpp
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -pipe -stdlib=libc++ -g -std=gnu++11 $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk -mmacosx-version-min=10.10 -Wall -W -dM -E -o moc_predefs.h ../../../../Qt/5.10.0/clang_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_account.cpp moc_spendingsbreakdownchart.cpp moc_spendingsbreakdownslice.cpp moc_loginscreen.cpp moc_expensedialog.cpp moc_maindashboard.cpp moc_removedialog.cpp moc_tablewidget.cpp
+compiler_moc_header_make_all: moc_account.cpp moc_spendingsbreakdownchart.cpp moc_spendingsbreakdownslice.cpp moc_maindashboard.cpp moc_expensedialog.cpp moc_removedialog.cpp moc_tablewidget.cpp moc_login.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_account.cpp moc_spendingsbreakdownchart.cpp moc_spendingsbreakdownslice.cpp moc_loginscreen.cpp moc_expensedialog.cpp moc_maindashboard.cpp moc_removedialog.cpp moc_tablewidget.cpp
+	-$(DEL_FILE) moc_account.cpp moc_spendingsbreakdownchart.cpp moc_spendingsbreakdownslice.cpp moc_maindashboard.cpp moc_expensedialog.cpp moc_removedialog.cpp moc_tablewidget.cpp moc_login.cpp
 moc_account.cpp: ../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QVector \
 		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qvector.h \
 		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QObject \
@@ -778,48 +780,17 @@ moc_account.cpp: ../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QVe
 		../EZbudget/account.h \
 		moc_predefs.h \
 		../../../../Qt/5.10.0/clang_64/bin/moc
-	/Users/elainejoymutuc/Qt/5.10.0/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/mkspecs/macx-clang -I/Users/elainejoymutuc/Documents/qtprojects/EZBudget/EZbudget -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCharts.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtGui.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include -F/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib ../EZbudget/account.h -o moc_account.cpp
+	/Users/elainejoymutuc/Qt/5.10.0/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/mkspecs/macx-clang -I/Users/elainejoymutuc/Documents/qtprojects/EZBudget/EZbudget -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCharts.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtGui.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtSql.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include -F/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib ../EZbudget/account.h -o moc_account.cpp
 
 moc_spendingsbreakdownchart.cpp: ../EZbudget/spendingsbreakdownchart.h \
 		moc_predefs.h \
 		../../../../Qt/5.10.0/clang_64/bin/moc
-	/Users/elainejoymutuc/Qt/5.10.0/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/mkspecs/macx-clang -I/Users/elainejoymutuc/Documents/qtprojects/EZBudget/EZbudget -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCharts.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtGui.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include -F/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib ../EZbudget/spendingsbreakdownchart.h -o moc_spendingsbreakdownchart.cpp
+	/Users/elainejoymutuc/Qt/5.10.0/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/mkspecs/macx-clang -I/Users/elainejoymutuc/Documents/qtprojects/EZBudget/EZbudget -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCharts.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtGui.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtSql.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include -F/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib ../EZbudget/spendingsbreakdownchart.h -o moc_spendingsbreakdownchart.cpp
 
 moc_spendingsbreakdownslice.cpp: ../EZbudget/spendingsbreakdownslice.h \
 		moc_predefs.h \
 		../../../../Qt/5.10.0/clang_64/bin/moc
-	/Users/elainejoymutuc/Qt/5.10.0/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/mkspecs/macx-clang -I/Users/elainejoymutuc/Documents/qtprojects/EZBudget/EZbudget -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCharts.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtGui.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include -F/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib ../EZbudget/spendingsbreakdownslice.h -o moc_spendingsbreakdownslice.cpp
-
-moc_loginscreen.cpp: ../EZbudget/maindashboard.h \
-		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
-		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		../EZbudget/account.h \
-		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QVector \
-		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qvector.h \
-		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QObject \
-		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qobject.h \
-		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QString \
-		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qstring.h \
-		../EZbudget/category.h \
-		../EZbudget/transaction.h \
-		../EZbudget/tablewidget.h \
-		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/QWidget \
-		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
-		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/QDialog \
-		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
-		../EZbudget/loginscreen.h \
-		moc_predefs.h \
-		../../../../Qt/5.10.0/clang_64/bin/moc
-	/Users/elainejoymutuc/Qt/5.10.0/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/mkspecs/macx-clang -I/Users/elainejoymutuc/Documents/qtprojects/EZBudget/EZbudget -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCharts.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtGui.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include -F/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib ../EZbudget/loginscreen.h -o moc_loginscreen.cpp
-
-moc_expensedialog.cpp: ../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/QDialog \
-		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
-		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QDate \
-		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qdatetime.h \
-		../EZbudget/expensedialog.h \
-		moc_predefs.h \
-		../../../../Qt/5.10.0/clang_64/bin/moc
-	/Users/elainejoymutuc/Qt/5.10.0/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/mkspecs/macx-clang -I/Users/elainejoymutuc/Documents/qtprojects/EZBudget/EZbudget -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCharts.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtGui.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include -F/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib ../EZbudget/expensedialog.h -o moc_expensedialog.cpp
+	/Users/elainejoymutuc/Qt/5.10.0/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/mkspecs/macx-clang -I/Users/elainejoymutuc/Documents/qtprojects/EZBudget/EZbudget -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCharts.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtGui.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtSql.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include -F/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib ../EZbudget/spendingsbreakdownslice.h -o moc_spendingsbreakdownslice.cpp
 
 moc_maindashboard.cpp: ../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
@@ -838,7 +809,16 @@ moc_maindashboard.cpp: ../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/He
 		../EZbudget/maindashboard.h \
 		moc_predefs.h \
 		../../../../Qt/5.10.0/clang_64/bin/moc
-	/Users/elainejoymutuc/Qt/5.10.0/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/mkspecs/macx-clang -I/Users/elainejoymutuc/Documents/qtprojects/EZBudget/EZbudget -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCharts.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtGui.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include -F/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib ../EZbudget/maindashboard.h -o moc_maindashboard.cpp
+	/Users/elainejoymutuc/Qt/5.10.0/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/mkspecs/macx-clang -I/Users/elainejoymutuc/Documents/qtprojects/EZBudget/EZbudget -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCharts.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtGui.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtSql.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include -F/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib ../EZbudget/maindashboard.h -o moc_maindashboard.cpp
+
+moc_expensedialog.cpp: ../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/QDialog \
+		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QDate \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qdatetime.h \
+		../EZbudget/expensedialog.h \
+		moc_predefs.h \
+		../../../../Qt/5.10.0/clang_64/bin/moc
+	/Users/elainejoymutuc/Qt/5.10.0/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/mkspecs/macx-clang -I/Users/elainejoymutuc/Documents/qtprojects/EZBudget/EZbudget -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCharts.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtGui.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtSql.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include -F/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib ../EZbudget/expensedialog.h -o moc_expensedialog.cpp
 
 moc_removedialog.cpp: ../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/QDialog \
 		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
@@ -847,33 +827,75 @@ moc_removedialog.cpp: ../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Hea
 		../EZbudget/removedialog.h \
 		moc_predefs.h \
 		../../../../Qt/5.10.0/clang_64/bin/moc
-	/Users/elainejoymutuc/Qt/5.10.0/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/mkspecs/macx-clang -I/Users/elainejoymutuc/Documents/qtprojects/EZBudget/EZbudget -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCharts.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtGui.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include -F/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib ../EZbudget/removedialog.h -o moc_removedialog.cpp
+	/Users/elainejoymutuc/Qt/5.10.0/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/mkspecs/macx-clang -I/Users/elainejoymutuc/Documents/qtprojects/EZBudget/EZbudget -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCharts.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtGui.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtSql.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include -F/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib ../EZbudget/removedialog.h -o moc_removedialog.cpp
 
 moc_tablewidget.cpp: ../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
 		../EZbudget/tablewidget.h \
 		moc_predefs.h \
 		../../../../Qt/5.10.0/clang_64/bin/moc
-	/Users/elainejoymutuc/Qt/5.10.0/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/mkspecs/macx-clang -I/Users/elainejoymutuc/Documents/qtprojects/EZBudget/EZbudget -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCharts.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtGui.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include -F/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib ../EZbudget/tablewidget.h -o moc_tablewidget.cpp
+	/Users/elainejoymutuc/Qt/5.10.0/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/mkspecs/macx-clang -I/Users/elainejoymutuc/Documents/qtprojects/EZBudget/EZbudget -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCharts.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtGui.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtSql.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include -F/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib ../EZbudget/tablewidget.h -o moc_tablewidget.cpp
+
+moc_login.cpp: ../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
+		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QtDebug \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../EZbudget/databasereaderwriter.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/QtSql \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqldatabase.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqldriver.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlerror.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlfield.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlindex.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlquery.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlrecord.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlresult.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qtsqlversion.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QFileInfo \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qfileinfo.h \
+		../EZbudget/Account.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QVector \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qvector.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QObject \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qobject.h \
+		../EZbudget/category.h \
+		../EZbudget/transaction.h \
+		../EZbudget/maindashboard.h \
+		../EZbudget/account.h \
+		../EZbudget/tablewidget.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		../EZbudget/login.h \
+		moc_predefs.h \
+		../../../../Qt/5.10.0/clang_64/bin/moc
+	/Users/elainejoymutuc/Qt/5.10.0/clang_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/mkspecs/macx-clang -I/Users/elainejoymutuc/Documents/qtprojects/EZBudget/EZbudget -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCharts.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtGui.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtSql.framework/Headers -I/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include -F/Users/elainejoymutuc/Qt/5.10.0/clang_64/lib ../EZbudget/login.h -o moc_login.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_maindashboard.h ui_loginscreen.h ui_expensedialog.h ui_maindashboard.h ui_removedialog.h ui_tablewidget.h
+compiler_uic_make_all: ui_maindashboard.h ui_expensedialog.h ui_maindashboard.h ui_login.h ui_removedialog.h ui_tablewidget.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_maindashboard.h ui_loginscreen.h ui_expensedialog.h ui_maindashboard.h ui_removedialog.h ui_tablewidget.h
+	-$(DEL_FILE) ui_maindashboard.h ui_expensedialog.h ui_maindashboard.h ui_login.h ui_removedialog.h ui_tablewidget.h
 ui_maindashboard.h: ../EZbudget/maindashboard.ui \
 		../../../../Qt/5.10.0/clang_64/bin/uic
 	/Users/elainejoymutuc/Qt/5.10.0/clang_64/bin/uic ../EZbudget/maindashboard.ui -o ui_maindashboard.h
 
-ui_loginscreen.h: ../EZbudget/loginscreen.ui \
-		../../../../Qt/5.10.0/clang_64/bin/uic
-	/Users/elainejoymutuc/Qt/5.10.0/clang_64/bin/uic ../EZbudget/loginscreen.ui -o ui_loginscreen.h
-
 ui_expensedialog.h: ../EZbudget/expensedialog.ui \
 		../../../../Qt/5.10.0/clang_64/bin/uic
 	/Users/elainejoymutuc/Qt/5.10.0/clang_64/bin/uic ../EZbudget/expensedialog.ui -o ui_expensedialog.h
+
+ui_login.h: ../EZbudget/login.ui \
+		../../../../Qt/5.10.0/clang_64/bin/uic
+	/Users/elainejoymutuc/Qt/5.10.0/clang_64/bin/uic ../EZbudget/login.ui -o ui_login.h
 
 ui_removedialog.h: ../EZbudget/removedialog.ui \
 		../../../../Qt/5.10.0/clang_64/bin/uic
@@ -912,9 +934,29 @@ main.o: ../EZbudget/main.cpp ../EZbudget/maindashboard.h \
 		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
 		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
-		../EZbudget/loginscreen.h \
-		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/QDialog \
-		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/qdialog.h
+		../EZbudget/login.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QtDebug \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		../EZbudget/databasereaderwriter.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/QtSql \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqldatabase.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqldriver.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlerror.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlfield.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlindex.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlquery.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlrecord.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlresult.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qtsqlversion.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QFileInfo \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qfileinfo.h \
+		../EZbudget/Account.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../EZbudget/main.cpp
 
 account.o: ../EZbudget/account.cpp ../EZbudget/account.h \
@@ -973,37 +1015,87 @@ spendingsbreakdownslice.o: ../EZbudget/spendingsbreakdownslice.cpp ../EZbudget/s
 		../EZbudget/spendingsbreakdownslice.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o spendingsbreakdownslice.o ../EZbudget/spendingsbreakdownslice.cpp
 
-accountdatabase.o: ../EZbudget/accountdatabase.cpp ../EZbudget/accountdatabase.h \
-		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QString \
-		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qstring.h \
-		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QDir \
-		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qdir.h \
-		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QDebug \
-		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qdebug.h \
-		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QVector \
-		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qvector.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o accountdatabase.o ../EZbudget/accountdatabase.cpp
-
-loginscreen.o: ../EZbudget/loginscreen.cpp ../EZbudget/loginscreen.h \
-		../EZbudget/maindashboard.h \
+login.o: ../EZbudget/login.cpp ../EZbudget/login.h \
 		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		../EZbudget/account.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QtDebug \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../EZbudget/databasereaderwriter.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/QtSql \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqldatabase.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqldriver.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlerror.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlfield.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlindex.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlquery.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlrecord.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlresult.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qtsqlversion.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QFileInfo \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qfileinfo.h \
+		../EZbudget/Account.h \
 		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QVector \
 		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qvector.h \
 		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QObject \
 		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qobject.h \
-		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QString \
-		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qstring.h \
 		../EZbudget/category.h \
 		../EZbudget/transaction.h \
+		../EZbudget/maindashboard.h \
+		../EZbudget/account.h \
 		../EZbudget/tablewidget.h \
 		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
-		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/QDialog \
-		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
-		ui_loginscreen.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o loginscreen.o ../EZbudget/loginscreen.cpp
+		ui_login.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o login.o ../EZbudget/login.cpp
+
+databasereaderwriter.o: ../EZbudget/databasereaderwriter.cpp ../EZbudget/databasereaderwriter.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QtDebug \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QString \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qstring.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/QtSql \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqldatabase.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqldriver.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlerror.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlfield.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlindex.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlquery.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlrecord.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqlresult.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qtsqlversion.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QFileInfo \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qfileinfo.h \
+		../EZbudget/Account.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QVector \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qvector.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QObject \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qobject.h \
+		../EZbudget/category.h \
+		../EZbudget/transaction.h \
+		../EZbudget/maindashboard.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
+		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../EZbudget/account.h \
+		../EZbudget/tablewidget.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QVariant \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qvariant.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o databasereaderwriter.o ../EZbudget/databasereaderwriter.cpp
 
 expensedialog.o: ../EZbudget/expensedialog.cpp ../EZbudget/expensedialog.h \
 		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/QDialog \
@@ -1053,20 +1145,20 @@ moc_spendingsbreakdownchart.o: moc_spendingsbreakdownchart.cpp
 moc_spendingsbreakdownslice.o: moc_spendingsbreakdownslice.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_spendingsbreakdownslice.o moc_spendingsbreakdownslice.cpp
 
-moc_loginscreen.o: moc_loginscreen.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_loginscreen.o moc_loginscreen.cpp
+moc_maindashboard.o: moc_maindashboard.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_maindashboard.o moc_maindashboard.cpp
 
 moc_expensedialog.o: moc_expensedialog.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_expensedialog.o moc_expensedialog.cpp
-
-moc_maindashboard.o: moc_maindashboard.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_maindashboard.o moc_maindashboard.cpp
 
 moc_removedialog.o: moc_removedialog.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_removedialog.o moc_removedialog.cpp
 
 moc_tablewidget.o: moc_tablewidget.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_tablewidget.o moc_tablewidget.cpp
+
+moc_login.o: moc_login.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_login.o moc_login.cpp
 
 ####### Install
 

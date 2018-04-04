@@ -77,8 +77,8 @@ mainDashboard::mainDashboard(QWidget *parent) :
 
         //catSeries = new QPieSeries(); //take this out
 
-        QStringList months = {
-            "T1", "T2", "T3", "T4", "T5", "T6"
+        QStringList transactions = {
+            "T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8", "T9", "T10", "T11", "T12"
         };
 
         QStringList categories = {
@@ -87,15 +87,15 @@ mainDashboard::mainDashboard(QWidget *parent) :
 
 //        for(int i = 0; i < categories.size(); i++)
 //        {
-//            spendSeries->append(new spendingsBreakdownSlice(QRandomGenerator::global()->bounded(1000), categories.at(i), catSeries));
+//            spendSeries->append(new spendingsBreakdownSlice(QRandomGenerator::global()->bounded(1000), categories.at(i)));
 //        }
 
         for (const QString &category : categories) {
             catSeries = new QPieSeries();
             catSeries->setName("Spendings - " + category);
 
-            for (const QString &month : months)
-                catSeries->append(new spendingsBreakdownSlice(QRandomGenerator::global()->bounded(1000), month, spendSeries));
+            for (const QString &transaction : transactions)
+                catSeries->append(new spendingsBreakdownSlice(QRandomGenerator::global()->bounded(1000), transaction, spendSeries));
 
             QObject::connect(catSeries, &QPieSeries::clicked, spendingsBreakdown, &spendingsBreakDownChart::handleSliceClicked);
 
@@ -130,8 +130,24 @@ void mainDashboard::updateUi(Account* ref)
     updatedBudgetLeft += "$";
     ui->budgetLabelUpdate->setText(updatedBudgetLeft);
 
+
     spendingsBarSet->replace(0, pCurrentAcount->getTotalSpendingsFromAllCategories());
     budgetLeftBarSet->replace(0, pCurrentAcount->calculateBudgetLeft());
+
+    QString spendingLabel = spendingsBarSet->label();
+    QString budgetLeftLabel = budgetLeftBarSet->label();
+    spendingLabel += ", $";
+    budgetLeftLabel += ", $";
+    spendingLabel += QString::number(pCurrentAcount->getTotalSpendingsFromAllCategories());
+    budgetLeftLabel += QString::number(pCurrentAcount->calculateBudgetLeft());
+    spendingsBarSet->setLabel(spendingLabel);
+    budgetLeftBarSet->setLabel(budgetLeftLabel);
+
+
+//    spendingsBarSet->label() += " ,";
+//    spendingsBarSet->label() += pCurrentAcount->getTotalSpendingsFromAllCategories();
+//    budgetLeftBarSet->label() += " ,";
+//    budgetLeftBarSet->label() += pCurrentAcount->calculateBudgetLeft();
 
 
     //budgetLeftBarSet->replace(0, pCurrentAcount->getSpendings());
