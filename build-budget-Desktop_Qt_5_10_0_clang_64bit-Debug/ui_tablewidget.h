@@ -39,7 +39,7 @@ public:
     {
         if (tableWidget->objectName().isEmpty())
             tableWidget->setObjectName(QStringLiteral("tableWidget"));
-        tableWidget->resize(400, 215);
+        tableWidget->resize(458, 218);
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -64,6 +64,7 @@ public:
         tableView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
         tableView->setAlternatingRowColors(true);
+        tableView->setSelectionMode(QAbstractItemView::SingleSelection);
         tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
         tableView->setHorizontalScrollMode(QAbstractItemView::ScrollPerPixel);
         tableView->horizontalHeader()->setCascadingSectionResizes(true);

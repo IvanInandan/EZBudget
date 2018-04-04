@@ -873,7 +873,7 @@ moc_login.cpp: ../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/QM
 		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qtsqlversion.h \
 		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QFileInfo \
 		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qfileinfo.h \
-		../EZbudget/account.h \
+		../EZbudget/Account.h \
 		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QVector \
 		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qvector.h \
 		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QObject \
@@ -881,6 +881,7 @@ moc_login.cpp: ../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/QM
 		../EZbudget/category.h \
 		../EZbudget/transaction.h \
 		../EZbudget/maindashboard.h \
+		../EZbudget/account.h \
 		../EZbudget/tablewidget.h \
 		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
@@ -910,6 +911,10 @@ compiler_moc_source_clean:
 compiler_uic_make_all: ui_maindashboard.h ui_expensedialog.h ui_maindashboard.h ui_login.h ui_removedialog.h ui_tablewidget.h ui_rowselection.h ui_edittransaction.h
 compiler_uic_clean:
 	-$(DEL_FILE) ui_maindashboard.h ui_expensedialog.h ui_maindashboard.h ui_login.h ui_removedialog.h ui_tablewidget.h ui_rowselection.h ui_edittransaction.h
+ui_maindashboard.h: ../EZbudget/maindashboard.ui \
+		../../../../Qt/5.10.0/clang_64/bin/uic
+	/Users/elainejoymutuc/Qt/5.10.0/clang_64/bin/uic ../EZbudget/maindashboard.ui -o ui_maindashboard.h
+
 ui_expensedialog.h: ../EZbudget/expensedialog.ui \
 		../../../../Qt/5.10.0/clang_64/bin/uic
 	/Users/elainejoymutuc/Qt/5.10.0/clang_64/bin/uic ../EZbudget/expensedialog.ui -o ui_expensedialog.h
@@ -988,7 +993,8 @@ main.o: ../EZbudget/main.cpp ../EZbudget/maindashboard.h \
 		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qsqltablemodel.h \
 		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qtsqlversion.h \
 		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QFileInfo \
-		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qfileinfo.h
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qfileinfo.h \
+		../EZbudget/Account.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../EZbudget/main.cpp
 
 account.o: ../EZbudget/account.cpp ../EZbudget/account.h \
@@ -1073,7 +1079,7 @@ login.o: ../EZbudget/login.cpp ../EZbudget/login.h \
 		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qtsqlversion.h \
 		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QFileInfo \
 		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qfileinfo.h \
-		../EZbudget/account.h \
+		../EZbudget/Account.h \
 		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QVector \
 		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qvector.h \
 		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QObject \
@@ -1081,6 +1087,7 @@ login.o: ../EZbudget/login.cpp ../EZbudget/login.h \
 		../EZbudget/category.h \
 		../EZbudget/transaction.h \
 		../EZbudget/maindashboard.h \
+		../EZbudget/account.h \
 		../EZbudget/tablewidget.h \
 		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
@@ -1110,7 +1117,7 @@ databasereaderwriter.o: ../EZbudget/databasereaderwriter.cpp ../EZbudget/databas
 		../../../../Qt/5.10.0/clang_64/lib/QtSql.framework/Headers/qtsqlversion.h \
 		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QFileInfo \
 		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qfileinfo.h \
-		../EZbudget/account.h \
+		../EZbudget/Account.h \
 		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QVector \
 		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qvector.h \
 		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QObject \
@@ -1120,6 +1127,7 @@ databasereaderwriter.o: ../EZbudget/databasereaderwriter.cpp ../EZbudget/databas
 		../EZbudget/maindashboard.h \
 		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../EZbudget/account.h \
 		../EZbudget/tablewidget.h \
 		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
@@ -1158,6 +1166,8 @@ tablewidget.o: ../EZbudget/tablewidget.cpp ../EZbudget/tablewidget.h \
 		../EZbudget/rowselection.h \
 		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/QTableWidget \
 		../../../../Qt/5.10.0/clang_64/lib/QtWidgets.framework/Headers/qtablewidget.h \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QDebug \
+		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qdebug.h \
 		../EZbudget/account.h \
 		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/QVector \
 		../../../../Qt/5.10.0/clang_64/lib/QtCore.framework/Headers/qvector.h \
