@@ -26,12 +26,13 @@ public:
     bool databaseLoginCheck(QString username, QString password);
     bool checkConnection();
     void loadProfile();
+    void saveProfile();
 private:
     QString user;
     static DatabaseReaderWriter* _instance;
     QSqlDatabase mydb;
     Account *c_account = new Account();
-    mainDashboard *mainDash;// = new mainDashboard(this);
+    mainDashboard *mainDash;
 };
 
 #endif // DATABASEREADERWRITER_H

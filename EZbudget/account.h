@@ -5,6 +5,8 @@
  *
  * Author: Jose Quirarte
  * Date: 2/24/18
+ *
+ * Edited by Alex Shershnov on 4/2/2018
  * */
 
 
@@ -19,19 +21,17 @@ class Account : public QObject
 {
     Q_OBJECT
 
-//protected:
-    //Account();
 private:
     int monthlyIncome;                     //monthly income
     int monthlyBudget;                     //stores monthly budget
     int savingsPercentage;                 //will be used to calculate monthly savings
     int monthlySavings;                    //stores monthly savings
+    int spendingIndex = 0;
     QVector<Category> expenditures;         //spendings
     //vector<Category> revenue;            //income transactions
     static bool failure;
     static bool success;
     //static Account* _instance;             //used to point to a new or existing account
-
 
 public:
     //static Account* Instance();            //will be used to make sure there is only one account
@@ -50,6 +50,7 @@ public:
     QString getCategoryTitle(int index) const;                  //will retrieve the name of the category at a specified index
     int calculateBudgetLeft() const;                            // will figure out how much budget is left
     int getTotalFromOneCategory(int index) const;
+    void addTransaction(QString tCategory, QString tName, QString tDate, float num, QString type);
 
 public slots:
     //setters

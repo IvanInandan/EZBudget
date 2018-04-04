@@ -16,6 +16,7 @@ public:
     ~RemoveDialog();
 
     int removeRowNumber();
+
 private:
     Ui::RemoveDialog *ui;
 };

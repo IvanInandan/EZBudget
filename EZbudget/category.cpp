@@ -27,6 +27,27 @@ void Category::addTransaction(QString category, QString Name, QString date, doub
     Transactions.push_back(temp);
 }
 
+/* PURPOSE: This function will serve to edit the current instance of the transaction
+ *
+ * PARAMETERS: category is the category name that the transaction belongs to
+ *             name is the name of the transaction
+ *             date is the date that the transaction was made
+ *             amount is the amount of the transaction
+ *             type is a flag that determines whether it is an expense or income
+ *  Author: Ivan Inandan
+ *  Date: 4/2/2018
+ */
+void Category::editTransaction(QString category, QString Name, QString date, double amount, QString type, int row)
+{
+ /*
+    Transactions[row].setTransactionCategory(category);
+    Transactions[row].setTransactionName(Name);
+    Transactions[row].setTransactionDate(date);
+    Transactions[row].setTransactionAmount(amount);
+    Transactions[row].setTransactionType(type);
+  */
+}
+
 /*PURPOSE: It will add up the amounts of every transaction and return it.
  * Author: Jose Quirarte
  * Date: 3/6/18
@@ -64,3 +85,12 @@ void Category::removeTransaction(int index)
 }
 
 
+//bool Category::exist(QString cName)
+//{
+//    for(int i = 0; i < Transactions.size();i++)
+//    {
+//        if(Transactions[i].getTransactionCategory() == cName)
+//            return true;
+//    }
+//    return false;
+//}

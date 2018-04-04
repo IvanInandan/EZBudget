@@ -30,6 +30,7 @@ public:
     QVBoxLayout *verticalLayout;
     QPushButton *addTransactionButton;
     QPushButton *removeTransactionButton;
+    QPushButton *editTransactionButton;
     QSpacerItem *verticalSpacer;
 
     void setupUi(QWidget *tableWidget)
@@ -85,6 +86,11 @@ public:
 
         verticalLayout->addWidget(removeTransactionButton);
 
+        editTransactionButton = new QPushButton(tableWidget);
+        editTransactionButton->setObjectName(QStringLiteral("editTransactionButton"));
+
+        verticalLayout->addWidget(editTransactionButton);
+
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         verticalLayout->addItem(verticalSpacer);
@@ -114,6 +120,7 @@ public:
         ___qtablewidgetitem3->setText(QApplication::translate("tableWidget", "Amount", nullptr));
         addTransactionButton->setText(QApplication::translate("tableWidget", "Add Transaction", nullptr));
         removeTransactionButton->setText(QApplication::translate("tableWidget", "Remove Transaction", nullptr));
+        editTransactionButton->setText(QApplication::translate("tableWidget", "Edit Transaction", nullptr));
     } // retranslateUi
 
 };
