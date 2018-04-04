@@ -18,3 +18,5 @@ int RemoveDialog::removeRowNumber()
 {
     return ui->removeRowEdit->value();
 }
+
+

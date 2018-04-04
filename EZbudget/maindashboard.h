@@ -29,8 +29,6 @@ public slots:
 private slots:
     void on_spendingsButton_clicked();
 
-    void on_incomeButton_clicked();
-
 private:
     Ui::mainDashboard *ui;
     QtCharts::QPieSeries *m_pieSeries; //m_pieSeries

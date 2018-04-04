@@ -202,11 +202,6 @@ void mainDashboard::updateUi(Account* ref)
 
 void mainDashboard::on_spendingsButton_clicked()
 {
-    table.show();
+       table.show();
 }
 
-
-void mainDashboard::on_incomeButton_clicked()
-{
-    table.show();
-}

@@ -19,7 +19,6 @@ public:
     QString transactionName() const;
     QString transactionCategory() const;
     QDate transactionDate() const;
-    // QString transactionType() const; // Check
     double transactionAmount() const;
 
 
@@ -28,8 +27,6 @@ private slots:
     void on_buttonBox_accepted();
 
     void on_buttonBox_rejected();
-
-  //  void on_transactionTypeEdit_activated(const QString &arg1);
 
 private:
     Ui::ExpenseDialog *ui;

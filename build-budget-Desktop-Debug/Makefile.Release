@@ -284,83 +284,6 @@ release\moc_account.cpp: C:\Qt\5.10.1\msvc2015\include\QtCore\QVector \
 		C:\Qt\5.10.1\msvc2015\include\QtCore\QString \
 		..\EZbudget\category.h \
 		..\EZbudget\transaction.h \
-		..\EZbudget\maindashboard.h \
-		C:\Qt\5.10.1\msvc2015\include\QtWidgets\QMainWindow \
-		C:\Qt\5.10.1\msvc2015\include\QtWidgets\qmainwindow.h \
-		C:\Qt\5.10.1\msvc2015\include\QtWidgets\qtwidgetsglobal.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qtguiglobal.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qtgui-config.h \
-		C:\Qt\5.10.1\msvc2015\include\QtWidgets\qtwidgets-config.h \
-		C:\Qt\5.10.1\msvc2015\include\QtWidgets\qwidget.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qwindowdefs.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qwindowdefs_win.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qmargins.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qpaintdevice.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qrect.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qsize.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qpalette.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qcolor.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qrgb.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qrgba64.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qbrush.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qmatrix.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qpolygon.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qregion.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qdatastream.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qiodevice.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qline.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qtransform.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qpainterpath.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qimage.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qpixelformat.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qpixmap.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qsharedpointer.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qshareddata.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qhash.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qsharedpointer_impl.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qfont.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qfontmetrics.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qfontinfo.h \
-		C:\Qt\5.10.1\msvc2015\include\QtWidgets\qsizepolicy.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qcursor.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qkeysequence.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qevent.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qvariant.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qmap.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qdebug.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qtextstream.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qlocale.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qset.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qcontiguouscache.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qurl.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qurlquery.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qfile.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qfiledevice.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qvector2d.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qtouchdevice.h \
-		C:\Qt\5.10.1\msvc2015\include\QtWidgets\qtabwidget.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qicon.h \
-		..\EZbudget\account.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\QBarSet \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\qbarset.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\QChartGlobal \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\qchartglobal.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\QtGlobal \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\QPen \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qpen.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\QBrush \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\QFont \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\QPieSeries \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\qpieseries.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\QAbstractSeries \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\qabstractseries.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\QAbstractAxis \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\qabstractaxis.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\QVariant \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\QPieSlice \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\qpieslice.h \
-		..\EZbudget\tablewidget.h \
-		C:\Qt\5.10.1\msvc2015\include\QtWidgets\QWidget \
 		..\EZbudget\account.h \
 		release\moc_predefs.h \
 		C:\Qt\5.10.1\msvc2015\bin\moc.exe
@@ -697,7 +620,6 @@ release\moc_maindashboard.cpp: C:\Qt\5.10.1\msvc2015\include\QtWidgets\QMainWind
 		C:\Qt\5.10.1\msvc2015\include\QtCore\QString \
 		..\EZbudget\category.h \
 		..\EZbudget\transaction.h \
-		..\EZbudget\maindashboard.h \
 		C:\Qt\5.10.1\msvc2015\include\QtCharts\QBarSet \
 		C:\Qt\5.10.1\msvc2015\include\QtCharts\qbarset.h \
 		C:\Qt\5.10.1\msvc2015\include\QtCharts\QChartGlobal \
@@ -1729,83 +1651,7 @@ release\account.obj: ..\EZbudget\account.cpp ../EZbudget/account.h \
 		C:\Qt\5.10.1\msvc2015\include\QtCore\qobject_impl.h \
 		C:\Qt\5.10.1\msvc2015\include\QtCore\QString \
 		../EZbudget/category.h \
-		../EZbudget/transaction.h \
-		../EZbudget/maindashboard.h \
-		C:\Qt\5.10.1\msvc2015\include\QtWidgets\QMainWindow \
-		C:\Qt\5.10.1\msvc2015\include\QtWidgets\qmainwindow.h \
-		C:\Qt\5.10.1\msvc2015\include\QtWidgets\qtwidgetsglobal.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qtguiglobal.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qtgui-config.h \
-		C:\Qt\5.10.1\msvc2015\include\QtWidgets\qtwidgets-config.h \
-		C:\Qt\5.10.1\msvc2015\include\QtWidgets\qwidget.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qwindowdefs.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qwindowdefs_win.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qmargins.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qpaintdevice.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qrect.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qsize.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qpalette.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qcolor.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qrgb.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qrgba64.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qbrush.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qmatrix.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qpolygon.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qregion.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qdatastream.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qiodevice.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qline.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qtransform.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qpainterpath.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qimage.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qpixelformat.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qpixmap.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qsharedpointer.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qshareddata.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qhash.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qsharedpointer_impl.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qfont.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qfontmetrics.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qfontinfo.h \
-		C:\Qt\5.10.1\msvc2015\include\QtWidgets\qsizepolicy.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qcursor.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qkeysequence.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qevent.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qvariant.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qmap.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qdebug.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qtextstream.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qlocale.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qset.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qcontiguouscache.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qurl.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qurlquery.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qfile.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\qfiledevice.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qvector2d.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qtouchdevice.h \
-		C:\Qt\5.10.1\msvc2015\include\QtWidgets\qtabwidget.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qicon.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\QBarSet \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\qbarset.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\QChartGlobal \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\qchartglobal.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\QtGlobal \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\QPen \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qpen.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\QBrush \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\QFont \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\QPieSeries \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\qpieseries.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\QAbstractSeries \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\qabstractseries.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\QAbstractAxis \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\qabstractaxis.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\QVariant \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\QPieSlice \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\qpieslice.h \
-		../EZbudget/tablewidget.h \
-		C:\Qt\5.10.1\msvc2015\include\QtWidgets\QWidget
+		../EZbudget/transaction.h
 
 release\transaction.obj: ..\EZbudget\transaction.cpp ../EZbudget/transaction.h \
 		C:\Qt\5.10.1\msvc2015\include\QtCore\QString \
@@ -3363,27 +3209,7 @@ release\tablewidget.obj: ..\EZbudget\tablewidget.cpp ../EZbudget/tablewidget.h \
 		C:\Qt\5.10.1\msvc2015\include\QtCore\QVector \
 		C:\Qt\5.10.1\msvc2015\include\QtCore\QObject \
 		../EZbudget/category.h \
-		../EZbudget/transaction.h \
-		../EZbudget/maindashboard.h \
-		C:\Qt\5.10.1\msvc2015\include\QtWidgets\QMainWindow \
-		C:\Qt\5.10.1\msvc2015\include\QtWidgets\qmainwindow.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\QBarSet \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\qbarset.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\QChartGlobal \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\qchartglobal.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCore\QtGlobal \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\QPen \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\qpen.h \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\QBrush \
-		C:\Qt\5.10.1\msvc2015\include\QtGui\QFont \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\QPieSeries \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\qpieseries.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\QAbstractSeries \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\qabstractseries.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\QAbstractAxis \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\qabstractaxis.h \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\QPieSlice \
-		C:\Qt\5.10.1\msvc2015\include\QtCharts\qpieslice.h
+		../EZbudget/transaction.h
 
 release\moc_account.obj: release\moc_account.cpp 
 

@@ -27,7 +27,6 @@ public:
     void addTransaction(QString category, QString Name, QString date, double amount, QString type);
     //void editTransaction(int index);  talk to group about how to implement this function
     void removeTransaction(int index);     //removes a transaction from the category
-    void editTransaction(QString category, QString Name, QString date, double amount, QString type, int row);
     int totalTransactions() const;           //adds up all of the amounts of every transaction in one category
     int getTotalNumOfTransactions()const;    // returns the number of transactions within a category
 };
