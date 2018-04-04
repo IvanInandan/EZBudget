@@ -58,7 +58,7 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         spendingChartPlaceholder = new QWidget(centralWidget);
         spendingChartPlaceholder->setObjectName(QStringLiteral("spendingChartPlaceholder"));
-        spendingChartPlaceholder->setGeometry(QRect(100, 70, 761, 321));
+        spendingChartPlaceholder->setGeometry(QRect(100, 80, 761, 341));
         spendingsButton = new QPushButton(centralWidget);
         spendingsButton->setObjectName(QStringLiteral("spendingsButton"));
         spendingsButton->setGeometry(QRect(340, 700, 141, 32));
@@ -70,10 +70,10 @@ public:
         spendSaveChartPlaceholder->setGeometry(QRect(40, 440, 901, 241));
         budgetLabel = new QLabel(centralWidget);
         budgetLabel->setObjectName(QStringLiteral("budgetLabel"));
-        budgetLabel->setGeometry(QRect(20, 10, 111, 41));
+        budgetLabel->setGeometry(QRect(20, -10, 111, 41));
         budgetLabelUpdate = new QLabel(centralWidget);
         budgetLabelUpdate->setObjectName(QStringLiteral("budgetLabelUpdate"));
-        budgetLabelUpdate->setGeometry(QRect(100, 10, 131, 41));
+        budgetLabelUpdate->setGeometry(QRect(110, -10, 131, 41));
         mainDashboard->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(mainDashboard);
         menuBar->setObjectName(QStringLiteral("menuBar"));
