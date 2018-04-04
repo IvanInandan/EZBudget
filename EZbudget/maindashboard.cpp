@@ -173,7 +173,6 @@ void mainDashboard::updateUi(Account* ref)
         spendSeries->append(new spendingsBreakdownSlice(pCategoryTotal, pCategoryTitle, catSeries));
     }
 
-
     //    for (const QString &category : categories) {
     //        catSeries = new QPieSeries();
     //        //catSeries->setName("Spendings by Category " + name);
@@ -185,7 +184,6 @@ void mainDashboard::updateUi(Account* ref)
 
     //        spendSeries->append(new spendingsBreakdownSlice(13, category, catSeries));
     //    }
-
 
 }
 
