@@ -37,7 +37,9 @@ public:
     {
         if (RemoveDialog->objectName().isEmpty())
             RemoveDialog->setObjectName(QStringLiteral("RemoveDialog"));
+        RemoveDialog->setEnabled(true);
         RemoveDialog->resize(250, 108);
+        RemoveDialog->setMinimumSize(QSize(250, 0));
         verticalLayout_2 = new QVBoxLayout(RemoveDialog);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         horizontalLayout = new QHBoxLayout();
@@ -46,6 +48,7 @@ public:
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         label = new QLabel(RemoveDialog);
         label->setObjectName(QStringLiteral("label"));
+        label->setMaximumSize(QSize(228, 16777215));
 
         verticalLayout->addWidget(label);
 
