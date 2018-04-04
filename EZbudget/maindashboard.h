@@ -29,13 +29,18 @@ public slots:
 private slots:
     void on_spendingsButton_clicked();
 
+    void on_incomeButton_clicked();
+
 private:
     Ui::mainDashboard *ui;
+    //QBarSet *m_set;
+    //spendingChart *SpendingChart;
     QtCharts::QPieSeries *m_pieSeries; //m_pieSeries
     QtCharts::QPieSeries *spendSeries; //yearSeries
     QtCharts::QPieSeries *catSeries; //cat_series
     QtCharts::QBarSet *spendingsBarSet; //m_set0
     QtCharts::QBarSet *budgetLeftBarSet; //m_set1
+    //QtCharts::QBarSet *m_set2;
     tableWidget table;
 };
 

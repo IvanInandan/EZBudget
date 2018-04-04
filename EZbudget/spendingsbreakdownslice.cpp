@@ -6,7 +6,6 @@ QT_CHARTS_USE_NAMESPACE
 spendingsBreakdownSlice::spendingsBreakdownSlice(qreal value, QString prefix, QAbstractSeries *drilldownSeries)
     : m_drilldownSeries(drilldownSeries),
       m_prefix(prefix)
-
 {
     setValue(value);
     updateLabel();
@@ -14,10 +13,6 @@ spendingsBreakdownSlice::spendingsBreakdownSlice(qreal value, QString prefix, QA
     connect(this, &spendingsBreakdownSlice::percentageChanged, this, &spendingsBreakdownSlice::updateLabel);
     connect(this, &spendingsBreakdownSlice::hovered, this, &spendingsBreakdownSlice::showHighlight);
 }
-
-//spendingsBreakdownSlice::spendingsBreakdownSlice(qreal value, QString prefix, QAbstractSeries *drilldownSeries)
-//    : m_drilldownSeries(drilldownSeries),
-//      m_prefix(prefix)
 
 spendingsBreakdownSlice::~spendingsBreakdownSlice()
 {

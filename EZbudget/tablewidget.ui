@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>215</height>
+    <width>458</width>
+    <height>218</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -32,6 +32,9 @@
        </property>
        <property name="alternatingRowColors">
         <bool>true</bool>
+       </property>
+       <property name="selectionMode">
+        <enum>QAbstractItemView::SingleSelection</enum>
        </property>
        <property name="selectionBehavior">
         <enum>QAbstractItemView::SelectRows</enum>
@@ -89,6 +92,13 @@
         <widget class="QPushButton" name="removeTransactionButton">
          <property name="text">
           <string>Remove Transaction</string>
+         </property>
+        </widget>
+       </item>
+       <item alignment="Qt::AlignLeft">
+        <widget class="QPushButton" name="editTransactionButton">
+         <property name="text">
+          <string>Edit Transaction</string>
          </property>
         </widget>
        </item>
