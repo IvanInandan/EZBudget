@@ -73,7 +73,7 @@ public:
         budgetLabel->setGeometry(QRect(20, -10, 111, 41));
         budgetLabelUpdate = new QLabel(centralWidget);
         budgetLabelUpdate->setObjectName(QStringLiteral("budgetLabelUpdate"));
-        budgetLabelUpdate->setGeometry(QRect(110, -10, 131, 41));
+        budgetLabelUpdate->setGeometry(QRect(170, -10, 131, 41));
         mainDashboard->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(mainDashboard);
         menuBar->setObjectName(QStringLiteral("menuBar"));
