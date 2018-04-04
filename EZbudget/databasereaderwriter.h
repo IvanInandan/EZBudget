@@ -14,7 +14,7 @@
 #include <QtSql>
 #include <QFileInfo>
 #include <iostream>
-#include <Account.h>
+#include <account.h>
 #include "maindashboard.h"
 
 class DatabaseReaderWriter
