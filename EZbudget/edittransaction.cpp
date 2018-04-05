@@ -23,7 +23,7 @@ QString editTransaction::transactionName() const
 
 QString editTransaction::transactionCategory() const
 {
-    return ui->transactionCategoryEdit->currentText();
+    return ui->transactionCategoryEdit->text();
 }
 
 QDate editTransaction::transactionDate() const
@@ -37,10 +37,10 @@ double editTransaction::transactionAmount() const
 }
 
 
-QString editTransaction::transactionType() const
+/*QString editTransaction::transactionType() const
 {
     return ui->transactionTypeEdit->currentText();
-}
+}*/
 
 
 void editTransaction::on_buttonBox_accepted()

@@ -12,7 +12,6 @@
 #include <QtCore/QDate>
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QComboBox>
 #include <QtWidgets/QDateEdit>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
@@ -21,45 +20,53 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_ExpenseDialog
 {
 public:
-    QVBoxLayout *verticalLayout_5;
+    QDialogButtonBox *buttonBox;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QVBoxLayout *verticalLayout;
     QLabel *transactionNameLabel;
     QLineEdit *transactionNameEdit;
     QVBoxLayout *verticalLayout_4;
     QLabel *transactionCategoryLabel;
-    QComboBox *transactionCategoryEdit;
+    QLineEdit *transactionCategoryEdit;
     QVBoxLayout *verticalLayout_2;
     QLabel *transactionDateLabel;
     QDateEdit *transactionDateEdit;
     QVBoxLayout *verticalLayout_3;
     QLabel *transactionAmountLabel;
     QDoubleSpinBox *transactionAmountEdit;
-    QDialogButtonBox *buttonBox;
 
     void setupUi(QDialog *ExpenseDialog)
     {
         if (ExpenseDialog->objectName().isEmpty())
             ExpenseDialog->setObjectName(QStringLiteral("ExpenseDialog"));
-        ExpenseDialog->resize(367, 73);
-        verticalLayout_5 = new QVBoxLayout(ExpenseDialog);
-        verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
-        horizontalLayout = new QHBoxLayout();
+        ExpenseDialog->resize(504, 139);
+        buttonBox = new QDialogButtonBox(ExpenseDialog);
+        buttonBox->setObjectName(QStringLiteral("buttonBox"));
+        buttonBox->setGeometry(QRect(340, 80, 156, 23));
+        buttonBox->setOrientation(Qt::Horizontal);
+        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
+        layoutWidget = new QWidget(ExpenseDialog);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(9, 9, 484, 66));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        transactionNameLabel = new QLabel(ExpenseDialog);
+        transactionNameLabel = new QLabel(layoutWidget);
         transactionNameLabel->setObjectName(QStringLiteral("transactionNameLabel"));
 
         verticalLayout->addWidget(transactionNameLabel);
 
-        transactionNameEdit = new QLineEdit(ExpenseDialog);
+        transactionNameEdit = new QLineEdit(layoutWidget);
         transactionNameEdit->setObjectName(QStringLiteral("transactionNameEdit"));
 
         verticalLayout->addWidget(transactionNameEdit);
@@ -69,16 +76,12 @@ public:
 
         verticalLayout_4 = new QVBoxLayout();
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
-        transactionCategoryLabel = new QLabel(ExpenseDialog);
+        transactionCategoryLabel = new QLabel(layoutWidget);
         transactionCategoryLabel->setObjectName(QStringLiteral("transactionCategoryLabel"));
 
         verticalLayout_4->addWidget(transactionCategoryLabel);
 
-        transactionCategoryEdit = new QComboBox(ExpenseDialog);
-        transactionCategoryEdit->addItem(QString());
-        transactionCategoryEdit->addItem(QString());
-        transactionCategoryEdit->addItem(QString());
-        transactionCategoryEdit->addItem(QString());
+        transactionCategoryEdit = new QLineEdit(layoutWidget);
         transactionCategoryEdit->setObjectName(QStringLiteral("transactionCategoryEdit"));
 
         verticalLayout_4->addWidget(transactionCategoryEdit);
@@ -88,12 +91,12 @@ public:
 
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        transactionDateLabel = new QLabel(ExpenseDialog);
+        transactionDateLabel = new QLabel(layoutWidget);
         transactionDateLabel->setObjectName(QStringLiteral("transactionDateLabel"));
 
         verticalLayout_2->addWidget(transactionDateLabel);
 
-        transactionDateEdit = new QDateEdit(ExpenseDialog);
+        transactionDateEdit = new QDateEdit(layoutWidget);
         transactionDateEdit->setObjectName(QStringLiteral("transactionDateEdit"));
         transactionDateEdit->setButtonSymbols(QAbstractSpinBox::NoButtons);
         transactionDateEdit->setDate(QDate(2018, 3, 6));
@@ -105,12 +108,12 @@ public:
 
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
-        transactionAmountLabel = new QLabel(ExpenseDialog);
+        transactionAmountLabel = new QLabel(layoutWidget);
         transactionAmountLabel->setObjectName(QStringLiteral("transactionAmountLabel"));
 
         verticalLayout_3->addWidget(transactionAmountLabel);
 
-        transactionAmountEdit = new QDoubleSpinBox(ExpenseDialog);
+        transactionAmountEdit = new QDoubleSpinBox(layoutWidget);
         transactionAmountEdit->setObjectName(QStringLiteral("transactionAmountEdit"));
         transactionAmountEdit->setButtonSymbols(QAbstractSpinBox::NoButtons);
         transactionAmountEdit->setMaximum(1e+8);
@@ -119,16 +122,6 @@ public:
 
 
         horizontalLayout->addLayout(verticalLayout_3);
-
-
-        verticalLayout_5->addLayout(horizontalLayout);
-
-        buttonBox = new QDialogButtonBox(ExpenseDialog);
-        buttonBox->setObjectName(QStringLiteral("buttonBox"));
-        buttonBox->setOrientation(Qt::Horizontal);
-        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
-
-        verticalLayout_5->addWidget(buttonBox);
 
 
         retranslateUi(ExpenseDialog);
@@ -140,14 +133,9 @@ public:
 
     void retranslateUi(QDialog *ExpenseDialog)
     {
-        ExpenseDialog->setWindowTitle(QApplication::translate("ExpenseDialog", "Dialog", nullptr));
+        ExpenseDialog->setWindowTitle(QApplication::translate("ExpenseDialog", "Add Transaction", nullptr));
         transactionNameLabel->setText(QApplication::translate("ExpenseDialog", "<html><head/><body><p align=\"center\"><span style=\" color:#030303;\">Name</span></p></body></html>", nullptr));
         transactionCategoryLabel->setText(QApplication::translate("ExpenseDialog", "<html><head/><body><p align=\"center\">Category</p></body></html>", nullptr));
-        transactionCategoryEdit->setItemText(0, QApplication::translate("ExpenseDialog", "Bills", nullptr));
-        transactionCategoryEdit->setItemText(1, QApplication::translate("ExpenseDialog", "Grocery/Food", nullptr));
-        transactionCategoryEdit->setItemText(2, QApplication::translate("ExpenseDialog", "Gas", nullptr));
-        transactionCategoryEdit->setItemText(3, QApplication::translate("ExpenseDialog", "Entertainment/Misc", nullptr));
-
         transactionDateLabel->setText(QApplication::translate("ExpenseDialog", "<html><head/><body><p align=\"center\">Date</p></body></html>", nullptr));
         transactionDateEdit->setDisplayFormat(QApplication::translate("ExpenseDialog", "M/dd/yy", nullptr));
         transactionAmountLabel->setText(QApplication::translate("ExpenseDialog", "<html><head/><body><p align=\"center\">Amount</p></body></html>", nullptr));

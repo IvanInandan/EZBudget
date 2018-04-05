@@ -41,7 +41,9 @@ private:
     QtCharts::QBarSet *spendingsBarSet; //m_set0
     QtCharts::QBarSet *budgetLeftBarSet; //m_set1
     //QtCharts::QBarSet *m_set2;
-    tableWidget table;
+    tableWidget spendingsTable;
+    tableWidget incomeTable;
+
 };
 
 #endif // MAINDASHBOARD_H

@@ -2,7 +2,7 @@
 #define TABLEWIDGET_H
 
 #include <QWidget>
-
+#include <account.h>
 namespace Ui {
 class tableWidget;
 }
@@ -14,7 +14,8 @@ class tableWidget : public QWidget
 public:
     explicit tableWidget(QWidget *parent = 0);
     ~tableWidget();
-
+    void updateUi();
+    int getRowCount();
 
 private slots:
     void on_addTransactionButton_clicked();

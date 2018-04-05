@@ -22,7 +22,7 @@ QString ExpenseDialog::transactionName() const
 
 QString ExpenseDialog::transactionCategory() const
 {
-    return ui->transactionCategoryEdit->currentText();
+    return ui->transactionCategoryEdit->text();
 }
 
 QDate ExpenseDialog::transactionDate() const

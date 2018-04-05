@@ -94,3 +94,23 @@ void Category::removeTransaction(int index)
 //    }
 //    return false;
 //}
+
+QString Category::getSpecificTransactionName(int index)
+{
+    return Transactions[index].getTransactionName();
+}
+
+QString Category::getSpecificTransactionDate(int index)
+{
+    return Transactions[index].getTransactionDate();
+}
+
+double Category::getSpecificTransactionAmount(int index)
+{
+    return Transactions[index].getTransactionAmount();
+}
+
+int Category::getTransactionSize()
+{
+    return Transactions.size();
+}

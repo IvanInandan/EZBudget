@@ -19,7 +19,10 @@ public:
     QString transactionCategory() const;
     QDate transactionDate() const;
     double transactionAmount() const;
-    QString transactionType() const; // Check
+    //QString transactionType() const; // Check
+
+signals:
+
 
 private slots:
 

@@ -40,6 +40,8 @@ Account::Account()
 //    expenditures[3].addTransaction("Misc", "Gym Membership", "4/10/17", 12.00, "expenses");
 //    expenditures[3].addTransaction("Misc", "Movie Ticket", "4/10/17", 16.00, "expenses");
 
+
+        //connect(this, SIGNAL(spendingsTableChanged(QString,QString,QString,float)), ,SLOT(updateSpendingsUi(QString,QString,QString,float)));
 }
 
 //This function adds a transaction and labels it to the appropriate category based on information
@@ -278,3 +280,45 @@ int Account::getTotalFromOneCategory(int index) const
     return expenditures[index].totalTransactions();
 }
 
+Account* Account::thisAcc()
+{return this;}
+
+/*void Account::populateTables()
+{
+    for(int i = 0; i < expenditures.size(); i++)
+        {
+           for(int j = 0; j < expenditures[i].Transactions.size(); j++)
+           {   QString transacName = expenditures[i].getSpecificTransactionName(j);
+               QString transacDate = expenditures[i].getSpecificTransactionDate(j);
+               QString transacCategory = expenditures[i].getCategoryName();
+               double transacAmount = expenditures[i].getSpecificTransactionAmount(j);
+
+              emit spendingsTableChanged(transacCategory, transacName, transacDate, transacAmount);
+           }
+        }
+}*/
+
+QString Account::getExpenditureTransactionName(int firstIndex, int secondIndex)
+{
+    return expenditures[firstIndex].getSpecificTransactionName(secondIndex);
+}
+
+QString Account::getExpenditureTransactionDate(int firstIndex, int secondIndex)
+{
+    return expenditures[firstIndex].getSpecificTransactionDate(secondIndex);
+}
+
+double Account::getExpenditureTransactionAmount(int firstIndex, int secondIndex)
+{
+    return expenditures[firstIndex].getSpecificTransactionAmount(secondIndex);
+}
+
+int Account::getExpenditureSize()
+{
+    return expenditures.size();
+}
+
+int Account::getExpenditureTransactionSize(int index)
+{
+    return expenditures[index].getTransactionSize();
+}

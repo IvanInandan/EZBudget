@@ -16,6 +16,8 @@
 #include <QObject> //allows usage of signals and slots
 #include <QString>
 #include "category.h"
+#include "tablewidget.h"
+
 
 class Account : public QObject
 {
@@ -51,6 +53,13 @@ public:
     int calculateBudgetLeft() const;                            // will figure out how much budget is left
     int getTotalFromOneCategory(int index) const;
     void addTransaction(QString tCategory, QString tName, QString tDate, float num, QString type);
+    Account * thisAcc();
+    QString getExpenditureTransactionName(int firstIndex, int secondIndex);
+    QString getExpenditureTransactionDate(int firstIndex, int secondIndex);
+    double getExpenditureTransactionAmount(int firstIndex, int secondIndex);
+    int getExpenditureSize();
+    int getExpenditureTransactionSize(int index);
+    //void populateTables();
 
 public slots:
     //setters
@@ -62,6 +71,7 @@ public slots:
 signals:
     //the following function will send out a signal to inform diagrams to update themselves
     void accountModified();
+    void spendingsTableChanged(QString transacCategory, QString transacName, QString transacDate, float amount);
 };
 
 #endif // ACCOUNT_H

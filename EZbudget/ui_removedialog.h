@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'removedialog.ui'
 **
-** Created by: Qt User Interface Compiler version 5.10.1
+** Created by: Qt User Interface Compiler version 5.11.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,13 +10,10 @@
 #define UI_REMOVEDIALOG_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QHBoxLayout>
-#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QVBoxLayout>
@@ -37,7 +34,9 @@ public:
     {
         if (RemoveDialog->objectName().isEmpty())
             RemoveDialog->setObjectName(QStringLiteral("RemoveDialog"));
+        RemoveDialog->setEnabled(true);
         RemoveDialog->resize(250, 108);
+        RemoveDialog->setMinimumSize(QSize(250, 0));
         verticalLayout_2 = new QVBoxLayout(RemoveDialog);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         horizontalLayout = new QHBoxLayout();
@@ -46,6 +45,7 @@ public:
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         label = new QLabel(RemoveDialog);
         label->setObjectName(QStringLiteral("label"));
+        label->setMaximumSize(QSize(228, 16777215));
 
         verticalLayout->addWidget(label);
 

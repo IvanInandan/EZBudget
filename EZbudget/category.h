@@ -22,6 +22,7 @@ private:
 
 public:
     Category();
+
     void setCategoryName(QString Name);
     QString getCategoryName() const;
     void addTransaction(QString category, QString Name, QString date, double amount, QString type);
@@ -30,6 +31,12 @@ public:
     void editTransaction(QString category, QString Name, QString date, double amount, QString type, int row);
     int totalTransactions() const;           //adds up all of the amounts of every transaction in one category
     int getTotalNumOfTransactions()const;    // returns the number of transactions within a category
+
+    QString getSpecificTransactionName(int index);
+    QString getSpecificTransactionDate(int index);
+    double getSpecificTransactionAmount(int index);
+
+    int getTransactionSize();
 };
 
 #endif // CATEGORY_H
