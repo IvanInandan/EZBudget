@@ -322,3 +322,28 @@ int Account::getExpenditureTransactionSize(int index)
 {
     return expenditures[index].getTransactionSize();
 }
+
+void Account::saveFromSpendings(QString transacCategory, QString transacName, QString transacDate, float amount, int row)
+{
+    for(int i=0; i < expenditures.size(); i++)
+    {
+
+        if(transacCategory == expenditures[i].getCategoryName())
+        {
+          //if user changes to a category with less transactions
+          if(row > expenditures[i].getTransactionSize())
+          {
+           expenditures[i].addTransaction(transacCategory, transacName, transacDate, amount, "Spendings");
+           return;
+          }
+
+            expenditures[i].editTransaction(transacCategory, transacName, transacDate, amount, row-1);
+
+        }
+
+     }
+
+  //not sure what to do if user makes new category!!
+}
+
+

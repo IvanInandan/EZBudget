@@ -17,6 +17,8 @@ public:
     void updateUi();
     int getRowCount();
 
+    //void removeFromExpenditures(int index);
+
 private slots:
     void on_addTransactionButton_clicked();
 

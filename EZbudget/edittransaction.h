@@ -21,8 +21,11 @@ public:
     double transactionAmount() const;
     //QString transactionType() const; // Check
 
-signals:
+//public slots:
+    void saveChangestoExpenditures(QString transacCategory, QString transacName, QString transacDate, float amount, int row);
 
+//signals:
+  // void saveChanges(QString transactionCategory, QString transactionName, QString transactionDate, double transactionAmount);
 
 private slots:
 

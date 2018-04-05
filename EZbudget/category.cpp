@@ -37,16 +37,14 @@ void Category::addTransaction(QString category, QString Name, QString date, doub
  *  Author: Ivan Inandan
  *  Date: 4/2/2018
  */
-//void Category::editTransaction(QString category, QString Name, QString date, double amount, QString type, int row)
-//{
- /*
+
+void Category::editTransaction(QString category, QString Name, QString date, double amount,int row)
+{
     Transactions[row].setTransactionCategory(category);
     Transactions[row].setTransactionName(Name);
     Transactions[row].setTransactionDate(date);
     Transactions[row].setTransactionAmount(amount);
-    Transactions[row].setTransactionType(type);
-  */
-//}
+}
 
 /*PURPOSE: It will add up the amounts of every transaction and return it.
  * Author: Jose Quirarte

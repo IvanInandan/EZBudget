@@ -3793,6 +3793,13 @@ release/edittransaction.o: edittransaction.cpp edittransaction.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QSpacerItem \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QVBoxLayout \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QWidget \
+		account.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QVector \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QObject \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QString \
+		category.h \
+		transaction.h \
+		tablewidget.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QPushButton \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qpushbutton.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qabstractbutton.h \
