@@ -5,7 +5,7 @@
  *
  * */
 #include "account.h"
-
+#include "maindashboard.h"
 bool Account::failure = false;
 bool Account::success = true;
 
@@ -27,10 +27,10 @@ Account::Account()
 //    setSavings(50);
 
 
-        addCategory("Bills");
-        addCategory("Grocery/Food");
-        addCategory("Gas");
-        addCategory( "Misc");
+//        addCategory("Bills");
+//        addCategory("Grocery/Food");
+//        addCategory("Gas");
+//        addCategory( "Misc");
 
 //    expenditures[0].addTransaction("Bills", "Electricity", "4/03/17", 50.00,"expenses");
 //    expenditures[0].addTransaction("Bills", "Gas", "4/03/17", 30.00,"expenses");
@@ -40,6 +40,8 @@ Account::Account()
 //    expenditures[3].addTransaction("Misc", "Gym Membership", "4/10/17", 12.00, "expenses");
 //    expenditures[3].addTransaction("Misc", "Movie Ticket", "4/10/17", 16.00, "expenses");
 
+
+        //connect(this, SIGNAL(spendingsTableChanged(QString,QString,QString,float)), ,SLOT(updateSpendingsUi(QString,QString,QString,float)));
 }
 
 //This function adds a transaction and labels it to the appropriate category based on information
@@ -278,3 +280,75 @@ int Account::getTotalFromOneCategory(int index) const
     return expenditures[index].totalTransactions();
 }
 
+//Account* Account::thisAcc()
+//{return this;}
+
+/*void Account::populateTables()
+{
+    for(int i = 0; i < expenditures.size(); i++)
+        {
+           for(int j = 0; j < expenditures[i].Transactions.size(); j++)
+           {   QString transacName = expenditures[i].getSpecificTransactionName(j);
+               QString transacDate = expenditures[i].getSpecificTransactionDate(j);
+               QString transacCategory = expenditures[i].getCategoryName();
+               double transacAmount = expenditures[i].getSpecificTransactionAmount(j);
+
+              emit spendingsTableChanged(transacCategory, transacName, transacDate, transacAmount);
+           }
+        }
+}*/
+
+QString Account::getExpenditureTransactionName(int firstIndex, int secondIndex)
+{
+    return expenditures[firstIndex].getSpecificTransactionName(secondIndex);
+}
+
+QString Account::getExpenditureTransactionDate(int firstIndex, int secondIndex)
+{
+    return expenditures[firstIndex].getSpecificTransactionDate(secondIndex);
+}
+
+double Account::getExpenditureTransactionAmount(int firstIndex, int secondIndex)
+{
+    return expenditures[firstIndex].getSpecificTransactionAmount(secondIndex);
+}
+
+int Account::getExpenditureSize()
+{
+    return expenditures.size();
+}
+
+int Account::getExpenditureTransactionSize(int index)
+{
+    return expenditures[index].getTransactionSize();
+}
+
+void Account::saveFromSpendings(QString transacCategory, QString transacName, QString transacDate, float amount, int row)
+{
+    for(int i=0; i < expenditures.size(); i++)
+    {
+
+        if(transacCategory == expenditures[i].getCategoryName())
+        {
+          //if user changes to a category with less transactions
+          if(row > expenditures[i].getTransactionSize())
+          {
+           expenditures[i].addTransaction(transacCategory, transacName, transacDate, amount, "Spendings");
+           return;
+          }
+
+            expenditures[i].editTransaction(transacCategory, transacName, transacDate, amount, row-1);
+
+        }
+
+     }
+
+  //not sure what to do if user makes new category!!
+}
+
+void Account::invokeUi()
+{
+    mainDash = new mainDashboard();
+    mainDash->show();
+    mainDash->updateUi(this);
+}

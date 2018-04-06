@@ -16,6 +16,12 @@
 #include <QObject> //allows usage of signals and slots
 #include <QString>
 #include "category.h"
+#include "tablewidget.h"
+
+//#include "maindashboard.h"
+
+
+class mainDashboard;
 
 class Account : public QObject
 {
@@ -28,11 +34,11 @@ private:
     int monthlySavings;                    //stores monthly savings
     int spendingIndex = 0;
     QVector<Category> expenditures;         //spendings
-    //vector<Category> revenue;            //income transactions
+    //QVector<Category> revenue;            //income transactions
     static bool failure;
     static bool success;
     //static Account* _instance;             //used to point to a new or existing account
-
+    mainDashboard *mainDash;
 public:
     //static Account* Instance();            //will be used to make sure there is only one account
     bool verifyNumber(int input);          //will make sure inputs are not negative
@@ -51,7 +57,15 @@ public:
     int calculateBudgetLeft() const;                            // will figure out how much budget is left
     int getTotalFromOneCategory(int index) const;
     void addTransaction(QString tCategory, QString tName, QString tDate, float num, QString type);
+    //Account * thisAcc();
+    QString getExpenditureTransactionName(int firstIndex, int secondIndex);
+    QString getExpenditureTransactionDate(int firstIndex, int secondIndex);
+    double getExpenditureTransactionAmount(int firstIndex, int secondIndex);
+    int getExpenditureSize();
+    int getExpenditureTransactionSize(int index);
 
+    void saveFromSpendings(QString transacCategory, QString transacName, QString transacDate, float amount, int row);
+    void invokeUi();
 public slots:
     //setters
     bool setBudget(int b);
@@ -62,6 +76,7 @@ public slots:
 signals:
     //the following function will send out a signal to inform diagrams to update themselves
     void accountModified();
+    //void spendingsTableChanged(QString transacCategory, QString transacName, QString transacDate, float amount);
 };
 
 #endif // ACCOUNT_H

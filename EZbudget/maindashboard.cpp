@@ -5,6 +5,8 @@
 #include "tablewidget.h"
 #include <QApplication>
 #include <QTableWidget>
+#include "databasereaderwriter.h"
+#include "account.h"
 using namespace std;
 
 #include <QtWidgets/QApplication>
@@ -211,11 +213,27 @@ void mainDashboard::updateUi(Account* ref)
 
 void mainDashboard::on_spendingsButton_clicked()
 {
-    table.show();
+    spendingsTable.show();
+    spendingsTable.setWindowTitle("Spendings");
+
+    //Account* currentAccount = new Account;
+    //currentAccount = currentAccount->thisAcc();
+
+    DatabaseReaderWriter *db = DatabaseReaderWriter::Instance();
+    Account *currentAccount = db->getAccountInstance();
+    //If there are transactions in the vector & no data in the
+    //table, the ui will be updated.
+
+    if(spendingsTable.getRowCount() == 0 /*&& currentAccount->getExpenditureSize() != 0*/)
+    {spendingsTable.updateUi();}
+
+    if(currentAccount->getExpenditureSize() == 0)
+    {spendingsTable.setWindowTitle("0 in Vector");}
 }
 
 
 void mainDashboard::on_incomeButton_clicked()
 {
-    table.show();
+    incomeTable.show();
+    incomeTable.setWindowTitle("Income");
 }

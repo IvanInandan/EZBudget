@@ -32,6 +32,7 @@ public:
     QString getTransactionDate() const;
     int getTransactionAmount() const;
     QString getTransactionType() const;
+
 };
 
 #endif // TRANSACTION_H

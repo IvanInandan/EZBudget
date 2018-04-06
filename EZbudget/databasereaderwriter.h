@@ -15,7 +15,7 @@
 #include <QFileInfo>
 #include <iostream>
 #include <Account.h>
-#include "maindashboard.h"
+//#include "maindashboard.h"
 
 class DatabaseReaderWriter
 {
@@ -27,12 +27,13 @@ public:
     bool checkConnection();
     void loadProfile();
     void saveProfile();
+    Account* getAccountInstance();
 private:
     QString user;
     static DatabaseReaderWriter* _instance;
     QSqlDatabase mydb;
     Account *c_account = new Account();
-    mainDashboard *mainDash;
+    //mainDashboard *mainDash;
 };
 
 #endif // DATABASEREADERWRITER_H
