@@ -4,6 +4,7 @@
 #include "removedialog.h"
 #include "rowselection.h"
 #include <QTableWidget>
+#include <QMessageBox>
 #include <QDebug>
 #include "account.h"
 #include "category.h"
@@ -84,6 +85,17 @@ void tableWidget::on_removeTransactionButton_clicked()
 {
     //Account *currentAccount = Account::Instance();
 
+    QItemSelectionModel *rowCheck = ui->tableView->selectionModel();
+    QModelIndexList selectedRowCheck = rowCheck->selectedRows();
+    if(selectedRowCheck.size()!=1)
+    {
+        qDebug() << "ERROR: No rows selected";
+        QMessageBox rowError;
+        rowError.setText("No rows have been selected!");
+        rowError.exec();
+        return;
+    }
+
     QItemSelectionModel *select = ui->tableView->selectionModel();
     QModelIndexList selectedRows = select->selectedRows();
     if(selectedRows.size()!=1)
@@ -141,6 +153,16 @@ void tableWidget::on_editTransactionButton_clicked()
    row.setWindowTitle("Edit Transaction");
    transacRow = row.editRowNumber();
 */
+   QItemSelectionModel *rowCheck = ui->tableView->selectionModel();
+   QModelIndexList selectedRowCheck = rowCheck->selectedRows();
+   if(selectedRowCheck.size()!=1)
+   {
+       qDebug() << "ERROR: No rows selected";
+       QMessageBox rowError;
+       rowError.setText("No rows have been selected!");
+       rowError.exec();
+       return;
+   }
 
    int editPass;
    editTransaction edit(this);

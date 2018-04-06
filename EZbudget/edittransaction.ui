@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>556</width>
+    <width>587</width>
     <height>111</height>
    </rect>
   </property>
@@ -34,7 +34,7 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>535</width>
+     <width>564</width>
      <height>62</height>
     </rect>
    </property>
@@ -63,28 +63,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QComboBox" name="transactionCategoryEdit">
-        <item>
-         <property name="text">
-          <string>Bills</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Grocery/Food</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Gas</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Entertainment/Misc</string>
-         </property>
-        </item>
-       </widget>
+       <widget class="QLineEdit" name="transactionCategoryEdit"/>
       </item>
      </layout>
     </item>

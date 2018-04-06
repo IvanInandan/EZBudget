@@ -162,8 +162,9 @@ void mainDashboard::updateUi(Account* ref)
     // Now lets do the same for the series
 
     spendSeries->clear();
-    //catSeries->clear();
+    catSeries->clear();
     QStringList categories;
+    QStringList transactions;
 
     for(int i = 0; i < pCurrentAcount->getNumCategories(); i++)
     {
@@ -171,7 +172,26 @@ void mainDashboard::updateUi(Account* ref)
         categories << pCategoryTitle;
         int pCategoryTotal = pCurrentAcount->getTotalFromOneCategory(i);
         spendSeries->append(new spendingsBreakdownSlice(pCategoryTotal, pCategoryTitle, catSeries));
+        //for(int i = 0; i < pCurrentAcount)
     }
+
+    //in progress
+
+//    for (const QString &category : categories) {
+//        catSeries = new QPieSeries();
+//        catSeries->setName("Spendings - " + category);
+
+//        for (const QString &transaction : transactions)
+//            catSeries->append(new spendingsBreakdownSlice(QRandomGenerator::global()->bounded(1000), transaction, spendSeries));
+
+//        QObject::connect(catSeries, &QPieSeries::clicked, spendingsBreakdown, &spendingsBreakDownChart::handleSliceClicked);
+
+//        spendSeries->append(new spendingsBreakdownSlice(catSeries->sum(), category, catSeries));
+//    }
+
+//    QObject::connect(spendSeries, &QPieSeries::clicked, spendingsBreakdown, &spendingsBreakDownChart::handleSliceClicked);
+
+//    spendingsBreakdown->changeSeries(spendSeries);
 
     //    for (const QString &category : categories) {
     //        catSeries = new QPieSeries();

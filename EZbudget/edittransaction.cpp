@@ -23,7 +23,7 @@ QString editTransaction::transactionName() const
 
 QString editTransaction::transactionCategory() const
 {
-    return ui->transactionCategoryEdit->currentText();
+    return ui->transactionCategoryEdit->text();
 }
 
 QDate editTransaction::transactionDate() const
