@@ -82,6 +82,13 @@ void Category::removeTransaction(int index)
     Transactions.erase(Transactions.begin() + index);
 }
 
+//PURPOSE: It will return the number of transactions in a category
+//Author: Jose Quirarte
+//DATE:4/4/18
+int Category::getTotalNumOfTransactions() const
+{
+    return Transactions.size();
+}
 
 //bool Category::exist(QString cName)
 //{
