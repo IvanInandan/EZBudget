@@ -5,7 +5,7 @@
  *
  * */
 #include "account.h"
-
+#include "maindashboard.h"
 bool Account::failure = false;
 bool Account::success = true;
 
@@ -27,10 +27,10 @@ Account::Account()
 //    setSavings(50);
 
 
-        addCategory("Bills");
-        addCategory("Grocery/Food");
-        addCategory("Gas");
-        addCategory( "Misc");
+//        addCategory("Bills");
+//        addCategory("Grocery/Food");
+//        addCategory("Gas");
+//        addCategory( "Misc");
 
 //    expenditures[0].addTransaction("Bills", "Electricity", "4/03/17", 50.00,"expenses");
 //    expenditures[0].addTransaction("Bills", "Gas", "4/03/17", 30.00,"expenses");
@@ -280,8 +280,8 @@ int Account::getTotalFromOneCategory(int index) const
     return expenditures[index].totalTransactions();
 }
 
-Account* Account::thisAcc()
-{return this;}
+//Account* Account::thisAcc()
+//{return this;}
 
 /*void Account::populateTables()
 {
@@ -346,4 +346,9 @@ void Account::saveFromSpendings(QString transacCategory, QString transacName, QS
   //not sure what to do if user makes new category!!
 }
 
-
+void Account::invokeUi()
+{
+    mainDash = new mainDashboard();
+    mainDash->show();
+    mainDash->updateUi(this);
+}

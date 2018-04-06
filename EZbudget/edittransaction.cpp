@@ -58,7 +58,7 @@ void editTransaction::on_buttonBox_rejected()
 void editTransaction::saveChangestoExpenditures(QString transacCategory, QString transacName, QString transacDate, float amount, int row)
 {
     Account* currentAccount = new Account;
-    currentAccount->thisAcc();
+    //currentAccount->thisAcc();
 
     currentAccount->saveFromSpendings(transacCategory, transacName, transacDate, amount, row);
 }

@@ -84,10 +84,11 @@ void DatabaseReaderWriter::loadProfile()
             c_account -> addTransaction(category, name, date, amount, type);
         }
     }
-
-    mainDash = new mainDashboard();
-    mainDash->show();
-    mainDash->updateUi(c_account);
+    //c_account->thisAcc(c_account);
+    c_account->invokeUi();
+//    mainDash = new mainDashboard();
+//    mainDash->show();
+//    mainDash->updateUi(c_account);
 
 }
 //Contains quieries to save the data user entered into the database
@@ -104,4 +105,8 @@ void DatabaseReaderWriter::saveProfile()
 
 //    Updating all transactions, will use a for loop here;
 //    qryUpdateTransactions.exec("update transaction set category='""', tName='""', tDate='""', type='""', tAmount='""' where userID='"+user +"'");
+}
+Account* DatabaseReaderWriter::getAccountInstance()
+{
+    return c_account;
 }

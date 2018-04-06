@@ -18,6 +18,10 @@
 #include "category.h"
 #include "tablewidget.h"
 
+//#include "maindashboard.h"
+
+
+class mainDashboard;
 
 class Account : public QObject
 {
@@ -34,7 +38,7 @@ private:
     static bool failure;
     static bool success;
     //static Account* _instance;             //used to point to a new or existing account
-
+    mainDashboard *mainDash;
 public:
     //static Account* Instance();            //will be used to make sure there is only one account
     bool verifyNumber(int input);          //will make sure inputs are not negative
@@ -53,7 +57,7 @@ public:
     int calculateBudgetLeft() const;                            // will figure out how much budget is left
     int getTotalFromOneCategory(int index) const;
     void addTransaction(QString tCategory, QString tName, QString tDate, float num, QString type);
-    Account * thisAcc();
+    //Account * thisAcc();
     QString getExpenditureTransactionName(int firstIndex, int secondIndex);
     QString getExpenditureTransactionDate(int firstIndex, int secondIndex);
     double getExpenditureTransactionAmount(int firstIndex, int secondIndex);
@@ -61,7 +65,7 @@ public:
     int getExpenditureTransactionSize(int index);
 
     void saveFromSpendings(QString transacCategory, QString transacName, QString transacDate, float amount, int row);
-
+    void invokeUi();
 public slots:
     //setters
     bool setBudget(int b);

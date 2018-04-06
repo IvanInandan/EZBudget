@@ -3,8 +3,9 @@
 #include "expensedialog.h"
 #include "removedialog.h"
 #include "rowselection.h"
-#include <QTableWidget>
+#include <QMessageBox>
 #include <QDebug>
+#include "databasereaderwriter.h"
 #include "account.h"
 #include "edittransaction.h"
 
@@ -25,8 +26,11 @@ tableWidget::~tableWidget()
 
 void tableWidget::on_addTransactionButton_clicked()
 {
-  Account *currentAccount = new Account();
-  currentAccount->thisAcc();
+  //Account *currentAccount = new Account();
+ // currentAccount->thisAcc();
+
+    DatabaseReaderWriter *db = DatabaseReaderWriter::Instance();
+    Account *currentAccount = db->getAccountInstance();
 
     int res;
     int row = ui->tableView->rowCount();
@@ -83,8 +87,19 @@ for(int i=0;i<4;i++)
 
 void tableWidget::on_removeTransactionButton_clicked()
 {
-    Account *currentAccount = new Account;
-    currentAccount->thisAcc();
+    QItemSelectionModel *rowCheck = ui->tableView->selectionModel();
+    QModelIndexList selectRowCheck = rowCheck->selectedRows();
+    if(selectRowCheck.size()!=1)
+    {
+    qDebug() << "Selection Error";
+    QMessageBox rowError;
+    rowError.setText("No rows have been selected! Please select one row.");
+    rowError.exec();
+    return;
+    }
+
+    //Account *currentAccount = new Account;
+   // currentAccount->thisAcc();
 
     QItemSelectionModel *select = ui->tableView->selectionModel();
     QModelIndexList selectedRows = select->selectedRows();
@@ -132,7 +147,18 @@ void tableWidget::on_removeTransactionButton_clicked()
 
 void tableWidget::on_editTransactionButton_clicked()
 {
-   /*
+    QItemSelectionModel *rowCheck = ui->tableView->selectionModel();
+    QModelIndexList selectRowCheck = rowCheck->selectedRows();
+    if(selectRowCheck.size()!=1)
+    {
+    qDebug() << "Selection Error";
+    QMessageBox rowError;
+    rowError.setText("No rows have been selected! Please select one row.");
+    rowError.exec();
+    return;
+    }
+
+    /*
     int rowEdit, transacRow;
 
     rowSelection row(this);
@@ -192,13 +218,16 @@ void tableWidget::on_editTransactionButton_clicked()
 
 void tableWidget::updateUi()
 {
-    Account *currentAccount = new Account;
-    currentAccount-> thisAcc();
+    //Account *currentAccount = new Account;
+    //currentAccount-> thisAcc();
 
-    QString transacName = "Netflix"; //currentAccount->getExpenditureTransactionName(1,0);
+    DatabaseReaderWriter *db = DatabaseReaderWriter::Instance();
+    Account *currentAccount = db->getAccountInstance();
+
+    /*QString transacName = "Netflix"; //currentAccount->getExpenditureTransactionName(1,0);
     QString transacDate = "01/09/19"; //currentAccount->getExpenditureTransactionDate(1,0); << using these values gives a runtime error: [index out of range]
     QString transacCategory = "Bills"; //currentAccount->getCategoryTitle(1);
-    double amount = 7.99; //currentAccount->getExpenditureTransactionSize(0); <-- this displays a 0 for all the indexes
+    double amount = currentAccount->getExpenditureSize();
 
     int row = ui->tableView->rowCount();
     ui->tableView->insertRow(row);
@@ -206,8 +235,8 @@ void tableWidget::updateUi()
     ui->tableView->setItem(row, CATEGORY, new QTableWidgetItem(transacCategory));
     ui->tableView->setItem(row, DATE, new QTableWidgetItem(transacDate));
     ui->tableView->setItem(row, AMOUNT, new QTableWidgetItem(QString::number(amount)));
-
-    QString transacName1 = "Thin Mints";
+*/
+    /*QString transacName1 = "Thin Mints";
     QString transacDate1 = "03/17/19";
     QString transacCategory1 = "Grocery/Food";
     double amount1 = 20;
@@ -230,10 +259,11 @@ void tableWidget::updateUi()
     ui->tableView->setItem(row2, CATEGORY, new QTableWidgetItem(transacCategory2));
     ui->tableView->setItem(row2, DATE, new QTableWidgetItem(transacDate2));
     ui->tableView->setItem(row2, AMOUNT, new QTableWidgetItem(QString::number(amount2)));
-
+*/
 
 //using this loop, program compiles but nothing happens
-    /*for(int i = 0; i < currentAccount->getExpenditureSize(); i++)
+
+    for(int i = 0; i < currentAccount->getExpenditureSize(); i++)
         {
            for(int j = 0; j < currentAccount->getExpenditureTransactionSize(i); j++)
            {
@@ -250,7 +280,7 @@ void tableWidget::updateUi()
                ui->tableView->setItem(row, DATE, new QTableWidgetItem(transacDate));
                ui->tableView->setItem(row, AMOUNT, new QTableWidgetItem(QString::number(amount)));
            }
-        }*/
+        }
 
 
 }
