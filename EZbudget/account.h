@@ -17,6 +17,7 @@
 #include <QString>
 #include "category.h"
 #include "tablewidget.h"
+#include "transaction.h"
 
 //#include "maindashboard.h"
 
@@ -32,46 +33,64 @@ private:
     int monthlyBudget;                     //stores monthly budget
     int savingsPercentage;                 //will be used to calculate monthly savings
     int monthlySavings;                    //stores monthly savings
-    int spendingIndex = 0;
-    QVector<Category> expenditures;         //spendings
-    //QVector<Category> revenue;            //income transactions
+    //int spendingIndex = 0;
+
+    //QVector<Category> expenditures;         //spendings
+
+    QVector<Transaction> spendings;
+    QVector<Transaction> income;
+
     static bool failure;
     static bool success;
-    //static Account* _instance;             //used to point to a new or existing account
     mainDashboard *mainDash;
 public:
-    //static Account* Instance();            //will be used to make sure there is only one account
-    bool verifyNumber(int input);          //will make sure inputs are not negative
-    void addCategory(QString s);           //adds a category to one of the vectors
 
     //getters
-    Account();
-    int getBudget() const;
-    int getSavings() const;
-    int getSavingsPercent() const;
-    int getNumCategories() const;                               //will return the number of categories in expenditures
-    void getCategory(int index, Category &section) const;       // will return a category object specified by the index
-    int getTotalSpendingsFromAllCategories() const;
-    int getIncome() const;
-    QString getCategoryTitle(int index) const;                  //will retrieve the name of the category at a specified index
-    int calculateBudgetLeft() const;                            // will figure out how much budget is left
-    int getTotalFromOneCategory(int index) const;
-    void addTransaction(QString tCategory, QString tName, QString tDate, float num, QString type);
+    //void addCategory(QString s);           //adds a category to one of the vectors
+    //int getBudget() const;//good
+    //int getSavings() const;//good
+    //int getSavingsPercent() const;//good
+    //int getNumCategories() const;                               //will return the number of categories in expenditures NOT GOOD
+    //void getCategory(int index, Category &section) const;       // will return a category object specified by the index
+    //int getTotalSpendingsFromAllCategories() const;
+    //int getIncome() const;
+    //QString getCategoryTitle(int index) const;                  //will retrieve the name of the category at a specified index
+    //int calculateBudgetLeft() const;                            // will figure out how much budget is left
+    //int getTotalFromOneCategory(int index) const;
+    //void addTransaction(QString tCategory, QString tName, QString tDate, float num, QString type);
     //Account * thisAcc();
-    QString getExpenditureTransactionName(int firstIndex, int secondIndex);
-    QString getExpenditureTransactionDate(int firstIndex, int secondIndex);
-    double getExpenditureTransactionAmount(int firstIndex, int secondIndex);
-    int getExpenditureSize();
-    int getExpenditureTransactionSize(int index);
+    //QString getExpenditureTransactionName(int firstIndex, int secondIndex);
+    //QString getExpenditureTransactionDate(int firstIndex, int secondIndex);
+    //double getExpenditureTransactionAmount(int firstIndex, int secondIndex);
+    //int getExpenditureSize();
+    //int getExpenditureTransactionSize(int index);
 
-    void saveFromSpendings(QString transacCategory, QString transacName, QString transacDate, float amount, int row);
+    //void saveFromSpendings(QString transacCategory, QString transacName, QString transacDate, float amount, int row);
+
+    //Refactored functions
+    Account();
+    void editTransactions(QString category, QString tName, QString tDate, QString &type, int amount, int index);
+    void addTransactions(QString category, QString tName, QString tDate, QString &type, int amount);
+    void removeTransactions(int index, QString &type);
+
+    void getTransaction(int index, QString &category, QString &tName, QString &tDate, QString &type, int &amount)const;
+
+    void getCategoryOfTransaction(int index, QString &category, QString &type)const;
+    int getTotalFromOneCategory(QString &category, QString &type)const;
+    int getTotalFromTransaction(int index, QString &type)const;
+    int getTotaNumberOfTransactions(QString &type)const;
+    bool verifyNumber(int input);          //will make sure inputs are not negative
+    int getBudget()const;
+    int getIncome()const;
+    int getSavings()const;
     void invokeUi();
+
 public slots:
     //setters
     bool setBudget(int b);
     bool setSavings(int savingPercent);
     bool setIncome(int i);
-    void setCategory(int index, Category &section);             //makes changes made to categories permanent
+    //void setCategory(int index, Category &section);             //makes changes made to categories permanent
 
 signals:
     //the following function will send out a signal to inform diagrams to update themselves

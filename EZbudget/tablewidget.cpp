@@ -70,17 +70,23 @@ void tableWidget::on_addTransactionButton_clicked()
                            */
 
 
-for(int i=0;i<4;i++)
-{
-    Category C;
-    currentAccount->getCategory(i,C);
+//for(int i=0;i<4;i++)
+//{
+//    //Category C;
+//    //currentAccount->getCategory(i,C);
+//    QString categoryName = "";
+//    currentAccount->getCategoryOfTransaction(i,categoryName,"Expenses");
 
-    if(transacCategory == C.getCategoryName())
+//    if(transacCategory == categoryName)//C.getCategoryName())
+//    {
+//       C.addTransaction(transacCategory, transacName, transacDate, transacAmount, transacType);
+//    }
+//    currentAccount->setCategory(i,C);
+    QString s = "Expenses";
+    for(int i = 0; i < currentAccount->getTotaNumberOfTransactions(s); i++)
     {
-     C.addTransaction(transacCategory, transacName, transacDate, transacAmount, transacType);
+        currentAccount->addTransactions(transacCategory, transacName, transacDate, transacType, transacAmount);//cat name date type amt)
     }
-    currentAccount->setCategory(i,C);
-}
 
 
 }
@@ -103,16 +109,16 @@ void tableWidget::on_removeTransactionButton_clicked()
     //Account *currentAccount = new Account;
    // currentAccount->thisAcc();
 
-    QItemSelectionModel *rowCheck = ui->tableView->selectionModel();
-    QModelIndexList selectedRowCheck = rowCheck->selectedRows();
-    if(selectedRowCheck.size()!=1)
-    {
-        qDebug() << "ERROR: No rows selected";
-        QMessageBox rowError;
-        rowError.setText("No rows have been selected!");
-        rowError.exec();
-        return;
-    }
+//    QItemSelectionModel *rowCheck = ui->tableView->selectionModel();
+//    QModelIndexList selectedRowCheck = rowCheck->selectedRows();
+//    if(selectedRowCheck.size()!=1)
+//    {
+//        qDebug() << "ERROR: No rows selected";
+//        QMessageBox rowError;
+//        rowError.setText("No rows have been selected!");
+//        rowError.exec();
+//        return;
+//    }
 
     QItemSelectionModel *select = ui->tableView->selectionModel();
     QModelIndexList selectedRows = select->selectedRows();
@@ -183,16 +189,16 @@ void tableWidget::on_editTransactionButton_clicked()
    row.setWindowTitle("Edit Transaction");
    transacRow = row.editRowNumber();
 */
-   QItemSelectionModel *rowCheck = ui->tableView->selectionModel();
-   QModelIndexList selectedRowCheck = rowCheck->selectedRows();
-   if(selectedRowCheck.size()!=1)
-   {
-       qDebug() << "ERROR: No rows selected";
-       QMessageBox rowError;
-       rowError.setText("No rows have been selected!");
-       rowError.exec();
-       return;
-   }
+//   QItemSelectionModel *rowCheck = ui->tableView->selectionModel();
+//   QModelIndexList selectedRowCheck = rowCheck->selectedRows();
+//   if(selectedRowCheck.size()!=1)
+//   {
+//       qDebug() << "ERROR: No rows selected";
+//       QMessageBox rowError;
+//       rowError.setText("No rows have been selected!");
+//       rowError.exec();
+//       return;
+//   }
 
    int editPass;
    editTransaction edit(this);
@@ -229,10 +235,12 @@ void tableWidget::on_editTransactionButton_clicked()
                           new QTableWidgetItem(transacCategory));
    ui->tableView->setItem(transacRow, DATE,
                           new QTableWidgetItem(transacDate));
+//   ui->tableViews->setItem(transacType, TYPE,
+//                           new QTableWidgetItem(tranacType));
    ui->tableView->setItem(transacRow, AMOUNT,
                           new QTableWidgetItem(QString::number(transacAmount)));
 
-    edit.saveChangestoExpenditures(transacCategory, transacName, transacDate, transacAmount, transacRow);
+    edit.saveChangestoExpenditures(transacCategory, transacName, transacDate, transacType, transacAmount, transacRow);
    //ui->tableView->removeRow(transacRow-1);
    // ----------------------------------------------------------------------------------
 
@@ -285,8 +293,10 @@ void tableWidget::updateUi()
 */
 
 //using this loop, program compiles but nothing happens
+    QString s = "Expenses";
+    QString i = "Income";
 
-    for(int i = 0; i < currentAccount->getExpenditureSize(); i++)
+    for(int i = 0; i < currentAccount->getTotaNumberOfTransactions(s); i++)//etc.
         {
            for(int j = 0; j < currentAccount->getExpenditureTransactionSize(i); j++)
            {

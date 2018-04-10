@@ -19,7 +19,7 @@ public:
     QString transactionName() const;
     QString transactionCategory() const;
     QDate transactionDate() const;
-    // QString transactionType() const; // Check
+    QString transactionType() const; // Check
     double transactionAmount() const;
 
 

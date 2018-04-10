@@ -35,12 +35,12 @@ double ExpenseDialog::transactionAmount() const
     return ui->transactionAmountEdit->value();
 }
 
-/*
-QString ExpenseDialog::transactionType() const
-{
-    return ui->transactionType->currentText();
-}
-*/
+
+//QString ExpenseDialog::transactionType() const
+//{
+//    return ui->transacType->currentText();
+//}
+
 
 void ExpenseDialog::on_buttonBox_accepted()
 {

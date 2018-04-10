@@ -19,7 +19,7 @@ DatabaseReaderWriter* DatabaseReaderWriter::Instance()
 DatabaseReaderWriter::DatabaseReaderWriter()
 {
     mydb = QSqlDatabase::addDatabase("QSQLITE");
-    mydb.setDatabaseName("C:/Users/samic/Documents/GitHub/EZBudget/EZbudget/QtEzBudget.db");
+    mydb.setDatabaseName("C:/sqlite2/QtEzBudget.db");
 }
 
 bool DatabaseReaderWriter::databaseLoginCheck(QString username, QString password)
@@ -81,7 +81,7 @@ void DatabaseReaderWriter::loadProfile()
             date = qry2.value(2).toString();
             type = qry2.value(3).toString();
             amount = qry2.value(4).toFloat();
-            c_account -> addTransaction(category, name, date, amount, type);
+            c_account -> addTransactions(category, name, date, type, amount);
         }
     }
     //c_account->thisAcc(c_account);
