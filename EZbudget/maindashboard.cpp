@@ -214,21 +214,21 @@ void mainDashboard::updateUi(Account* ref)
 void mainDashboard::on_spendingsButton_clicked()
 {
     spendingsTable.show();
-    spendingsTable.setWindowTitle("Spendings");
+    spendingsTable.setWindowTitle("Expenses");
 
     //Account* currentAccount = new Account;
     //currentAccount = currentAccount->thisAcc();
 
-    DatabaseReaderWriter *db = DatabaseReaderWriter::Instance();
-    Account *currentAccount = db->getAccountInstance();
+    //DatabaseReaderWriter *db = DatabaseReaderWriter::Instance();
+    //Account *currentAccount = db->getAccountInstance();
     //If there are transactions in the vector & no data in the
     //table, the ui will be updated.
 
-    if(spendingsTable.getRowCount() == 0 /*&& currentAccount->getExpenditureSize() != 0*/)
-    {spendingsTable.updateUi();}
+    if(spendingsTable.getRowCount() == 0)
+    {spendingsTable.updateUi(spendingsTable.windowTitle());}
 
-    if(currentAccount->getExpenditureSize() == 0)
-    {spendingsTable.setWindowTitle("0 in Vector");}
+    //if(currentAccount->getExpenditureSize() == 0)
+    //{spendingsTable.setWindowTitle("0 in Vector");}
 }
 
 
@@ -236,4 +236,7 @@ void mainDashboard::on_incomeButton_clicked()
 {
     incomeTable.show();
     incomeTable.setWindowTitle("Income");
+
+    if(incomeTable.getRowCount() == 0)
+    {incomeTable.updateUi(incomeTable.windowTitle());}
 }

@@ -14,7 +14,7 @@ class tableWidget : public QWidget
 public:
     explicit tableWidget(QWidget *parent = 0);
     ~tableWidget();
-    void updateUi();
+    void updateUi(QString type);
     int getRowCount();
 
     //void removeFromExpenditures(int index);

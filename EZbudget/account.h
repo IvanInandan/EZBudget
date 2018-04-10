@@ -84,6 +84,7 @@ public:
     int getIncome()const;
     int getSavings()const;
     void invokeUi();
+    mainDashboard* getDash(); //this is the only way to send the type when editing a transaction
 
 public slots:
     //setters

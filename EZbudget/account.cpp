@@ -466,3 +466,8 @@ int Account::getIncome() const
 {
     return monthlyIncome;
 }
+
+mainDashboard* Account::getDash()
+{
+ return mainDash;
+}

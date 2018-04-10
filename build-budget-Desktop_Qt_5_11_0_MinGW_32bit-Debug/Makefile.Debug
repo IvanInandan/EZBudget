@@ -228,6 +228,60 @@ debug/moc_account.cpp: C:/Qt/5.11.0/mingw53_32/include/QtCore/QVector \
 		C:/Qt/5.11.0/mingw53_32/include/QtCore/QString \
 		../EZbudget/category.h \
 		../EZbudget/transaction.h \
+		../EZbudget/tablewidget.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QWidget \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qwidget.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qtwidgetsglobal.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qtguiglobal.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qtgui-config.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qtwidgets-config.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qwindowdefs.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qwindowdefs_win.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qmargins.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qpaintdevice.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qrect.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsize.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qpalette.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qcolor.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qrgb.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qrgba64.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qbrush.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qmatrix.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qpolygon.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qregion.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qdatastream.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qiodevice.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qline.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qtransform.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qpainterpath.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qimage.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qpixelformat.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qpixmap.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsharedpointer.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qshareddata.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qhash.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qfont.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qfontmetrics.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qfontinfo.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qsizepolicy.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qcursor.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qkeysequence.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qevent.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qvariant.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qmap.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qdebug.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtextstream.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qlocale.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qset.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qcontiguouscache.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qurl.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qurlquery.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfile.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfiledevice.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qvector2d.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qtouchdevice.h \
+		../EZbudget/account.h \
 		../EZbudget/account.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.11.0/mingw53_32/bin/moc.exe
@@ -564,6 +618,8 @@ debug/moc_maindashboard.cpp: C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QMainWind
 		C:/Qt/5.11.0/mingw53_32/include/QtCore/QString \
 		../EZbudget/category.h \
 		../EZbudget/transaction.h \
+		../EZbudget/tablewidget.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QWidget \
 		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QBarSet \
 		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qbarset.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QChartGlobal \
@@ -582,8 +638,6 @@ debug/moc_maindashboard.cpp: C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QMainWind
 		C:/Qt/5.11.0/mingw53_32/include/QtCore/QVariant \
 		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QPieSlice \
 		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qpieslice.h \
-		../EZbudget/tablewidget.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QWidget \
 		../EZbudget/maindashboard.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.11.0/mingw53_32/bin/moc.exe
@@ -913,6 +967,13 @@ debug/moc_tablewidget.cpp: C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QWidget \
 		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfiledevice.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtGui/qtouchdevice.h \
+		../EZbudget/account.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QVector \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QObject \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QString \
+		../EZbudget/category.h \
+		../EZbudget/transaction.h \
+		../EZbudget/tablewidget.h \
 		../EZbudget/tablewidget.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.11.0/mingw53_32/bin/moc.exe
@@ -1178,28 +1239,9 @@ debug/moc_login.cpp: C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QMainWindow \
 		C:/Qt/5.11.0/mingw53_32/include/QtCore/QVector \
 		../EZbudget/category.h \
 		../EZbudget/transaction.h \
-		../EZbudget/maindashboard.h \
-		../EZbudget/account.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QBarSet \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qbarset.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QChartGlobal \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qchartglobal.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtCore/QtGlobal \
-		C:/Qt/5.11.0/mingw53_32/include/QtGui/QPen \
-		C:/Qt/5.11.0/mingw53_32/include/QtGui/qpen.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtGui/QBrush \
-		C:/Qt/5.11.0/mingw53_32/include/QtGui/QFont \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QPieSeries \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qpieseries.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QAbstractSeries \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qabstractseries.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QAbstractAxis \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qabstractaxis.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtCore/QVariant \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QPieSlice \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qpieslice.h \
 		../EZbudget/tablewidget.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QWidget \
+		../EZbudget/account.h \
 		../EZbudget/login.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.11.0/mingw53_32/bin/moc.exe
@@ -1418,6 +1460,14 @@ debug/moc_edittransaction.cpp: C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QDialog
 		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfiledevice.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtGui/qtouchdevice.h \
+		../EZbudget/account.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QVector \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QObject \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QString \
+		../EZbudget/category.h \
+		../EZbudget/transaction.h \
+		../EZbudget/tablewidget.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QWidget \
 		../EZbudget/edittransaction.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.11.0/mingw53_32/bin/moc.exe
@@ -1587,6 +1637,8 @@ debug/main.o: ../EZbudget/main.cpp ../EZbudget/maindashboard.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtCore/QString \
 		../EZbudget/category.h \
 		../EZbudget/transaction.h \
+		../EZbudget/tablewidget.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QWidget \
 		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QBarSet \
 		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qbarset.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QChartGlobal \
@@ -1605,8 +1657,6 @@ debug/main.o: ../EZbudget/main.cpp ../EZbudget/maindashboard.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtCore/QVariant \
 		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QPieSlice \
 		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qpieslice.h \
-		../EZbudget/tablewidget.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QWidget \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QApplication \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qapplication.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -1820,7 +1870,83 @@ debug/account.o: ../EZbudget/account.cpp ../EZbudget/account.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtCore/qobject_impl.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtCore/QString \
 		../EZbudget/category.h \
-		../EZbudget/transaction.h
+		../EZbudget/transaction.h \
+		../EZbudget/tablewidget.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QWidget \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qwidget.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qtwidgetsglobal.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qtguiglobal.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qtgui-config.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qtwidgets-config.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qwindowdefs.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qwindowdefs_win.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qmargins.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qpaintdevice.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qrect.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsize.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qpalette.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qcolor.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qrgb.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qrgba64.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qbrush.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qmatrix.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qpolygon.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qregion.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qdatastream.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qiodevice.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qline.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qtransform.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qpainterpath.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qimage.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qpixelformat.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qpixmap.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsharedpointer.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qshareddata.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qhash.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qfont.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qfontmetrics.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qfontinfo.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qsizepolicy.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qcursor.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qkeysequence.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qevent.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qvariant.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qmap.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qdebug.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtextstream.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qlocale.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qset.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qcontiguouscache.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qurl.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qurlquery.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfile.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfiledevice.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qvector2d.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qtouchdevice.h \
+		../EZbudget/maindashboard.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QMainWindow \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qmainwindow.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qtabwidget.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qicon.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QBarSet \
+		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qbarset.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QChartGlobal \
+		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qchartglobal.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QtGlobal \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/QPen \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qpen.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/QBrush \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/QFont \
+		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QPieSeries \
+		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qpieseries.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QAbstractSeries \
+		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qabstractseries.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QAbstractAxis \
+		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qabstractaxis.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QVariant \
+		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QPieSlice \
+		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qpieslice.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\account.o ..\EZbudget\account.cpp
 
 debug/transaction.o: ../EZbudget/transaction.cpp ../EZbudget/transaction.h \
@@ -2019,6 +2145,8 @@ debug/maindashboard.o: ../EZbudget/maindashboard.cpp ../EZbudget/maindashboard.h
 		C:/Qt/5.11.0/mingw53_32/include/QtCore/QString \
 		../EZbudget/category.h \
 		../EZbudget/transaction.h \
+		../EZbudget/tablewidget.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QWidget \
 		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QBarSet \
 		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qbarset.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QChartGlobal \
@@ -2037,8 +2165,6 @@ debug/maindashboard.o: ../EZbudget/maindashboard.cpp ../EZbudget/maindashboard.h
 		C:/Qt/5.11.0/mingw53_32/include/QtCore/QVariant \
 		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QPieSlice \
 		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qpieslice.h \
-		../EZbudget/tablewidget.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QWidget \
 		../EZbudget/ui_maindashboard.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QAction \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qaction.h \
@@ -2092,8 +2218,139 @@ debug/maindashboard.o: ../EZbudget/maindashboard.cpp ../EZbudget/maindashboard.h
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qstyle.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qtabbar.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qrubberband.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtCore/QRandomGenerator \
+		../EZbudget/databasereaderwriter.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QtDebug \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/QtSql \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/QtSqlDepends \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QtCore \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QtCoreDepends \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qabstractanimation.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qabstracteventdispatcher.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qabstractnativeeventfilter.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qabstractproxymodel.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qabstractstate.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qabstracttransition.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qanimationgroup.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qarraydataops.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qarraydatapointer.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qbasictimer.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qbitarray.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qbuffer.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qbytearraymatcher.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qcache.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qcollator.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qcommandlineoption.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qcommandlineparser.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qcryptographichash.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qdatetime.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qdeadlinetimer.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qelapsedtimer.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qdir.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfileinfo.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qdiriterator.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qeasingcurve.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qendian.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qeventtransition.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qexception.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfactoryinterface.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfileselector.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QStringList \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfilesystemwatcher.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfinalstate.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfuture.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfutureinterface.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qrunnable.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qresultstore.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfuturesynchronizer.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfuturewatcher.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qhistorystate.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qidentityproxymodel.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qisenum.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qjsonarray.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qjsonvalue.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qjsondocument.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qjsonobject.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qlibrary.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qlibraryinfo.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qversionnumber.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qlinkedlist.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qlockfile.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qloggingcategory.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qmath.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qmessageauthenticationcode.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qmetaobject.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qmimedata.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qmimedatabase.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qmimetype.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qobjectcleanuphandler.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qoperatingsystemversion.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qparallelanimationgroup.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qpauseanimation.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qplugin.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qpointer.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qpluginloader.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qprocess.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qpropertyanimation.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qvariantanimation.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qqueue.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtCore/qrandom.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qreadwritelock.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qresource.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsavefile.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qscopedvaluerollback.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsemaphore.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsequentialanimationgroup.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsettings.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsharedmemory.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsignalmapper.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsignaltransition.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsocketnotifier.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsortfilterproxymodel.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qstack.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qstandardpaths.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qstate.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qstatemachine.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qstorageinfo.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qstringlistmodel.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsystemsemaphore.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtemporarydir.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtemporaryfile.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtextboundaryfinder.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtextcodec.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qthread.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qthreadpool.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qthreadstorage.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtimeline.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtimer.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtimezone.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtranslator.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtypetraits.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/quuid.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qwaitcondition.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qwineventnotifier.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qxmlstream.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtcoreversion.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qtsqlglobal.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqldatabase.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqldriver.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqldriverplugin.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqlerror.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqlfield.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqlindex.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqlrecord.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqlquery.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqlquerymodel.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqlrelationaldelegate.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qitemdelegate.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qlistview.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qcombobox.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqlrelationaltablemodel.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqltablemodel.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqlresult.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qtsqlversion.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QFileInfo \
+		../EZbudget/Account.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QRandomGenerator \
 		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QChartView \
 		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qchartview.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QGraphicsView \
@@ -2106,7 +2363,6 @@ debug/maindashboard.o: ../EZbudget/maindashboard.cpp ../EZbudget/maindashboard.h
 		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qbarseries.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QAbstractBarSeries \
 		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qabstractbarseries.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtCore/QStringList \
 		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QBarCategoryAxis \
 		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qbarcategoryaxis.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QValueAxis \
@@ -2630,29 +2886,11 @@ debug/login.o: ../EZbudget/login.cpp ../EZbudget/login.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtCore/QVector \
 		../EZbudget/category.h \
 		../EZbudget/transaction.h \
-		../EZbudget/maindashboard.h \
-		../EZbudget/account.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QBarSet \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qbarset.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QChartGlobal \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qchartglobal.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtCore/QtGlobal \
-		C:/Qt/5.11.0/mingw53_32/include/QtGui/QPen \
-		C:/Qt/5.11.0/mingw53_32/include/QtGui/qpen.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtGui/QBrush \
-		C:/Qt/5.11.0/mingw53_32/include/QtGui/QFont \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QPieSeries \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qpieseries.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QAbstractSeries \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qabstractseries.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QAbstractAxis \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qabstractaxis.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtCore/QVariant \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QPieSlice \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qpieslice.h \
 		../EZbudget/tablewidget.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QWidget \
+		../EZbudget/account.h \
 		../EZbudget/ui_login.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QVariant \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QApplication \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qapplication.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qdesktopwidget.h \
@@ -2664,6 +2902,7 @@ debug/login.o: ../EZbudget/login.cpp ../EZbudget/login.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qlineedit.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtGui/qtextcursor.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtGui/qtextformat.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qpen.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtGui/qtextoption.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QMenuBar \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qmenubar.h \
@@ -2937,30 +3176,10 @@ debug/databasereaderwriter.o: ../EZbudget/databasereaderwriter.cpp ../EZbudget/d
 		C:/Qt/5.11.0/mingw53_32/include/QtCore/QVector \
 		../EZbudget/category.h \
 		../EZbudget/transaction.h \
-		../EZbudget/maindashboard.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QMainWindow \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qmainwindow.h \
-		../EZbudget/account.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QBarSet \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qbarset.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QChartGlobal \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qchartglobal.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtCore/QtGlobal \
-		C:/Qt/5.11.0/mingw53_32/include/QtGui/QPen \
-		C:/Qt/5.11.0/mingw53_32/include/QtGui/qpen.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtGui/QBrush \
-		C:/Qt/5.11.0/mingw53_32/include/QtGui/QFont \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QPieSeries \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qpieseries.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QAbstractSeries \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qabstractseries.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QAbstractAxis \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qabstractaxis.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtCore/QVariant \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QPieSlice \
-		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qpieslice.h \
 		../EZbudget/tablewidget.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QWidget
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QWidget \
+		../EZbudget/account.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QVariant
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\databasereaderwriter.o ..\EZbudget\databasereaderwriter.cpp
 
 debug/expensedialog.o: ../EZbudget/expensedialog.cpp ../EZbudget/expensedialog.h \
@@ -3079,24 +3298,11 @@ debug/expensedialog.o: ../EZbudget/expensedialog.cpp ../EZbudget/expensedialog.h
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtGui/qguiapplication.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtGui/qinputmethod.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QComboBox \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qcombobox.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qstyleoption.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QDateEdit \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qdatetimeedit.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qabstractspinbox.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtGui/qvalidator.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtCore/qregularexpression.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtGui/qicon.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qslider.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qabstractslider.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qstyle.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qtabbar.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qtabwidget.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qrubberband.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qframe.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtCore/qabstractitemmodel.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QDateEdit \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qdatetimeedit.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QDialogButtonBox \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qdialogbuttonbox.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QDoubleSpinBox \
@@ -3108,6 +3314,7 @@ debug/expensedialog.o: ../EZbudget/expensedialog.cpp ../EZbudget/expensedialog.h
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qgridlayout.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QLabel \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qlabel.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qframe.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QLineEdit \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qlineedit.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtGui/qtextcursor.h \
@@ -3355,6 +3562,12 @@ debug/tablewidget.o: ../EZbudget/tablewidget.cpp ../EZbudget/tablewidget.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfiledevice.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtGui/qtouchdevice.h \
+		../EZbudget/account.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QVector \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QObject \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QString \
+		../EZbudget/category.h \
+		../EZbudget/transaction.h \
 		../EZbudget/ui_tablewidget.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtCore/QVariant \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QApplication \
@@ -3402,14 +3615,141 @@ debug/tablewidget.o: ../EZbudget/tablewidget.cpp ../EZbudget/tablewidget.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtCore/QDate \
 		C:/Qt/5.11.0/mingw53_32/include/QtCore/qdatetime.h \
 		../EZbudget/removedialog.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtCore/QString \
 		../EZbudget/rowselection.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QMessageBox \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qmessagebox.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtCore/QDebug \
-		../EZbudget/account.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtCore/QVector \
-		C:/Qt/5.11.0/mingw53_32/include/QtCore/QObject \
-		../EZbudget/category.h \
-		../EZbudget/transaction.h \
+		../EZbudget/databasereaderwriter.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QtDebug \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/QtSql \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/QtSqlDepends \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QtCore \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QtCoreDepends \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qabstractanimation.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qabstracteventdispatcher.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qabstractnativeeventfilter.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qabstractproxymodel.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qabstractstate.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qabstracttransition.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qanimationgroup.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qarraydataops.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qarraydatapointer.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qbasictimer.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qbitarray.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qbuffer.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qbytearraymatcher.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qcache.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qcollator.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qcommandlineoption.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qcommandlineparser.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qcryptographichash.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qdeadlinetimer.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qelapsedtimer.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qdir.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfileinfo.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qdiriterator.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qeasingcurve.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qendian.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qeventtransition.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qexception.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfactoryinterface.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfileselector.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QStringList \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfilesystemwatcher.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfinalstate.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfuture.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfutureinterface.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qrunnable.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qresultstore.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfuturesynchronizer.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfuturewatcher.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qhistorystate.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qidentityproxymodel.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qisenum.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qjsonarray.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qjsonvalue.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qjsondocument.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qjsonobject.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qlibrary.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qlibraryinfo.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qversionnumber.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qlinkedlist.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qlockfile.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qloggingcategory.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qmath.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qmessageauthenticationcode.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qmetaobject.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qmimedata.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qmimedatabase.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qmimetype.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qobjectcleanuphandler.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qoperatingsystemversion.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qparallelanimationgroup.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qpauseanimation.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qplugin.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qpointer.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qpluginloader.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qprocess.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qpropertyanimation.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qvariantanimation.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qqueue.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qrandom.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qreadwritelock.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qresource.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsavefile.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qscopedvaluerollback.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsemaphore.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsequentialanimationgroup.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsettings.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsharedmemory.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsignalmapper.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsignaltransition.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsocketnotifier.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsortfilterproxymodel.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qstack.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qstandardpaths.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qstate.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qstatemachine.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qstorageinfo.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qstringlistmodel.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsystemsemaphore.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtemporarydir.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtemporaryfile.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtextboundaryfinder.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtextcodec.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qthread.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qthreadpool.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qthreadstorage.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtimeline.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtimer.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtimezone.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtranslator.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtypetraits.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/quuid.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qwaitcondition.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qwineventnotifier.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qxmlstream.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtcoreversion.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qtsqlglobal.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqldatabase.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqldriver.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqldriverplugin.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqlerror.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqlfield.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqlindex.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqlrecord.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqlquery.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqlquerymodel.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqlrelationaldelegate.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qitemdelegate.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qlistview.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qcombobox.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqlrelationaltablemodel.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqltablemodel.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqlresult.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qtsqlversion.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QFileInfo \
+		../EZbudget/Account.h \
 		../EZbudget/edittransaction.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\tablewidget.o ..\EZbudget\tablewidget.cpp
 
@@ -3544,6 +3884,13 @@ debug/rowselection.o: ../EZbudget/rowselection.cpp ../EZbudget/rowselection.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qgridlayout.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QWidget \
 		../EZbudget/edittransaction.h \
+		../EZbudget/account.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QVector \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QObject \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QString \
+		../EZbudget/category.h \
+		../EZbudget/transaction.h \
+		../EZbudget/tablewidget.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QPushButton \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qpushbutton.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qabstractbutton.h \
@@ -3655,9 +4002,15 @@ debug/edittransaction.o: ../EZbudget/edittransaction.cpp ../EZbudget/edittransac
 		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfiledevice.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtGui/qtouchdevice.h \
+		../EZbudget/account.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QVector \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QObject \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QString \
+		../EZbudget/category.h \
+		../EZbudget/transaction.h \
+		../EZbudget/tablewidget.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QWidget \
 		../EZbudget/ui_edittransaction.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtCore/QDate \
-		C:/Qt/5.11.0/mingw53_32/include/QtCore/qdatetime.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtCore/QVariant \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QApplication \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qapplication.h \
@@ -3666,24 +4019,12 @@ debug/edittransaction.o: ../EZbudget/edittransaction.cpp ../EZbudget/edittransac
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtGui/qguiapplication.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtGui/qinputmethod.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QComboBox \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qcombobox.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qstyleoption.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QDateEdit \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qdatetimeedit.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qdatetime.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qabstractspinbox.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtGui/qvalidator.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtCore/qregularexpression.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtGui/qicon.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qslider.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qabstractslider.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qstyle.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qtabbar.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qtabwidget.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qrubberband.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qframe.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtCore/qabstractitemmodel.h \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QDateEdit \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qdatetimeedit.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QDialogButtonBox \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qdialogbuttonbox.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QDoubleSpinBox \
@@ -3695,14 +4036,178 @@ debug/edittransaction.o: ../EZbudget/edittransaction.cpp ../EZbudget/edittransac
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qgridlayout.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QLabel \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qlabel.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qframe.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QLineEdit \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qlineedit.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtGui/qtextcursor.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtGui/qtextformat.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtGui/qpen.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtGui/qtextoption.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QSpacerItem \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QVBoxLayout \
-		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QWidget \
+		../EZbudget/databasereaderwriter.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QtDebug \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/QtSql \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/QtSqlDepends \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QtCore \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QtCoreDepends \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qabstractanimation.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qabstracteventdispatcher.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qabstractnativeeventfilter.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qabstractproxymodel.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qabstractstate.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qabstracttransition.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qanimationgroup.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qarraydataops.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qarraydatapointer.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qbasictimer.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qbitarray.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qbuffer.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qbytearraymatcher.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qcache.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qcollator.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qcommandlineoption.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qcommandlineparser.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qcryptographichash.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qdeadlinetimer.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qelapsedtimer.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qdir.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfileinfo.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qdiriterator.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qeasingcurve.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qendian.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qeventtransition.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qexception.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfactoryinterface.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfileselector.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QStringList \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfilesystemwatcher.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfinalstate.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfuture.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfutureinterface.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qrunnable.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qresultstore.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfuturesynchronizer.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qfuturewatcher.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qhistorystate.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qidentityproxymodel.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qisenum.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qjsonarray.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qjsonvalue.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qjsondocument.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qjsonobject.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qlibrary.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qlibraryinfo.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qversionnumber.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qlinkedlist.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qlockfile.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qloggingcategory.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qmath.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qmessageauthenticationcode.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qmetaobject.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qmimedata.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qmimedatabase.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qmimetype.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qobjectcleanuphandler.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qoperatingsystemversion.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qparallelanimationgroup.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qpauseanimation.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qplugin.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qpointer.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qpluginloader.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qprocess.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qpropertyanimation.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qvariantanimation.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qqueue.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qrandom.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qreadwritelock.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qresource.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsavefile.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qscopedvaluerollback.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsemaphore.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsequentialanimationgroup.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsettings.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsharedmemory.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsignalmapper.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsignaltransition.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsocketnotifier.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsortfilterproxymodel.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qstack.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qstandardpaths.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qstate.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qstatemachine.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qstorageinfo.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qstringlistmodel.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qsystemsemaphore.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtemporarydir.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtemporaryfile.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtextboundaryfinder.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtextcodec.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qthread.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qthreadpool.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qthreadstorage.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtimeline.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtimer.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtimezone.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtranslator.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtypetraits.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/quuid.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qwaitcondition.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qwineventnotifier.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qxmlstream.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/qtcoreversion.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qtsqlglobal.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqldatabase.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqldriver.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqldriverplugin.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqlerror.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqlfield.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqlindex.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqlrecord.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqlquery.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqlquerymodel.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqlrelationaldelegate.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qitemdelegate.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qstyleoption.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/qicon.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qslider.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qabstractslider.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qstyle.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qtabbar.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qtabwidget.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qrubberband.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qlistview.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qcombobox.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqlrelationaltablemodel.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqltablemodel.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qsqlresult.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtSql/qtsqlversion.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QFileInfo \
+		../EZbudget/Account.h \
+		../EZbudget/maindashboard.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QMainWindow \
+		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qmainwindow.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QBarSet \
+		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qbarset.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QChartGlobal \
+		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qchartglobal.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCore/QtGlobal \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/QPen \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/QBrush \
+		C:/Qt/5.11.0/mingw53_32/include/QtGui/QFont \
+		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QPieSeries \
+		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qpieseries.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QAbstractSeries \
+		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qabstractseries.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QAbstractAxis \
+		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qabstractaxis.h \
+		C:/Qt/5.11.0/mingw53_32/include/QtCharts/QPieSlice \
+		C:/Qt/5.11.0/mingw53_32/include/QtCharts/qpieslice.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/QPushButton \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qpushbutton.h \
 		C:/Qt/5.11.0/mingw53_32/include/QtWidgets/qabstractbutton.h
