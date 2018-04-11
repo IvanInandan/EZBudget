@@ -121,6 +121,11 @@ mainDashboard::mainDashboard(QWidget *parent) :
         spendBreakdownChartView->setGeometry(ui->spendingChartPlaceholder->geometry());
         spendBreakdownChartView->showNormal();
 
+        DatabaseReaderWriter* db = DatabaseReaderWriter::Instance();
+        Account* pCurrentAcount = db -> getAccountInstance();
+        QObject::connect(pCurrentAcount, SIGNAL(accountModified()),this, SLOT(updateUi()));
+
+
     }
 }
 
@@ -129,10 +134,12 @@ mainDashboard::~mainDashboard()
     delete ui;
 }
 
-void mainDashboard::updateUi(Account* ref)
+void mainDashboard::updateUi()
 {
     // lets get the account
-    Account *pCurrentAcount = ref;//new Account();
+    DatabaseReaderWriter* db = DatabaseReaderWriter::Instance();
+    Account* pCurrentAcount = db -> getAccountInstance();
+    //Account *pCurrentAcount = ref;//new Account();
 
     string Expenses = "Expenses";
     QString qExpenses = QString::fromStdString(Expenses);
