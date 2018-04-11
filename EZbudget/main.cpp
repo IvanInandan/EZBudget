@@ -10,6 +10,7 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    a.setStyle("fusion");
     login l;
     l.show();
     //loginScreen l;
