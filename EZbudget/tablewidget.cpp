@@ -83,11 +83,12 @@ void tableWidget::on_addTransactionButton_clicked()
 //    }
 //    currentAccount->setCategory(i,C);
 
-    //QString s = "Expenses";
-    for(int i = 0; i < currentAccount->getTotaNumberOfTransactions(s); i++)
-    {
-        currentAccount->addTransactions(transacCategory, transacName, transacDate, transacType, transacAmount);//cat name date type amt)
-    }
+//    string Expenses = "Expenses";
+//    QString qExpenses = QString::fromStdString(Expenses);
+//    for(int i = 0; i < currentAccount->getTotaNumberOfTransactions(s); i++)
+//    {
+//        currentAccount->addTransactions(transacCategory, transacName, transacDate, transacType, transacAmount);//cat name date type amt)
+//    }
 
 
 }
@@ -252,7 +253,7 @@ void tableWidget::updateUi(QString type)
     DatabaseReaderWriter *db = DatabaseReaderWriter::Instance();
     Account *currentAccount = db->getAccountInstance();
     QString transacName, transacDate, transacCategory;
-    double amount;
+    int amount;
 
 
    for(int i = 0; i < currentAccount->getTotaNumberOfTransactions(type); i++)

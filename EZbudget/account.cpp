@@ -339,6 +339,82 @@ void Account::getCategoryOfTransaction(int index, QString &category, QString &ty
     else
         category = income[index].getTransactionCategory();
 }
+
+/*
+int Account::getNumberOfCategories()
+{
+    QVector tempCategories;
+    int count;
+
+    if(type == "Expenses")
+    {
+        for(int i = 0; i < spendings.size(); i++)
+        {
+            if()
+        }
+    }
+    else if(type == "Income")
+}
+*/
+
+QStringList Account::getSpendingCategories()
+{
+    QMap<QString, bool> catMap;
+    QStringList result;
+
+    // Step 1 - get all the categories put into map (map avoids duplicates!)
+    for(Transaction trans : spendings){
+        catMap[ trans.getTransactionCategory() ] = true;
+    }
+
+    // Step 2 - convert map to a list
+
+    QMap<QString, bool>::iterator it = catMap.begin();
+    for(; it != catMap.end(); it++)
+    {
+        QString category = it.key();
+        result.push_back(category);
+    }
+
+    return result;
+}
+
+QList<Transaction> Account::getSpendingTransactions(const QString &category)
+{
+    QList<Transaction> result;
+    for(Transaction trans : spendings){
+        if(trans.getTransactionCategory() == category)
+            result.push_back(trans);
+    }
+    return result;
+}
+
+int Account::calculateBudgetLeft(QString &type) const
+{
+    std::string Expenses = "Expenses";
+    QString qExpenses = QString::fromStdString(Expenses);
+    return (getBudget() - getTotalFromType(qExpenses));
+}
+
+int Account::getTotalFromType(QString &type)const
+{
+    int total = 0;
+    if(type == "Expenses")
+    {
+        for(int i = 0; i < getTotaNumberOfTransactions(type); i++)
+        {
+            total += spendings[i].getTransactionAmount();
+        }
+
+    }
+    else if(type == "Income")
+        for(int i = 0; i < getTotaNumberOfTransactions(type); i++)
+        {
+            total += income[i].getTransactionAmount();
+        }
+    return total;
+
+}
 //Returns an amount from a specific transaction based on index provided
 int Account::getTotalFromTransaction(int index, QString &type)const
 {
@@ -349,6 +425,8 @@ int Account::getTotalFromTransaction(int index, QString &type)const
     else
         return income[index].getTransactionAmount();
 }
+
+
 //Returns how many categories are within a specified vector
 int Account::getTotaNumberOfTransactions(QString &type)const
 {

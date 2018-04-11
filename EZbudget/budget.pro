@@ -38,7 +38,8 @@ SOURCES += \
     removedialog.cpp \
     tablewidget.cpp \
     rowselection.cpp \
-    edittransaction.cpp
+    edittransaction.cpp \
+    updatebudgetdialog.cpp
 
 HEADERS += \
         account.h \
@@ -56,7 +57,8 @@ HEADERS += \
     ui_removedialog.h \
     ui_tablewidget.h \
     rowselection.h \
-    edittransaction.h
+    edittransaction.h \
+    updatebudgetdialog.h
 
 FORMS += \
     maindashboard.ui \
@@ -66,7 +68,8 @@ FORMS += \
     removedialog.ui \
     tablewidget.ui \
     rowselection.ui \
-    edittransaction.ui
+    edittransaction.ui \
+    updatebudgetdialog.ui
 
 
 target.path = $$[QT_INSTALL_EXAMPLES]/charts/donutchart

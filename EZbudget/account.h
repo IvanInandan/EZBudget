@@ -12,6 +12,7 @@
 
 #ifndef ACCOUNT_H
 #define ACCOUNT_H
+#include <QStringList>
 #include <QVector>
 #include <QObject> //allows usage of signals and slots
 #include <QString>
@@ -66,7 +67,6 @@ public:
     //int getExpenditureTransactionSize(int index);
 
     //void saveFromSpendings(QString transacCategory, QString transacName, QString transacDate, float amount, int row);
-
     //Refactored functions
     Account();
     void editTransactions(QString category, QString tName, QString tDate, QString &type, int amount, int index);
@@ -76,15 +76,23 @@ public:
     void getTransaction(int index, QString &category, QString &tName, QString &tDate, QString &type, int &amount)const;
 
     void getCategoryOfTransaction(int index, QString &category, QString &type)const;
+
+    int calculateBudgetLeft(QString &type) const;
+
+
+    int getTotalFromType(QString &type)const;
     int getTotalFromOneCategory(QString &category, QString &type)const;
     int getTotalFromTransaction(int index, QString &type)const;
     int getTotaNumberOfTransactions(QString &type)const;
     bool verifyNumber(int input);          //will make sure inputs are not negative
     int getBudget()const;
-    int getIncome()const;
+    int getIncome()const ;
     int getSavings()const;
     void invokeUi();
     mainDashboard* getDash(); //this is the only way to send the type when editing a transaction
+
+    QStringList getSpendingCategories();
+    QList<Transaction> getSpendingTransactions(const QString &category);
 
 public slots:
     //setters
