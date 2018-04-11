@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'edittransaction.ui'
 **
-** Created by: Qt User Interface Compiler version 5.11.0
+** Created by: Qt User Interface Compiler version 5.10.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,12 +10,15 @@
 #define UI_EDITTRANSACTION_H
 
 #include <QtCore/QVariant>
+#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDateEdit>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QDoubleSpinBox>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QSpacerItem>
@@ -53,7 +56,7 @@ public:
         editTransaction->resize(556, 128);
         layoutWidget = new QWidget(editTransaction);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(30, 10, 391, 111));
+        layoutWidget->setGeometry(QRect(30, 10, 564, 62));
         verticalLayout_5 = new QVBoxLayout(layoutWidget);
         verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
         verticalLayout_5->setContentsMargins(0, 0, 0, 0);

@@ -6,6 +6,7 @@
 #include <QtCharts/QBarSet>
 #include <QtCharts/QPieSeries>
 #include "tablewidget.h"
+#include "updatebudgetdialog.h"
 //class QPieSeries;
 //class QBarSet;
 
@@ -31,6 +32,10 @@ private slots:
 
     void on_incomeButton_clicked();
 
+    //void on_spendingsButton_2_clicked();
+
+    void on_updateBudgetButton_clicked();
+
 private:
     Ui::mainDashboard *ui;
     //QBarSet *m_set;
@@ -43,6 +48,7 @@ private:
     //QtCharts::QBarSet *m_set2;
     tableWidget spendingsTable;
     tableWidget incomeTable;
+    updateBudgetDialog updateBudgetWindow;
 
 };
 
