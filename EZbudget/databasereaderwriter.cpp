@@ -19,7 +19,7 @@ DatabaseReaderWriter* DatabaseReaderWriter::Instance()
 DatabaseReaderWriter::DatabaseReaderWriter()
 {
     mydb = QSqlDatabase::addDatabase("QSQLITE");
-    mydb.setDatabaseName("/Users/elainejoymutuc/Documents/qtprojects/EZBudget/EZbudget/QtEzBudget.db");
+    mydb.setDatabaseName("C:/Users/sekos/OneDrive/Documents/EZBudget/EZbudget/QtEzBudget.db");
 }
 
 bool DatabaseReaderWriter::databaseLoginCheck(QString username, QString password)
