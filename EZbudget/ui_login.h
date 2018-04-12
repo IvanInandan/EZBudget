@@ -17,7 +17,6 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
@@ -29,8 +28,9 @@ class Ui_login
 {
 public:
     QWidget *centralWidget;
+    QLabel *label;
+    QPushButton *pushButton;
     QWidget *widget;
-    QVBoxLayout *verticalLayout_4;
     QHBoxLayout *horizontalLayout;
     QVBoxLayout *verticalLayout;
     QLabel *label_2;
@@ -38,12 +38,6 @@ public:
     QVBoxLayout *verticalLayout_2;
     QLineEdit *lineEdit_username;
     QLineEdit *lineEdit_password;
-    QVBoxLayout *verticalLayout_3;
-    QHBoxLayout *horizontalLayout_2;
-    QSpacerItem *horizontalSpacer;
-    QPushButton *pushButton;
-    QSpacerItem *horizontalSpacer_2;
-    QLabel *label;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -56,35 +50,48 @@ public:
         login->resize(365, 271);
         centralWidget = new QWidget(login);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
+        label = new QLabel(centralWidget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(20, 190, 311, 31));
+        QFont font;
+        font.setPointSize(12);
+        font.setBold(true);
+        font.setWeight(75);
+        label->setFont(font);
+        pushButton = new QPushButton(centralWidget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(170, 150, 75, 23));
+        QFont font1;
+        font1.setPointSize(9);
+        font1.setBold(true);
+        font1.setWeight(75);
+        pushButton->setFont(font1);
         widget = new QWidget(centralWidget);
         widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(20, 20, 311, 141));
-        verticalLayout_4 = new QVBoxLayout(widget);
-        verticalLayout_4->setSpacing(6);
-        verticalLayout_4->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
-        verticalLayout_4->setContentsMargins(0, 0, 0, 0);
-        horizontalLayout = new QHBoxLayout();
+        widget->setGeometry(QRect(30, 60, 191, 52));
+        horizontalLayout = new QHBoxLayout(widget);
         horizontalLayout->setSpacing(6);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
         verticalLayout = new QVBoxLayout();
         verticalLayout->setSpacing(6);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         label_2 = new QLabel(widget);
         label_2->setObjectName(QStringLiteral("label_2"));
-        QFont font;
-        font.setFamily(QStringLiteral("Segoe Script"));
-        font.setPointSize(10);
-        label_2->setFont(font);
+        QFont font2;
+        font2.setFamily(QStringLiteral("Segoe Script"));
+        font2.setPointSize(10);
+        label_2->setFont(font2);
 
         verticalLayout->addWidget(label_2);
 
         label_3 = new QLabel(widget);
         label_3->setObjectName(QStringLiteral("label_3"));
-        QFont font1;
-        font1.setFamily(QStringLiteral("Segoe Print"));
-        font1.setPointSize(10);
-        label_3->setFont(font1);
+        QFont font3;
+        font3.setFamily(QStringLiteral("Segoe Print"));
+        font3.setPointSize(10);
+        label_3->setFont(font3);
 
         verticalLayout->addWidget(label_3);
 
@@ -107,49 +114,6 @@ public:
 
 
         horizontalLayout->addLayout(verticalLayout_2);
-
-
-        verticalLayout_4->addLayout(horizontalLayout);
-
-        verticalLayout_3 = new QVBoxLayout();
-        verticalLayout_3->setSpacing(6);
-        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setSpacing(6);
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_2->addItem(horizontalSpacer);
-
-        pushButton = new QPushButton(widget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        QFont font2;
-        font2.setPointSize(9);
-        font2.setBold(true);
-        font2.setWeight(75);
-        pushButton->setFont(font2);
-
-        horizontalLayout_2->addWidget(pushButton);
-
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_2->addItem(horizontalSpacer_2);
-
-
-        verticalLayout_3->addLayout(horizontalLayout_2);
-
-        label = new QLabel(widget);
-        label->setObjectName(QStringLiteral("label"));
-        QFont font3;
-        font3.setPointSize(12);
-        font3.setBold(true);
-        font3.setWeight(75);
-        label->setFont(font3);
-
-        verticalLayout_3->addWidget(label);
-
-
-        verticalLayout_4->addLayout(verticalLayout_3);
 
         login->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(login);
@@ -174,10 +138,10 @@ public:
     void retranslateUi(QMainWindow *login)
     {
         login->setWindowTitle(QApplication::translate("login", "login", nullptr));
+        label->setText(QApplication::translate("login", "[+]Status", nullptr));
+        pushButton->setText(QApplication::translate("login", "Login", nullptr));
         label_2->setText(QApplication::translate("login", "Username:", nullptr));
         label_3->setText(QApplication::translate("login", "Password:", nullptr));
-        pushButton->setText(QApplication::translate("login", "Login", nullptr));
-        label->setText(QApplication::translate("login", "[+]Status", nullptr));
         toolBar->setWindowTitle(QApplication::translate("login", "toolBar", nullptr));
     } // retranslateUi
 
