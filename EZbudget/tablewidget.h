@@ -3,9 +3,6 @@
 
 #include <QWidget>
 #include <account.h>
-
-class mainDashboard;
-
 namespace Ui {
 class tableWidget;
 }
@@ -19,6 +16,8 @@ public:
     ~tableWidget();
     void updateUi(QString type);
     int getRowCount();
+
+    //void removeFromExpenditures(int index);
 
 private slots:
     void on_addTransactionButton_clicked();

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
+<<<<<<< HEAD
 <!-- Written by QtCreator 4.5.1, 2018-04-11T19:22:36. -->
+=======
+<!-- Written by QtCreator 4.5.1, 2018-04-10T15:55:01. -->
+>>>>>>> parent of 5f8c5af... Fixed Remove Transaction button and Add Transaction Button
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -66,7 +70,7 @@
    <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/samic/Documents/GitHub/EZBudget/EZbudget</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:/Users/samic/Documents/GitHub/EZBudget/build-budget-Desktop_Qt_5_11_0_MinGW_32bit-Debug</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
