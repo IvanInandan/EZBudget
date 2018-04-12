@@ -260,7 +260,7 @@ void Account::invokeUi()
 {
     mainDash = new mainDashboard();
     mainDash->show();
-    mainDash->updateUi();
+    mainDash->updateUi(this);
 }
 
 

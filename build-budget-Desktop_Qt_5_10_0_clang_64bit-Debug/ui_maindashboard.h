@@ -39,7 +39,6 @@ public:
     QLabel *budgetLabel;
     QLabel *budgetLabelUpdate;
     QPushButton *spendingsButton_2;
-    QPushButton *pushButton;
     QMenuBar *menuBar;
     QMenu *menuSettings;
     QToolBar *mainToolBar;
@@ -63,7 +62,7 @@ public:
         spendingChartPlaceholder->setGeometry(QRect(100, 80, 761, 341));
         spendingsButton = new QPushButton(centralWidget);
         spendingsButton->setObjectName(QStringLiteral("spendingsButton"));
-        spendingsButton->setGeometry(QRect(270, 700, 141, 32));
+        spendingsButton->setGeometry(QRect(340, 700, 141, 32));
         incomeButton = new QPushButton(centralWidget);
         incomeButton->setObjectName(QStringLiteral("incomeButton"));
         incomeButton->setGeometry(QRect(490, 700, 141, 32));
@@ -78,10 +77,7 @@ public:
         budgetLabelUpdate->setGeometry(QRect(170, -10, 131, 41));
         spendingsButton_2 = new QPushButton(centralWidget);
         spendingsButton_2->setObjectName(QStringLiteral("spendingsButton_2"));
-        spendingsButton_2->setGeometry(QRect(800, 20, 141, 32));
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(660, 20, 113, 32));
+        spendingsButton_2->setGeometry(QRect(810, 20, 141, 32));
         mainDashboard->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(mainDashboard);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -116,8 +112,7 @@ public:
         incomeButton->setText(QApplication::translate("mainDashboard", "Income/Savings", nullptr));
         budgetLabel->setText(QApplication::translate("mainDashboard", "<html><head/><body><p><span style=\" font-size:12pt;\">Budget Left:</span></p></body></html>", nullptr));
         budgetLabelUpdate->setText(QApplication::translate("mainDashboard", "<html><head/><body><p><span style=\" font-size:18pt; font-weight:600;\">TextLabel</span></p></body></html>", nullptr));
-        spendingsButton_2->setText(QApplication::translate("mainDashboard", "Update Budget", nullptr));
-        pushButton->setText(QApplication::translate("mainDashboard", "Update Budget", nullptr));
+        spendingsButton_2->setText(QApplication::translate("mainDashboard", "UpdateBudget", nullptr));
         menuSettings->setTitle(QApplication::translate("mainDashboard", "Settings", nullptr));
     } // retranslateUi
 

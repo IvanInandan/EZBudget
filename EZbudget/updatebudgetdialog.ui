@@ -15,13 +15,6 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QLabel" name="label">
-     <property name="text">
-      <string>Please enter your desired budget:</string>
-     </property>
-    </widget>
-   </item>
-   <item>
     <widget class="QLineEdit" name="lineEdit"/>
    </item>
    <item>

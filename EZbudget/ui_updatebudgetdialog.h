@@ -1,11 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'updatebudgetdialog.ui'
 **
-<<<<<<< HEAD
 ** Created by: Qt User Interface Compiler version 5.11.0
-=======
-** Created by: Qt User Interface Compiler version 5.10.0
->>>>>>> f0fe530978d02116bc5c8b34fc4acde9902bda6b
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -14,19 +10,9 @@
 #define UI_UPDATEBUDGETDIALOG_H
 
 #include <QtCore/QVariant>
-<<<<<<< HEAD
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
-=======
-#include <QtWidgets/QAction>
-#include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QDialog>
-#include <QtWidgets/QDialogButtonBox>
-#include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLabel>
->>>>>>> f0fe530978d02116bc5c8b34fc4acde9902bda6b
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QVBoxLayout>
 
@@ -36,10 +22,6 @@ class Ui_updateBudgetDialog
 {
 public:
     QVBoxLayout *verticalLayout;
-<<<<<<< HEAD
-=======
-    QLabel *label;
->>>>>>> f0fe530978d02116bc5c8b34fc4acde9902bda6b
     QLineEdit *lineEdit;
     QDialogButtonBox *buttonBox;
 
@@ -50,14 +32,6 @@ public:
         updateBudgetDialog->resize(390, 111);
         verticalLayout = new QVBoxLayout(updateBudgetDialog);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-<<<<<<< HEAD
-=======
-        label = new QLabel(updateBudgetDialog);
-        label->setObjectName(QStringLiteral("label"));
-
-        verticalLayout->addWidget(label);
-
->>>>>>> f0fe530978d02116bc5c8b34fc4acde9902bda6b
         lineEdit = new QLineEdit(updateBudgetDialog);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
 
@@ -78,10 +52,6 @@ public:
     void retranslateUi(QDialog *updateBudgetDialog)
     {
         updateBudgetDialog->setWindowTitle(QApplication::translate("updateBudgetDialog", "Dialog", nullptr));
-<<<<<<< HEAD
-=======
-        label->setText(QApplication::translate("updateBudgetDialog", "Please enter your desired budget:", nullptr));
->>>>>>> f0fe530978d02116bc5c8b34fc4acde9902bda6b
     } // retranslateUi
 
 };
