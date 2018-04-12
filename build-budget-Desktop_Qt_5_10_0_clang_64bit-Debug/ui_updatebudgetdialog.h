@@ -16,6 +16,7 @@
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QVBoxLayout>
 
@@ -25,6 +26,7 @@ class Ui_updateBudgetDialog
 {
 public:
     QVBoxLayout *verticalLayout;
+    QLabel *label;
     QLineEdit *lineEdit;
     QDialogButtonBox *buttonBox;
 
@@ -35,6 +37,11 @@ public:
         updateBudgetDialog->resize(390, 111);
         verticalLayout = new QVBoxLayout(updateBudgetDialog);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        label = new QLabel(updateBudgetDialog);
+        label->setObjectName(QStringLiteral("label"));
+
+        verticalLayout->addWidget(label);
+
         lineEdit = new QLineEdit(updateBudgetDialog);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
 
@@ -55,6 +62,7 @@ public:
     void retranslateUi(QDialog *updateBudgetDialog)
     {
         updateBudgetDialog->setWindowTitle(QApplication::translate("updateBudgetDialog", "Dialog", nullptr));
+        label->setText(QApplication::translate("updateBudgetDialog", "Please enter your desired budget:", nullptr));
     } // retranslateUi
 
 };

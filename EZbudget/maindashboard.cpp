@@ -8,6 +8,7 @@
 #include "databasereaderwriter.h"
 #include "account.h"
 #include "transaction.h"
+#include "updatebudgetdialog.h"
 using namespace std;
 
 #include <QtWidgets/QApplication>
@@ -52,7 +53,7 @@ mainDashboard::mainDashboard(QWidget *parent) :
         spendSaveChart->setAnimationOptions(QChart::SeriesAnimations);
 
         QStringList chartForMonth;  //label on the side
-        chartForMonth << "Month";
+        chartForMonth << "Current Month";
         QBarCategoryAxis *axis = new QBarCategoryAxis();
         axis->append(chartForMonth);
         spendSaveChart->createDefaultAxes();
@@ -120,6 +121,11 @@ mainDashboard::mainDashboard(QWidget *parent) :
         spendBreakdownChartView->setGeometry(ui->spendingChartPlaceholder->geometry());
         spendBreakdownChartView->showNormal();
 
+        DatabaseReaderWriter* db = DatabaseReaderWriter::Instance();
+        Account* pCurrentAcount = db -> getAccountInstance();
+        QObject::connect(pCurrentAcount, SIGNAL(accountModified()),this, SLOT(updateUi()));
+
+
     }
 }
 
@@ -128,21 +134,24 @@ mainDashboard::~mainDashboard()
     delete ui;
 }
 
-void mainDashboard::updateUi(Account* ref)
+void mainDashboard::updateUi()
 {
     // lets get the account
-    Account *pCurrentAcount = ref;//new Account();
+    DatabaseReaderWriter* db = DatabaseReaderWriter::Instance();
+    Account* pCurrentAcount = db -> getAccountInstance();
+    //Account *pCurrentAcount = ref;//new Account();
 
     string Expenses = "Expenses";
     QString qExpenses = QString::fromStdString(Expenses);
 
-    QString updatedBudgetLeft = QString::number(pCurrentAcount->calculateBudgetLeft(qExpenses));
-    ui->budgetLabelUpdate->clear();
-    updatedBudgetLeft += "$";
+    QString updatedBudgetLeft = "$" +QString::number(pCurrentAcount->calculateBudgetLeft(qExpenses));
     ui->budgetLabelUpdate->setText(updatedBudgetLeft);
 
-    //or(int i = 0; pCurrentAcount->spendings)
+    QString currentIncome = "$" + QString::number(pCurrentAcount->getIncome());
+    ui->currentIncomeUpdate->setText(currentIncome);
 
+    QString currentSavings = "$" + QString::number(pCurrentAcount->getSavings());
+    ui->currentSavingsUpdate->setText(currentSavings);
 
     spendingsBarSet->replace(0, pCurrentAcount->getTotalFromType(qExpenses));
     budgetLeftBarSet->replace(0, pCurrentAcount->calculateBudgetLeft(qExpenses));
@@ -319,4 +328,10 @@ void mainDashboard::on_incomeButton_clicked()
 
     if(incomeTable.getRowCount() == 0)
     {incomeTable.updateUi(incomeTable.windowTitle());}
+}
+
+void mainDashboard::on_updateBudgetButton_clicked()
+{
+    updateBudgetWindow.show();
+    updateBudgetWindow.setWindowTitle("Update Budget");
 }
