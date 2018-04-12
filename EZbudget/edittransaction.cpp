@@ -49,7 +49,6 @@ double editTransaction::transactionAmount() const
 void editTransaction::on_buttonBox_accepted()
 {
     accept();
-   // saveChangestoExpenditures(transactionCategory(), transactionName(), transactionDate(), transactionAmount());
 }
 
 void editTransaction::on_buttonBox_rejected()

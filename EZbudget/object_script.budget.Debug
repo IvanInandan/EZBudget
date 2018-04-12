@@ -13,6 +13,7 @@ INPUT(
 ./debug\tablewidget.o
 ./debug\rowselection.o
 ./debug\edittransaction.o
+./debug\updatebudgetdialog.o
 ./debug\moc_account.o
 ./debug\moc_spendingsbreakdownchart.o
 ./debug\moc_spendingsbreakdownslice.o
@@ -23,4 +24,5 @@ INPUT(
 ./debug\moc_login.o
 ./debug\moc_rowselection.o
 ./debug\moc_edittransaction.o
+./debug\moc_updatebudgetdialog.o
 );

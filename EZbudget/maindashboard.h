@@ -22,6 +22,8 @@ class mainDashboard : public QMainWindow
 public:
     explicit mainDashboard(QWidget *parent = 0);
     ~mainDashboard(); 
+    int getFlag();
+
 
 public slots:
     void updateUi(Account *ref);
@@ -43,7 +45,7 @@ private:
     //QtCharts::QBarSet *m_set2;
     tableWidget spendingsTable;
     tableWidget incomeTable;
-
+    int flag;
 };
 
 #endif // MAINDASHBOARD_H

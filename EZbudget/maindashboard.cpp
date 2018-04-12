@@ -287,6 +287,10 @@ void mainDashboard::updateUi(Account* ref)
 
 void mainDashboard::on_spendingsButton_clicked()
 {
+    flag = 0;
+    DatabaseReaderWriter* db = DatabaseReaderWriter::Instance();
+    Account* currentAccount = db->getAccountInstance();
+
     spendingsTable.show();
     spendingsTable.setWindowTitle("Expenses");
 
@@ -301,13 +305,15 @@ void mainDashboard::on_spendingsButton_clicked()
     if(spendingsTable.getRowCount() == 0)
     {spendingsTable.updateUi(spendingsTable.windowTitle());}
 
-    //if(currentAccount->getExpenditureSize() == 0)
-    //{spendingsTable.setWindowTitle("0 in Vector");}
+    QString type = "Expenses";
+    if(currentAccount->getTotaNumberOfTransactions(type) == 0)
+    {spendingsTable.setWindowTitle("0 in Vector");}
 }
 
 
 void mainDashboard::on_incomeButton_clicked()
 {
+    flag = 1;
     incomeTable.show();
     incomeTable.setWindowTitle("Income");
 
