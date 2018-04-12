@@ -141,13 +141,14 @@ void mainDashboard::updateUi()
     string Expenses = "Expenses";
     QString qExpenses = QString::fromStdString(Expenses);
 
-    QString updatedBudgetLeft = QString::number(pCurrentAcount->calculateBudgetLeft(qExpenses));
-    ui->budgetLabelUpdate->clear();
-    updatedBudgetLeft += "$";
-    ui->budgetLabelUpdate->setText(updatedBudgetLeft);
+    QString updatedBudgetLeft = "$" + QString::number(pCurrentAcount->calculateBudgetLeft(qExpenses));
+    ui->updateBudgetLeftLabel->setText(updatedBudgetLeft);
 
-    //or(int i = 0; pCurrentAcount->spendings)
+    QString updatedCurrentIncome = "$" + QString::number(pCurrentAcount->getIncome());
+    ui->updateCurrentIncomeLeftLabel->setText(updatedCurrentIncome);
 
+    QString updatedCurrentSavings = "$" + QString::number(pCurrentAcount->getSavings());
+    ui->updateCurrentSavingsLabel->setText(updatedCurrentSavings);
 
     spendingsBarSet->replace(0, pCurrentAcount->getTotalFromType(qExpenses));
     budgetLeftBarSet->replace(0, pCurrentAcount->calculateBudgetLeft(qExpenses));
@@ -325,4 +326,12 @@ void mainDashboard::on_incomeButton_clicked()
 int mainDashboard::getFlag()
 {
     return flag;
+}
+
+void mainDashboard::on_updateBudgetButton_clicked()
+{
+    updateBudgetWindow.show();
+    updateBudgetWindow.setWindowTitle("");
+
+
 }
