@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
@@ -18,6 +19,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -27,11 +29,15 @@ class Ui_login
 public:
     QWidget *centralWidget;
     QLabel *label;
+    QPushButton *pushButton;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout;
+    QVBoxLayout *verticalLayout;
     QLabel *label_2;
     QLabel *label_3;
+    QVBoxLayout *verticalLayout_2;
     QLineEdit *lineEdit_username;
     QLineEdit *lineEdit_password;
-    QPushButton *pushButton;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -52,39 +58,67 @@ public:
         font.setBold(true);
         font.setWeight(75);
         label->setFont(font);
-        label_2 = new QLabel(centralWidget);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(30, 60, 81, 20));
-        QFont font1;
-        font1.setFamily(QStringLiteral("Segoe Script"));
-        font1.setPointSize(10);
-        label_2->setFont(font1);
-        label_3 = new QLabel(centralWidget);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(30, 110, 67, 23));
-        QFont font2;
-        font2.setFamily(QStringLiteral("Segoe Print"));
-        font2.setPointSize(10);
-        label_3->setFont(font2);
-        lineEdit_username = new QLineEdit(centralWidget);
-        lineEdit_username->setObjectName(QStringLiteral("lineEdit_username"));
-        lineEdit_username->setGeometry(QRect(130, 60, 141, 20));
-        lineEdit_password = new QLineEdit(centralWidget);
-        lineEdit_password->setObjectName(QStringLiteral("lineEdit_password"));
-        lineEdit_password->setGeometry(QRect(130, 110, 141, 20));
-        lineEdit_password->setEchoMode(QLineEdit::Password);
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(170, 150, 75, 23));
+        QFont font1;
+        font1.setPointSize(9);
+        font1.setBold(true);
+        font1.setWeight(75);
+        pushButton->setFont(font1);
+        widget = new QWidget(centralWidget);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(30, 60, 191, 52));
+        horizontalLayout = new QHBoxLayout(widget);
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setSpacing(6);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        label_2 = new QLabel(widget);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        QFont font2;
+        font2.setFamily(QStringLiteral("Segoe Script"));
+        font2.setPointSize(10);
+        label_2->setFont(font2);
+
+        verticalLayout->addWidget(label_2);
+
+        label_3 = new QLabel(widget);
+        label_3->setObjectName(QStringLiteral("label_3"));
         QFont font3;
-        font3.setPointSize(9);
-        font3.setBold(true);
-        font3.setWeight(75);
-        pushButton->setFont(font3);
+        font3.setFamily(QStringLiteral("Segoe Print"));
+        font3.setPointSize(10);
+        label_3->setFont(font3);
+
+        verticalLayout->addWidget(label_3);
+
+
+        horizontalLayout->addLayout(verticalLayout);
+
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setSpacing(6);
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        lineEdit_username = new QLineEdit(widget);
+        lineEdit_username->setObjectName(QStringLiteral("lineEdit_username"));
+
+        verticalLayout_2->addWidget(lineEdit_username);
+
+        lineEdit_password = new QLineEdit(widget);
+        lineEdit_password->setObjectName(QStringLiteral("lineEdit_password"));
+        lineEdit_password->setEchoMode(QLineEdit::Password);
+
+        verticalLayout_2->addWidget(lineEdit_password);
+
+
+        horizontalLayout->addLayout(verticalLayout_2);
+
         login->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(login);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 365, 21));
+        menuBar->setGeometry(QRect(0, 0, 365, 17));
         login->setMenuBar(menuBar);
         mainToolBar = new QToolBar(login);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -105,9 +139,9 @@ public:
     {
         login->setWindowTitle(QApplication::translate("login", "login", nullptr));
         label->setText(QApplication::translate("login", "[+]Status", nullptr));
+        pushButton->setText(QApplication::translate("login", "Login", nullptr));
         label_2->setText(QApplication::translate("login", "Username:", nullptr));
         label_3->setText(QApplication::translate("login", "Password:", nullptr));
-        pushButton->setText(QApplication::translate("login", "Login", nullptr));
         toolBar->setWindowTitle(QApplication::translate("login", "toolBar", nullptr));
     } // retranslateUi
 

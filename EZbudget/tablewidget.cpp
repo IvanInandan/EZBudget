@@ -4,7 +4,7 @@
 #include "removedialog.h"
 #include "rowselection.h"
 #include <QTableWidget>
-
+#include "maindashboard.h"
 #include <QMessageBox>
 #include <QDebug>
 #include "databasereaderwriter.h"
@@ -55,6 +55,8 @@ void tableWidget::on_addTransactionButton_clicked()
     transacType = windowTitle();
    // transacType = ed.transactionType(); // Check
 
+    qDebug() << " Transaction type = " << transacType;
+
     ui->tableView->insertRow(ui->tableView->rowCount());
     ui->tableView->setItem(row, NAME,
                            new QTableWidgetItem(transacName));
@@ -64,32 +66,9 @@ void tableWidget::on_addTransactionButton_clicked()
                            new QTableWidgetItem(transacDate));
     ui->tableView->setItem(row, AMOUNT,
                            new QTableWidgetItem(QString::number(transacAmount)));
-  /*
-    ui->tableView->setItem(row, DATE,
-                           new QTableWidgetItem(transacType));
-                           */
 
-
-//for(int i=0;i<4;i++)
-//{
-//    //Category C;
-//    //currentAccount->getCategory(i,C);
-//    QString categoryName = "";
-//    currentAccount->getCategoryOfTransaction(i,categoryName,"Expenses");
-
-//    if(transacCategory == categoryName)//C.getCategoryName())
-//    {
-//       C.addTransaction(transacCategory, transacName, transacDate, transacAmount, transacType);
-//    }
-//    currentAccount->setCategory(i,C);
-
-//    string Expenses = "Expenses";
-//    QString qExpenses = QString::fromStdString(Expenses);
-//    for(int i = 0; i < currentAccount->getTotaNumberOfTransactions(s); i++)
-//    {
-//        currentAccount->addTransactions(transacCategory, transacName, transacDate, transacType, transacAmount);//cat name date type amt)
-//    }
-
+    currentAccount->addTransactions(transacCategory, transacName, transacDate, transacType, transacAmount);
+    db->saveProfile();
 
 }
 
@@ -99,6 +78,7 @@ void tableWidget::on_removeTransactionButton_clicked()
 {
     DatabaseReaderWriter *db = DatabaseReaderWriter::Instance();
     Account *currentAccount = db->getAccountInstance();
+    mainDashboard *currentDashboard = currentAccount->getDash();
 
     QItemSelectionModel *rowCheck = ui->tableView->selectionModel();
     QModelIndexList selectRowCheck = rowCheck->selectedRows();
@@ -152,9 +132,12 @@ void tableWidget::on_removeTransactionButton_clicked()
     */
 
     ui->tableView->removeRow(transacRow);
-
-   QString transacType = ui->tableView->windowTitle();
-   currentAccount->removeTransactions(transacRow, transacType);
+    QString type;
+   if(currentDashboard->getFlag() == 0)
+   {type = "Expenses";}
+   else
+   {type = "Income";}
+   currentAccount->removeTransactions(transacRow,type);
 
 }
 

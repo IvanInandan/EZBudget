@@ -287,6 +287,7 @@ void mainDashboard::updateUi(Account* ref)
 
 void mainDashboard::on_spendingsButton_clicked()
 {
+    flag = 0;
     spendingsTable.show();
     spendingsTable.setWindowTitle("Expenses");
 
@@ -308,9 +309,16 @@ void mainDashboard::on_spendingsButton_clicked()
 
 void mainDashboard::on_incomeButton_clicked()
 {
+    flag = 1;
     incomeTable.show();
     incomeTable.setWindowTitle("Income");
 
     if(incomeTable.getRowCount() == 0)
     {incomeTable.updateUi(incomeTable.windowTitle());}
+}
+
+
+int mainDashboard::getFlag()
+{
+    return flag;
 }
