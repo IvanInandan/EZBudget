@@ -145,6 +145,7 @@ void tableWidget::on_editTransactionButton_clicked()
 {
     DatabaseReaderWriter *db = DatabaseReaderWriter::Instance();
     Account *currentAccount = db->getAccountInstance();
+    mainDashboard *currentDashboard = currentAccount->getDash();
 
     QItemSelectionModel *rowCheck = ui->tableView->selectionModel();
     QModelIndexList selectRowCheck = rowCheck->selectedRows();
@@ -191,7 +192,25 @@ void tableWidget::on_editTransactionButton_clicked()
    QString transacDate = edit.transactionDate().toString("M/dd/yy");
    QString transacCategory = edit.transactionCategory();
    double transacAmount = edit.transactionAmount();
-   QString transacType = ui->tableView->windowTitle();
+   //QString transacType = ui->tableView->windowTitle();
+
+   // Check size of vector:
+      //----------------
+
+      QString type = "Expenses";
+      int size = currentAccount -> getTotaNumberOfTransactions(type);
+
+      qDebug() << "Size is: " << size << "\n";
+
+      //----------------------------------------------
+
+
+      // Check Type:
+      //----------------
+
+
+      //-----------------
+
 
    // Changes UI Display of Table ------------------------------------------------------
 
@@ -220,7 +239,25 @@ void tableWidget::on_editTransactionButton_clicked()
    ui->tableView->setItem(transacRow, AMOUNT,
                           new QTableWidgetItem(QString::number(transacAmount)));
 
-    currentAccount->editTransactions(transacCategory, transacName, transacDate, transacType, transacAmount, transacRow);
+   QString transactionType;
+   if(currentDashboard -> getFlag() == 0)
+    {
+        transactionType = "Expenses";
+    }
+
+    else
+    {
+      //  transactionType = "Spendings";
+    }
+
+    qDebug() << "Transaction Type: " << transactionType << "\n";
+
+     currentAccount->editTransactions(transacCategory, transacName, transacDate, transactionType, transacAmount, transacRow);
+
+     // ---------------------------------------------------------------------------------
+
+     // Save into Database: [WORKS WHEN DATABASE FUNCTION 'SAVEPROFILE' IS PUSHED]
+     db -> saveProfile(); // Saves changes made to the account into the database
 
    //ui->tableView->removeRow(transacRow-1);
    // ----------------------------------------------------------------------------------
