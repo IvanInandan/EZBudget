@@ -69,9 +69,6 @@ public:
     //void saveFromSpendings(QString transacCategory, QString transacName, QString transacDate, float amount, int row);
     //Refactored functions
     Account();
-    void editTransactions(QString category, QString tName, QString tDate, QString &type, int amount, int index);
-    void addTransactions(QString category, QString tName, QString tDate, QString &type, int amount);
-    void removeTransactions(int index, QString &type);
 
     void getTransaction(int index, QString &category, QString &tName, QString &tDate, QString &type, int &amount)const;
 
@@ -99,6 +96,10 @@ public slots:
     bool setBudget(int b);
     bool setSavings(int savingPercent);
     bool setIncome(int i);
+    void editTransactions(QString category, QString tName, QString tDate, QString &type, int amount, int index);
+    void addTransactions(QString category, QString tName, QString tDate, QString &type, int amount);
+    void removeTransactions(int index, QString &type);
+
     //void setCategory(int index, Category &section);             //makes changes made to categories permanent
 
 signals:
