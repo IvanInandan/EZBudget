@@ -121,6 +121,9 @@ mainDashboard::mainDashboard(QWidget *parent) :
         spendBreakdownChartView->showNormal();
 
     }
+    DatabaseReaderWriter* db = DatabaseReaderWriter::Instance();
+    Account* pCurrentAcount = db -> getAccountInstance();
+    QObject::connect(pCurrentAcount, SIGNAL(accountModified()),this, SLOT(updateUi()));
 }
 
 mainDashboard::~mainDashboard()
@@ -128,10 +131,12 @@ mainDashboard::~mainDashboard()
     delete ui;
 }
 
-void mainDashboard::updateUi(Account* ref)
+void mainDashboard::updateUi()
 {
     // lets get the account
-    Account *pCurrentAcount = ref;//new Account();
+    DatabaseReaderWriter* db = DatabaseReaderWriter::Instance();
+    Account* pCurrentAcount = db -> getAccountInstance();
+    //Account *pCurrentAcount = ref;//new Account();
 
     string Expenses = "Expenses";
     QString qExpenses = QString::fromStdString(Expenses);
@@ -287,6 +292,7 @@ void mainDashboard::updateUi(Account* ref)
 
 void mainDashboard::on_spendingsButton_clicked()
 {
+    flag = 0;
     spendingsTable.show();
     spendingsTable.setWindowTitle("Expenses");
 
@@ -308,9 +314,15 @@ void mainDashboard::on_spendingsButton_clicked()
 
 void mainDashboard::on_incomeButton_clicked()
 {
+    flag = 1;
     incomeTable.show();
     incomeTable.setWindowTitle("Income");
 
     if(incomeTable.getRowCount() == 0)
     {incomeTable.updateUi(incomeTable.windowTitle());}
+}
+
+int mainDashboard::getFlag()
+{
+    return flag;
 }

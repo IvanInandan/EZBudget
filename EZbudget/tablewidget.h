@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include <account.h>
+
+class mainDashboard;
 namespace Ui {
 class tableWidget;
 }
