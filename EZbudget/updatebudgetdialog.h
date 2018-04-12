@@ -15,10 +15,6 @@ public:
     explicit updateBudgetDialog(QWidget *parent = 0);
     ~updateBudgetDialog();
 
-private slots:
-
-    void on_okButton_clicked();
-
 private:
     Ui::updateBudgetDialog *ui;
 };

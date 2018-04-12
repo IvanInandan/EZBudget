@@ -281,8 +281,6 @@ void Account::addTransactions(QString category, QString tName, QString tDate, QS
     else
         income.push_back(t);
 
-    emit accountModified();
-
 }
 //Removes a transaction from a vector based on index and type provided
 void Account::removeTransactions(int index, QString &type)
@@ -291,8 +289,6 @@ void Account::removeTransactions(int index, QString &type)
         spendings.remove(index);
     else
         income.remove(index);
-
-    emit accountModified();
 }
 //Edit a particular instance of transaction from a vector based on index and type provided
 void Account::editTransactions(QString category, QString tName, QString tDate, QString &type, int amount, int index)
@@ -311,8 +307,6 @@ void Account::editTransactions(QString category, QString tName, QString tDate, Q
         income[index].setTransactionDate(tDate);
         income[index].setTransactionName(tName);
     }
-
-    emit accountModified();
 }
 //Returns a total amount from one one category based on specified type and a category
 int Account::getTotalFromOneCategory(QString &category, QString &type)const
