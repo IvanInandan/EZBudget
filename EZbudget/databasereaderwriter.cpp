@@ -19,7 +19,7 @@ DatabaseReaderWriter* DatabaseReaderWriter::Instance()
 DatabaseReaderWriter::DatabaseReaderWriter()
 {
     mydb = QSqlDatabase::addDatabase("QSQLITE");
-    mydb.setDatabaseName("/Users/elainejoymutuc/Documents/qtprojects/EZBudget/EZbudget/QtEzBudget.db");
+    mydb.setDatabaseName("C:/sqlite2/QtEzBudget.db");
 }
 
 bool DatabaseReaderWriter::databaseLoginCheck(QString username, QString password)
@@ -68,18 +68,18 @@ void DatabaseReaderWriter::loadProfile()
 
     //Temp variables
     QString category, name, date, type;
-    float amount;
+    int amount;
 
     //Query for getting information about transactions
 
-    qry2.exec("select * from transactions where userID='"+user +"'");
+    qry2.exec("select * from transac where user='"+user +"'");
     {
         while(qry2.next())
         {
-            category = qry2.value(0).toString();
-            name = qry2.value(1).toString();
-            date = qry2.value(2).toString();
-            type = qry2.value(3).toString();
+            category = qry2.value(1).toString();
+            name = qry2.value(2).toString();
+            date = qry2.value(3).toString();
+            type = qry2.value(5).toString();
             amount = qry2.value(4).toFloat();
             c_account -> addTransactions(category, name, date, type, amount);
         }
