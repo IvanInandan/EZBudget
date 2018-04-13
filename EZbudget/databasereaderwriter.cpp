@@ -9,6 +9,7 @@
 #include <QVariant>
 DatabaseReaderWriter* DatabaseReaderWriter::_instance = 0;
 
+
 DatabaseReaderWriter* DatabaseReaderWriter::Instance()
 {
     if(_instance == 0)
@@ -52,7 +53,7 @@ bool DatabaseReaderWriter::checkConnection()
 void DatabaseReaderWriter::loadProfile()
 {
     int income, budget, savings;
-    QSqlQuery qry1, qry2;
+    QSqlQuery qry1, qry2, qry3;
     qry1.exec("select * from users where name='"+user + "'");
     {
         while(qry1.next())
@@ -72,28 +73,65 @@ void DatabaseReaderWriter::loadProfile()
 
     //Query for getting information about transactions
 
-    qry2.exec("select * from transac where user='"+user +"'");
-    {
+//    qry2.exec("select * from transac where user='"+user +"'");
+//    {
+//        while(qry2.next())
+//        {
+//            category = qry2.value(1).toString();
+//            name = qry2.value(2).toString();
+//            date = qry2.value(3).toString();
+//            type = qry2.value(5).toString();
+//            amount = qry2.value(4).toFloat();
+//            c_account -> addTransactions(category, name, date, type, amount);
+//        }
+//    }
+      QString t = "Expenses";
+      qry2.exec("select * from expenses where user='"+user+"'");
+      {
         while(qry2.next())
         {
-            category = qry2.value(1).toString();
-            name = qry2.value(2).toString();
-            date = qry2.value(3).toString();
-            type = qry2.value(5).toString();
-            amount = qry2.value(4).toFloat();
-            c_account -> addTransactions(category, name, date, type, amount);
+            category = qry2.value(0).toString();
+            name = qry2.value(1).toString();
+            date = qry2.value(2).toString();
+            amount = qry2.value(3).toInt();
+            c_account -> addTransactions(category, name, date, t, amount);
         }
-    }
-    //c_account->thisAcc(c_account);
-    c_account->invokeUi();
+      }
+      t = "Income";
+      qry3.exec("select * from income where user='"+user+"'");
+      {
+        while(qry3.next())
+        {
+            category = qry3.value(0).toString();
+            name = qry3.value(1).toString();
+            date = qry3.value(2).toString();
+            amount = qry3.value(3).toInt();
+            c_account -> addTransactions(category, name, date, t, amount);
+        }
+      }
+      c_account->invokeUi();
 //    mainDash = new mainDashboard();
 //    mainDash->show();
 //    mainDash->updateUi(c_account);
 
 }
+
+
+//create table expenses
+//(
+//category varchar2(25),
+//tName varchar2(25),
+//tDate DATE,
+//amount NUMBER,
+//user varchar2(15),
+//FOREIGN KEY(user) REFERENCES users(name)
+//)
+
+
+
 //Contains quieries to save the data user entered into the database
-void DatabaseReaderWriter::saveProfile()
-{
+//void DatabaseReaderWriter::saveProfile()
+//{
 
 //    int tempBudget, tempIncome, tempSavings;
 //    c_account->getBudget();
@@ -105,7 +143,42 @@ void DatabaseReaderWriter::saveProfile()
 
 //    Updating all transactions, will use a for loop here;
 //    qryUpdateTransactions.exec("update transaction set category='""', tName='""', tDate='""', type='""', tAmount='""' where userID='"+user +"'");
+//}
+
+
+
+
+void DatabaseReaderWriter::addTransaction(QString category, QString name, QString date, QString type, int amount)
+{
+    QSqlQuery qry;
+    if(type == "Expenses")
+        qry.exec("insert into expenses values('"+category+"', '"+name+"', '"+date+"', '"+amount+"', '"+user+"')");
+    else
+        qry.exec("insert into income values('"+category+"', '"+name+"', '"+date+"', '"+amount+"', '"+user+"')");
 }
+void DatabaseReaderWriter::removeTransaction(int rowIndex, QString type)
+{
+    QString i = QString::number(rowIndex);
+    QSqlQuery qry;
+    if(type == "Expenses")
+        qry.exec("delete from expenses where rowid=1");//'"+rowIndex+"' ");
+    else
+        qry.exec("delete from income where rowid=1");//'"+rowIndex+"'");
+
+
+}
+void DatabaseReaderWriter::editTransaction(QString category, QString name, QString date, QString type, int amount, int index)
+{
+    QString amt = QString::number(amount);
+    QString i = QString::number(index);
+    QSqlQuery qry;
+    if(type == "Expenses")
+       qry.exec("update expenses where rowid='"+i+"' AND user='"+user+"' set category='"+category+"', tName='"+name+"', tDate='"+date+"',amount='"+amt+"' ");
+    else
+        qry.exec("update income where rowid='"+i+"' AND user='"+user+"' set category='"+category+"', tName='"+name+"', tDate='"+date+"',amount='"+amt+"' ");
+}
+
+
 Account* DatabaseReaderWriter::getAccountInstance()
 {
     return c_account;

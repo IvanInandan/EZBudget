@@ -28,7 +28,6 @@ SOURCES += \
         main.cpp \
         account.cpp \
     transaction.cpp \
-    category.cpp \
     maindashboard.cpp \
     spendingsbreakdownchart.cpp \
     spendingsbreakdownslice.cpp \
@@ -44,7 +43,6 @@ SOURCES += \
 HEADERS += \
         account.h \
     transaction.h \
-    category.h \
     spendingsbreakdownchart.h \
     spendingsbreakdownslice.h \
     databasereaderwriter.h \

@@ -14,8 +14,11 @@
 #include <QtSql>
 #include <QFileInfo>
 #include <iostream>
-#include <Account.h>
+#include "Account.h"// was <Account.h>
+#include "transaction.h"
 //#include "maindashboard.h"
+
+class Account;
 
 class DatabaseReaderWriter
 {
@@ -27,12 +30,18 @@ public:
     bool checkConnection();
     void loadProfile();
     void saveProfile();
+
+    void addTransaction(QString category, QString name, QString date, QString type, int amount);
+    void removeTransaction(int rowIndex, QString type);
+    void editTransaction(QString category, QString name, QString date, QString type, int amount, int index);
+
     Account* getAccountInstance();
 private:
     QString user;
     static DatabaseReaderWriter* _instance;
     QSqlDatabase mydb;
     Account *c_account = new Account();
+    Transaction temp;
     //mainDashboard *mainDash;
 };
 

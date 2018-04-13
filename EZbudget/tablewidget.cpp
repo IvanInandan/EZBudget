@@ -242,7 +242,7 @@ void tableWidget::on_editTransactionButton_clicked()
      // ---------------------------------------------------------------------------------
 
      // Save into Database: [WORKS WHEN DATABASE FUNCTION 'SAVEPROFILE' IS PUSHED]
-     db -> saveProfile(); // Saves changes made to the account into the database
+     //db -> saveProfile(); // Saves changes made to the account into the database
    //ui->tableView->removeRow(transacRow-1);
    // ----------------------------------------------------------------------------------
 

@@ -6,6 +6,10 @@
  * */
 #include "account.h"
 #include "maindashboard.h"
+
+#include "databasereaderwriter.h"
+DatabaseReaderWriter *db = DatabaseReaderWriter::Instance();
+
 bool Account::failure = false;
 bool Account::success = true;
 
@@ -20,242 +24,8 @@ Account::Account()
         //connect(this, SIGNAL(spendingsTableChanged(QString,QString,QString,float)), ,SLOT(updateSpendingsUi(QString,QString,QString,float)));
 }
 
-//This function adds a transaction and labels it to the appropriate category based on information
-//received from the database
-//Author: Alex Shershnov
-//Date: 4/2/2018
-//void Account::addTransaction(QString tCategory, QString tName, QString tDate, float num, QString type)
-//{
-//    if(expenditures.size() == 0)
-//    {
-//        addCategory(tCategory);
-//        expenditures[0].addTransaction(tCategory, tName, tDate, num, type);
-//        spendingIndex++;
-//        return;
-//    }
-//    for(int i = 0; i < expenditures.size(); i++)
-//    {
-//        if(expenditures[i].getCategoryName() == tCategory)
-//        {
-//            expenditures[i].addTransaction(tCategory, tName, tDate, num, type);
-//            return;
-//        }
-//    }
-//        //return ++spendingIndex;
-
-//    addCategory(tCategory);
-//    expenditures[spendingIndex].addTransaction(tCategory, tName, tDate, num, type);
-//    spendingIndex++;
-//    return;
-
-//}
-
-
-
-
-
-
-
-/* PURPOSE: It will return the monthly budget.
- * Author: Jose Quirarte
- * Date: 2/24/18
- * */
-//int Account::getBudget() const
-//{
-//    return monthlyBudget;
-//}
-
-/* PURPOSE: It will return the monthly savings.
- * Author: Jose Quirarte
- * Date: 2/24/18
- * */
-//int Account::getSavings() const
-//{
-//    return monthlySavings;
-//}
-
-
-/* PURPOSE: It will return the savings Percentage.
- * Author: Jose Quirarte
- * Date: 2/24/18
- * */
-//int Account::getSavingsPercent() const
-//{
-//    return savingsPercentage;
-//}
-
-/*PURPOSE:It will return the number of categories the user has created.
- * Author: Jose Quirarte
- * Date: 3/5/18
- * */
-//int Account::getNumCategories() const
-//{
-
-//    return expenditures.size();
-//}
-
-/* PURPOSE: It will make the passed category be a copy of a category within the expenditures vector
- * PARAMETER: index will be used to to figure out which category to make section the copy of.
- *            section is just a category object that will be overwritten
- * Author: Jose Quirarte
- * Date: 3/5/18
- * */
-//void Account::getCategory(int index, Category &section ) const
-//{
-//    section  = expenditures[index];
-//}
-
-
-/* PURPOSE: It will create a temp category, rename it using the parameter, and
- * add it to the vector.
- * PARAMETER: s is the name of the new category
- * Author: Jose Quirarte
- * Date: 3/5/18
- * */
-//void Account::addCategory(QString s)
-//{
-//    Category temp;
-//    temp.setCategoryName(s);
-//    expenditures.push_back(temp);
-//}
-
-
-/* PURPOSE: It will add up all the total Amounts from each category and then return the sum.
- * Author: Jose Quirarte
- * Date:3/5/18
- * */
-//int Account::getTotalSpendingsFromAllCategories() const
-//{
-//    int total = 0;
-//    for(int i = 0; i < expenditures.size();i++)
-//        total+=expenditures[i].totalTransactions();
-
-//    return total;
-//}
-
-/*PURPOSE: It will set the income to what the user inputted for income
- *
- * */
-//bool Account::setIncome(int i)
-//{
-//    if(verifyNumber(i) == success && monthlyBudget != i)
-//        {
-//            monthlyIncome = i;
-//            emit accountModified();
-//            return success;
-//        }
-//    return failure;
-//}
-
-//int Account::getIncome() const
-//{
-//    return monthlyIncome;
-//}
-
-//PURPOSE: It overwrites a category at the specified index with a category that was passed to it.
-//Date: 3/15/19
-//PARAMETER: index is the index of the category that we want to overwrite
-//           section is the updated category and will be used to overwrite a category
-//void Account::setCategory(int index, Category &section)
-//{
-//    // we make index unsigned to get rid of warning
-//    if (index >= expenditures.size())
-//        return;   // output some error message here
-
-//    expenditures[index] = section;
-//    emit accountModified();
-
-//}
-
-//PURPOSE: It will retrieve the name of the category at the specified index
-//Author: Jose Quirarte
-//Date: 3/16/17
-//PARAMETER: index is the index of the target category
-//QString Account::getCategoryTitle(int index) const
-//{
-//    return expenditures[index].getCategoryName();
-//}
-
-//PURPOSE: It will calculate and return the budget left by subtracting the total transaction amount
-//         from the budget they inputted.
-//Author: Jose Quirarte
-//Date: 3/21/2018
-//int Account::calculateBudgetLeft() const
-//{
-//    return (getBudget() - getTotalSpendingsFromAllCategories());
-//}
-
-//PURPOSE: It will retrieve the total amount spent in one category
-//Author: Jose Quirarte
-//Date: 3/26/18
-//int Account::getTotalFromOneCategory(int index) const
-//{
-//    return expenditures[index].totalTransactions();
-//}
-
-/*void Account::populateTables()
-{
-    for(int i = 0; i < expenditures.size(); i++)
-        {
-           for(int j = 0; j < expenditures[i].Transactions.size(); j++)
-           {   QString transacName = expenditures[i].getSpecificTransactionName(j);
-               QString transacDate = expenditures[i].getSpecificTransactionDate(j);
-               QString transacCategory = expenditures[i].getCategoryName();
-               double transacAmount = expenditures[i].getSpecificTransactionAmount(j);
-
-              emit spendingsTableChanged(transacCategory, transacName, transacDate, transacAmount);
-           }
-        }
-}*/
-
-//QString Account::getExpenditureTransactionName(int firstIndex, int secondIndex)
-//{
-//    return expenditures[firstIndex].getSpecificTransactionName(secondIndex);
-//}
-
-//QString Account::getExpenditureTransactionDate(int firstIndex, int secondIndex)
-//{
-//    return expenditures[firstIndex].getSpecificTransactionDate(secondIndex);
-//}
-
-//double Account::getExpenditureTransactionAmount(int firstIndex, int secondIndex)
-//{
-//    return expenditures[firstIndex].getSpecificTransactionAmount(secondIndex);
-//}
-
-//int Account::getExpenditureSize()
-//{
-//    return expenditures.size();
-//}
-
-//int Account::getExpenditureTransactionSize(int index)
-//{
-//    return expenditures[index].getTransactionSize();
-//}
-
-//void Account::saveFromSpendings(QString transacCategory, QString transacName, QString transacDate, float amount, int row)
-//{
-//    for(int i=0; i < expenditures.size(); i++)
-//    {
-
-//        if(transacCategory == expenditures[i].getCategoryName())
-//        {
-//          //if user changes to a category with less transactions
-//          if(row > expenditures[i].getTransactionSize())
-//          {
-//           expenditures[i].addTransaction(transacCategory, transacName, transacDate, amount, "Spendings");
-//           return;
-//          }
-
-//            expenditures[i].editTransaction(transacCategory, transacName, transacDate, amount, row-1);
-
-//        }
-
-//     }
-
-//  //not sure what to do if user makes new category!!
-//}
-
+//Author:Alex Shershnov
+//Purpose: Initial call to bring up the main dashboard UI
 void Account::invokeUi()
 {
     mainDash = new mainDashboard();
@@ -266,7 +36,7 @@ void Account::invokeUi()
 
 //REFACTORING
 
-
+//Author:Alex Shershnov
 //Adds a transaction and pushes it into the appropriate vector based on type of the transaction
 void Account::addTransactions(QString category, QString tName, QString tDate, QString &type, int amount)
 {
@@ -280,10 +50,11 @@ void Account::addTransactions(QString category, QString tName, QString tDate, QS
         spendings.push_back(t);
     else
         income.push_back(t);
-
+    //db->addTransaction(category, tName, tDate, type, amount);
     emit accountModified();
 
 }
+//Author:Alex Shershnov
 //Removes a transaction from a vector based on index and type provided
 void Account::removeTransactions(int index, QString &type)
 {
@@ -291,9 +62,10 @@ void Account::removeTransactions(int index, QString &type)
         spendings.remove(index);
     else
         income.remove(index);
-
+   // db->removeTransaction(index, type);
     emit accountModified();
 }
+//Author: Alex Shershnov
 //Edit a particular instance of transaction from a vector based on index and type provided
 void Account::editTransactions(QString category, QString tName, QString tDate, QString &type, int amount, int index)
 {
@@ -311,9 +83,10 @@ void Account::editTransactions(QString category, QString tName, QString tDate, Q
         income[index].setTransactionDate(tDate);
         income[index].setTransactionName(tName);
     }
-
+    //db->editTransaction(category, tName, tDate, type, amount, index);
     emit accountModified();
 }
+//Author:Alex Shershnov
 //Returns a total amount from one one category based on specified type and a category
 int Account::getTotalFromOneCategory(QString &category, QString &type)const
 {
@@ -336,7 +109,7 @@ int Account::getTotalFromOneCategory(QString &category, QString &type)const
     }
     return total;
 }
-
+//Author:Alex Shershnov
 //Returns by reference the name of the transaction based on the index specified
 void Account::getCategoryOfTransaction(int index, QString &category, QString &type)const
 {
@@ -401,7 +174,8 @@ int Account::calculateBudgetLeft(QString &type) const
     QString qExpenses = QString::fromStdString(Expenses);
     return (getBudget() - getTotalFromType(qExpenses));
 }
-
+//Author: Alex Shershnov
+//Purpose: Gets a total amount of cash spent based on type -- expenses/income
 int Account::getTotalFromType(QString &type)const
 {
     int total = 0;
@@ -421,6 +195,7 @@ int Account::getTotalFromType(QString &type)const
     return total;
 
 }
+//Author:Alex Shershnov
 //Returns an amount from a specific transaction based on index provided
 int Account::getTotalFromTransaction(int index, QString &type)const
 {
@@ -432,7 +207,7 @@ int Account::getTotalFromTransaction(int index, QString &type)const
         return income[index].getTransactionAmount();
 }
 
-
+//Author:Alex Shershnov
 //Returns how many categories are within a specified vector
 int Account::getTotaNumberOfTransactions(QString &type)const
 {
@@ -441,7 +216,8 @@ int Account::getTotaNumberOfTransactions(QString &type)const
     else
         return income.size();
 }
-
+//Author:Alex Shershnov
+//Returns a particular transaction based on a specific index within the vector
 void Account::getTransaction(int index, QString &category, QString &tName, QString &tDate, QString &type, int &amount)const
 {
     if(type == "Expenses")
