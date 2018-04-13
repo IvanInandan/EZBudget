@@ -6,8 +6,11 @@
    <rect>
     <x>0</x>
     <y>0</y>
+
     <width>556</width>
     <height>128</height>
+
+    
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,14 +21,17 @@
     <rect>
      <x>30</x>
      <y>10</y>
+
      <width>564</width>
-     <height>68</height>
+     <height>62</height>
+
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_5">
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
+
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
          <widget class="QLabel" name="label">
@@ -84,9 +90,6 @@
          <widget class="QDoubleSpinBox" name="transactionAmountEdit">
           <property name="buttonSymbols">
            <enum>QAbstractSpinBox::NoButtons</enum>
-          </property>
-          <property name="maximum">
-           <double>999999999999.989990234375000</double>
           </property>
          </widget>
         </item>
