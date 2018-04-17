@@ -14,7 +14,7 @@
 #include <QtSql>
 #include <QFileInfo>
 #include <iostream>
-#include "Account.h"// was <Account.h>
+#include "account.h"// was <Account.h>
 #include "transaction.h"
 //#include "maindashboard.h"
 

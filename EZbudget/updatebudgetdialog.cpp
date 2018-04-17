@@ -33,3 +33,8 @@ int updateBudgetDialog::updateBudget() const
 {
     return ui->budgetEntered->value();
 }
+
+void updateBudgetDialog::on_cancelButton_clicked()
+{
+    reject();
+}

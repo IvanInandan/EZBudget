@@ -28,8 +28,8 @@ tableWidget::~tableWidget()
 
 void tableWidget::on_addTransactionButton_clicked()
 {
-  //Account *currentAccount = new Account();
- // currentAccount->thisAcc();
+    //Account *currentAccount = new Account();
+    // currentAccount->thisAcc();
 
     DatabaseReaderWriter *db = DatabaseReaderWriter::Instance();
     Account *currentAccount = db->getAccountInstance();
@@ -53,7 +53,7 @@ void tableWidget::on_addTransactionButton_clicked()
     transacAmount = ed.transactionAmount();
     transacCategory = ed.transactionCategory();
     transacType = windowTitle();
-   // transacType = ed.transactionType(); // Check
+    // transacType = ed.transactionType(); // Check
 
     ui->tableView->insertRow(ui->tableView->rowCount());
     ui->tableView->setItem(row, NAME,
@@ -65,9 +65,8 @@ void tableWidget::on_addTransactionButton_clicked()
     ui->tableView->setItem(row, AMOUNT,
                            new QTableWidgetItem(QString::number(transacAmount)));
 
-   currentAccount->addTransactions(transacCategory, transacName, transacDate, transacType, transacAmount);
-
-
+    currentAccount->addTransactions(transacCategory, transacName, transacDate, transacType, transacAmount);
+    db -> addTransaction(transacCategory, transacName, transacDate, transacType, transacAmount);
 }
 
 
@@ -81,26 +80,26 @@ void tableWidget::on_removeTransactionButton_clicked()
     QModelIndexList selectRowCheck = rowCheck->selectedRows();
     if(selectRowCheck.size()!=1)
     {
-    qDebug() << "Selection Error";
-    QMessageBox rowError;
-    rowError.setText("No rows have been selected! Please select one row.");
-    rowError.exec();
-    return;
+        qDebug() << "Selection Error";
+        QMessageBox rowError;
+        rowError.setText("No rows have been selected! Please select one row.");
+        rowError.exec();
+        return;
     }
 
     //Account *currentAccount = new Account;
-   // currentAccount->thisAcc();
+    // currentAccount->thisAcc();
 
-//    QItemSelectionModel *rowCheck = ui->tableView->selectionModel();
-//    QModelIndexList selectedRowCheck = rowCheck->selectedRows();
-//    if(selectedRowCheck.size()!=1)
-//    {
-//        qDebug() << "ERROR: No rows selected";
-//        QMessageBox rowError;
-//        rowError.setText("No rows have been selected!");
-//        rowError.exec();
-//        return;
-//    }
+    //    QItemSelectionModel *rowCheck = ui->tableView->selectionModel();
+    //    QModelIndexList selectedRowCheck = rowCheck->selectedRows();
+    //    if(selectedRowCheck.size()!=1)
+    //    {
+    //        qDebug() << "ERROR: No rows selected";
+    //        QMessageBox rowError;
+    //        rowError.setText("No rows have been selected!");
+    //        rowError.exec();
+    //        return;
+    //    }
 
     QItemSelectionModel *select = ui->tableView->selectionModel();
     QModelIndexList selectedRows = select->selectedRows();
@@ -131,17 +130,17 @@ void tableWidget::on_removeTransactionButton_clicked()
     ui->tableView->removeRow(transacRow);
 
     QString transacType;
-       if(currentDashboard->getFlag() == 0)
-        {
-            transacType = "Expenses";
-        }
+    if(currentDashboard->getFlag() == 0)
+    {
+        transacType = "Expenses";
+    }
 
-        else
-        {
-          //  transactionType = "Spendings";
-        }
+    else
+    {
+        //  transactionType = "Spendings";
+    }
     currentAccount->removeTransactions(transacRow, transacType);
-
+    db -> removeTransaction(transacRow, transacType);
 }
 
 void tableWidget::on_editTransactionButton_clicked()
@@ -154,11 +153,11 @@ void tableWidget::on_editTransactionButton_clicked()
     QModelIndexList selectRowCheck = rowCheck->selectedRows();
     if(selectRowCheck.size()!=1)
     {
-    qDebug() << "Selection Error";
-    QMessageBox rowError;
-    rowError.setText("No rows have been selected! Please select one row.");
-    rowError.exec();
-    return;
+        qDebug() << "Selection Error";
+        QMessageBox rowError;
+        rowError.setText("No rows have been selected! Please select one row.");
+        rowError.exec();
+        return;
     }
 
     /*
@@ -173,78 +172,79 @@ void tableWidget::on_editTransactionButton_clicked()
    row.setWindowTitle("Edit Transaction");
    transacRow = row.editRowNumber();
 */
-//   QItemSelectionModel *rowCheck = ui->tableView->selectionModel();
-//   QModelIndexList selectedRowCheck = rowCheck->selectedRows();
-//   if(selectedRowCheck.size()!=1)
-//   {
-//       qDebug() << "ERROR: No rows selected";
-//       QMessageBox rowError;
-//       rowError.setText("No rows have been selected!");
-//       rowError.exec();
-//       return;
-//   }
+    //   QItemSelectionModel *rowCheck = ui->tableView->selectionModel();
+    //   QModelIndexList selectedRowCheck = rowCheck->selectedRows();
+    //   if(selectedRowCheck.size()!=1)
+    //   {
+    //       qDebug() << "ERROR: No rows selected";
+    //       QMessageBox rowError;
+    //       rowError.setText("No rows have been selected!");
+    //       rowError.exec();
+    //       return;
+    //   }
 
-   int editPass;
-   editTransaction edit(this);
-   editPass = edit.exec();
+    int editPass;
+    editTransaction edit(this);
+    editPass = edit.exec();
 
-   if(editPass == QDialog::Rejected)
-       return;
+    if(editPass == QDialog::Rejected)
+        return;
 
-   QString transacName = edit.transactionName();
-   QString transacDate = edit.transactionDate().toString("M/dd/yy");
-   QString transacCategory = edit.transactionCategory();
-   double transacAmount = edit.transactionAmount();
-   //QString transacType = ui->tableView->windowTitle();
+    QString transacName = edit.transactionName();
+    QString transacDate = edit.transactionDate().toString("M/dd/yy");
+    QString transacCategory = edit.transactionCategory();
+    double transacAmount = edit.transactionAmount();
+    //QString transacType = ui->tableView->windowTitle();
 
-   // Changes UI Display of Table ------------------------------------------------------
+    // Changes UI Display of Table ------------------------------------------------------
 
-   QItemSelectionModel *select = ui->tableView->selectionModel();
-   QModelIndexList selectedRows = select->selectedRows();
-   if(selectedRows.size()!=1)
-   {
-       // Error
-       qDebug() << "Error";
-   }
-   QModelIndex index = selectedRows.at(0);
-   int transacRow = index.row();
+    QItemSelectionModel *select = ui->tableView->selectionModel();
+    QModelIndexList selectedRows = select->selectedRows();
+    if(selectedRows.size()!=1)
+    {
+        // Error
+        qDebug() << "Error";
+    }
+    QModelIndex index = selectedRows.at(0);
+    int transacRow = index.row();
 
-   qDebug() << "Row is " << transacRow;
+    qDebug() << "Row is " << transacRow;
 
 
-   //ui->tableView->insertRow(transacRow);
-   ui->tableView->setItem(transacRow, NAME,
-                          new QTableWidgetItem(transacName));
-   ui->tableView->setItem(transacRow, CATEGORY,
-                          new QTableWidgetItem(transacCategory));
-   ui->tableView->setItem(transacRow, DATE,
-                          new QTableWidgetItem(transacDate));
-//   ui->tableViews->setItem(transacType, TYPE,
-//                           new QTableWidgetItem(transacType));
-   ui->tableView->setItem(transacRow, AMOUNT,
-                          new QTableWidgetItem(QString::number(transacAmount)));
+    //ui->tableView->insertRow(transacRow);
+    ui->tableView->setItem(transacRow, NAME,
+                           new QTableWidgetItem(transacName));
+    ui->tableView->setItem(transacRow, CATEGORY,
+                           new QTableWidgetItem(transacCategory));
+    ui->tableView->setItem(transacRow, DATE,
+                           new QTableWidgetItem(transacDate));
+    //   ui->tableViews->setItem(transacType, TYPE,
+    //                           new QTableWidgetItem(transacType));
+    ui->tableView->setItem(transacRow, AMOUNT,
+                           new QTableWidgetItem(QString::number(transacAmount)));
 
-   QString transactionType;
-   if(currentDashboard->getFlag() == 0)
+    QString transactionType;
+    if(currentDashboard->getFlag() == 0)
     {
         transactionType = "Expenses";
     }
 
     else
     {
-      //  transactionType = "Spendings";
+        //  transactionType = "Spendings";
     }
 
     qDebug() << "Transaction Type: " << transactionType << "\n";
 
-     currentAccount->editTransactions(transacCategory, transacName, transacDate, transactionType, transacAmount, transacRow);
+    currentAccount->editTransactions(transacCategory, transacName, transacDate, transactionType, transacAmount, transacRow); // Edits Account
+    db->editTransaction(transacCategory, transacName, transacDate, transactionType, transacAmount, transacRow);  // Edits Database
 
-     // ---------------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------------
 
-     // Save into Database: [WORKS WHEN DATABASE FUNCTION 'SAVEPROFILE' IS PUSHED]
-     //db -> saveProfile(); // Saves changes made to the account into the database
-   //ui->tableView->removeRow(transacRow-1);
-   // ----------------------------------------------------------------------------------
+    // Save into Database: [WORKS WHEN DATABASE FUNCTION 'SAVEPROFILE' IS PUSHED]
+    //db -> saveProfile(); // Saves changes made to the account into the database
+    //ui->tableView->removeRow(transacRow-1);
+    // ----------------------------------------------------------------------------------
 
 
 }
@@ -260,18 +260,18 @@ void tableWidget::updateUi(QString type)
     int amount;
 
 
-   for(int i = 0; i < currentAccount->getTotaNumberOfTransactions(type); i++)
-   {
-       int row = ui->tableView->rowCount();
+    for(int i = 0; i < currentAccount->getTotaNumberOfTransactions(type); i++)
+    {
+        int row = ui->tableView->rowCount();
 
-       currentAccount->getTransaction(row, transacCategory, transacName, transacDate, type, amount);
+        currentAccount->getTransaction(row, transacCategory, transacName, transacDate, type, amount);
 
-       ui->tableView->insertRow(row);
-       ui->tableView->setItem(row, NAME, new QTableWidgetItem(transacName));
-       ui->tableView->setItem(row, CATEGORY, new QTableWidgetItem(transacCategory));
-       ui->tableView->setItem(row, DATE, new QTableWidgetItem(transacDate));
-       ui->tableView->setItem(row, AMOUNT, new QTableWidgetItem(QString::number(amount)));
-   }
+        ui->tableView->insertRow(row);
+        ui->tableView->setItem(row, NAME, new QTableWidgetItem(transacName));
+        ui->tableView->setItem(row, CATEGORY, new QTableWidgetItem(transacCategory));
+        ui->tableView->setItem(row, DATE, new QTableWidgetItem(transacDate));
+        ui->tableView->setItem(row, AMOUNT, new QTableWidgetItem(QString::number(amount)));
+    }
 }
 
 int tableWidget::getRowCount()
