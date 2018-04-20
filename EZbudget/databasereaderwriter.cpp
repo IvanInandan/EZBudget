@@ -145,26 +145,51 @@ void DatabaseReaderWriter::loadProfile()
 //    qryUpdateTransactions.exec("update transaction set category='""', tName='""', tDate='""', type='""', tAmount='""' where userID='"+user +"'");
 //}
 
-
-
+void DatabaseReaderWriter::updateProfile(int income, int budget, int savings)
+{
+    income = c_account->getIncome();
+    budget = c_account->getBudget();
+    savings = c_account ->getSavings();
+    QString inc = QString::number(income);
+    QString budg = QString::number(budget);
+    QString sav = QString::number(savings);
+    QSqlQuery qry;
+    qry.exec("update users set monthlyIncome='"+inc+"', monthlySavings='"+sav+"', monthlyBudget='"+budg+"'");
+}
 
 void DatabaseReaderWriter::addTransaction(QString category, QString name, QString date, QString type, int amount)
 {
     QSqlQuery qry;
+    QString amt = QString::number(amount);
+
+    QString income = "Income";
+    QString exp = "Expenses";
+    int totalExpenses = c_account -> getTotaNumberOfTransactions(exp) - 1;
+    int totalIncome = c_account -> getTotaNumberOfTransactions(income) - 1;
+    income = QString::number(totalIncome);
+    exp = QString::number(totalExpenses);
+
     if(type == "Expenses")
-        qry.exec("insert into expenses values('"+category+"', '"+name+"', '"+date+"', '"+amount+"', '"+user+"')");
+        qry.exec("insert into expenses values('"+category+"', '"+name+"', '"+date+"', '"+amt+"', '"+user+"', '"+exp+"')");
     else
-        qry.exec("insert into income values('"+category+"', '"+name+"', '"+date+"', '"+amount+"', '"+user+"')");
+        qry.exec("insert into income values('"+category+"', '"+name+"', '"+date+"', '"+amt+"', '"+user+"', '"+income+"')");
 }
 void DatabaseReaderWriter::removeTransaction(int rowIndex, QString type)
 {
     QString i = QString::number(rowIndex);
-    QSqlQuery qry;
+    QSqlQuery qry, qry1;
     if(type == "Expenses")
-        qry.exec("delete from expenses where rowid=1");//'"+rowIndex+"' ");
+    {
+        qry.exec("delete from expenses where rowNum='"+i+"' AND user='"+user+"'");//'"+rowIndex+"' ");
+        i = QString::number(++rowIndex);
+        qry1.exec("update expenses set rowNum=(rowNum - 1) where rowNum >= '"+i+"'AND user='"+user+"'");
+    }
     else
-        qry.exec("delete from income where rowid=1");//'"+rowIndex+"'");
+    {
+        qry.exec("delete from income where rowNum='"+i+"' AND user='"+user+"'");//'"+rowIndex+"'");
 
+        qry1.exec("update income set rowNum=(rowNum - 1) where rowNum >= '"+i+"'AND user='"+user+"'");
+    }
 
 }
 void DatabaseReaderWriter::editTransaction(QString category, QString name, QString date, QString type, int amount, int index)
@@ -173,9 +198,9 @@ void DatabaseReaderWriter::editTransaction(QString category, QString name, QStri
     QString i = QString::number(index);
     QSqlQuery qry;
     if(type == "Expenses")
-       qry.exec("update expenses where rowid='"+i+"' AND user='"+user+"' set category='"+category+"', tName='"+name+"', tDate='"+date+"',amount='"+amt+"' ");
+       qry.exec("update expenses set category='"+category+"', tName='"+name+"', tDate='"+date+"',amount='"+amt+"' where rowNum='"+i+"' AND user='"+user+"'");
     else
-        qry.exec("update income where rowid='"+i+"' AND user='"+user+"' set category='"+category+"', tName='"+name+"', tDate='"+date+"',amount='"+amt+"' ");
+        qry.exec("update income set category='"+category+"', tName='"+name+"', tDate='"+date+"',amount='"+amt+"' where rowNum='"+i+"' AND user='"+user+"' ");
 }
 
 
