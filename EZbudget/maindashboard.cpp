@@ -147,10 +147,10 @@ void mainDashboard::updateUi()
     ui->updateBudgetLeftLabel->setText(updatedBudgetLeft);
 
 
-    QString updatedCurrentIncome = "$" + QString::number(pCurrentAcount->getIncome() + pCurrentAcount->getTotalFromType(qIncome));
+    QString updatedCurrentIncome = "$" + QString::number(pCurrentAcount->getIncome());
     ui->updateCurrentIncomeLeftLabel->setText(updatedCurrentIncome);
 
-    QString updatedCurrentSavings = "$" + QString::number(pCurrentAcount->getSavings());
+    QString updatedCurrentSavings = "$" + QString::number(pCurrentAcount->getSavings() + pCurrentAcount->getTotalFromType(qIncome));
     ui->updateCurrentSavingsLabel->setText(updatedCurrentSavings);
 
     spendingsBarSet->replace(0, pCurrentAcount->getTotalFromType(qExpenses));

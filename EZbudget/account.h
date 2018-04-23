@@ -33,7 +33,7 @@ class Account : public QObject
 private:
     int monthlyIncome;                     //monthly income
     int monthlyBudget;                     //stores monthly budget
-    int savingsPercentage;                 //will be used to calculate monthly savings
+    //int savingsPercentage;                 //will be used to calculate monthly savings
     int monthlySavings;                    //stores monthly savings
 
     QVector<Transaction> spendings;
@@ -75,7 +75,7 @@ public:
 public slots:
     //setters
     bool setBudget(int b);
-    bool setSavings(int savingPercent);
+    bool setSaving(int savings);
     bool setIncome(int i);
     void editTransactions(QString category, QString tName, QString tDate, QString &type, int amount, int index);
     void addTransactions(QString category, QString tName, QString tDate, QString &type, int amount);

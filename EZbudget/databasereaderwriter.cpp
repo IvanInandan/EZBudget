@@ -65,7 +65,7 @@ void DatabaseReaderWriter::loadProfile()
     }
     c_account ->setBudget(budget);
     c_account ->setIncome(income);
-    c_account ->setSavings(savings);
+    c_account ->setSaving(savings);
 
     //Temp variables
     QString category, name, date, type;
