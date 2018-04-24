@@ -119,23 +119,6 @@ void Account::getCategoryOfTransaction(int index, QString &category, QString &ty
         category = income[index].getTransactionCategory();
 }
 
-/*
-int Account::getNumberOfCategories()
-{
-    QVector tempCategories;
-    int count;
-
-    if(type == "Expenses")
-    {
-        for(int i = 0; i < spendings.size(); i++)
-        {
-            if()
-        }
-    }
-    else if(type == "Income")
-}
-*/
-
 QStringList Account::getSpendingCategories()
 {
     QMap<QString, bool> catMap;
@@ -297,18 +280,14 @@ bool Account::setBudget(int b)
  *
  * */
 
-bool Account::setSavings(int savingsPercent)
+bool Account::setSaving(int savings)
 {
-    //we convert savingsPercent to decimal and then multiply it with the monthly budget to get
-    // the new savings amount
-    int newSavings = monthlyIncome * ((double) savingsPercent / 100);
 
-    //we dont want m_savings and new_savings to be the same in case of cyclic connections to avoid infinte looping
+    //we dont new_savings to be the same in case of cyclic connections to avoid infinte looping
     //and we also want to make sure new_savings is positive
-    if(monthlySavings != newSavings && verifyNumber(newSavings) == success)
+    if(monthlySavings != savings && verifyNumber(savings) == success)
         {
-            savingsPercentage = savingsPercent;
-            monthlySavings = newSavings;
+            monthlySavings = savings;
             emit accountModified();
             return success;
         }

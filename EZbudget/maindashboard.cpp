@@ -137,15 +137,17 @@ void mainDashboard::updateUi()
     //Account *pCurrentAcount = ref;//new Account();
 
     string Expenses = "Expenses";
+    string income = "Income";
     QString qExpenses = QString::fromStdString(Expenses);
-
+    QString qIncome = QString::fromStdString(income);
     QString updatedBudgetLeft = "$" + QString::number(pCurrentAcount->calculateBudgetLeft(qExpenses));
     ui->updateBudgetLeftLabel->setText(updatedBudgetLeft);
+
 
     QString updatedCurrentIncome = "$" + QString::number(pCurrentAcount->getIncome());
     ui->updateCurrentIncomeLeftLabel->setText(updatedCurrentIncome);
 
-    QString updatedCurrentSavings = "$" + QString::number(pCurrentAcount->getSavings());
+    QString updatedCurrentSavings = "$" + QString::number(pCurrentAcount->getSavings() + pCurrentAcount->getTotalFromType(qIncome));
     ui->updateCurrentSavingsLabel->setText(updatedCurrentSavings);
 
     spendingsBarSet->replace(0, pCurrentAcount->getTotalFromType(qExpenses));
