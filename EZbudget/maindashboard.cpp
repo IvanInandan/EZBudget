@@ -82,21 +82,9 @@ mainDashboard::mainDashboard(QWidget *parent) :
         spendSeries= new QtCharts::QPieSeries();
         spendSeries->setName("Spendings Breakdown");
 
-        //catSeries = new QPieSeries(); //take this out
-
+        //default transaction/categories
         QStringList transactions = {"Transaction"};
         QStringList categories = {"Transaction"};
-        /*
-        QStringList categories = pCurrentAcount->getSpendingCategories();
-        for(QString category : categories)
-        {
-            // You now have a category name
-            QList<Transaction> transactions = pCurrentAcount->getSpendingTransactions(category);
-            // You now have all the transactions for that specific category
-            // You need to have a loop here that goes through the transactions and does something
-            // ...
-        }
-        */
 
         for (const QString &category : categories) {
             catSeries = new QPieSeries();
@@ -121,6 +109,7 @@ mainDashboard::mainDashboard(QWidget *parent) :
         spendBreakdownChartView->showNormal();
 
     }
+
     DatabaseReaderWriter* db = DatabaseReaderWriter::Instance();
     Account* pCurrentAcount = db -> getAccountInstance();
     QObject::connect(pCurrentAcount, SIGNAL(accountModified()),this, SLOT(updateUi()));
@@ -133,12 +122,8 @@ mainDashboard::~mainDashboard()
 
 void mainDashboard::updateUi()
 {
-
-    //ui->emptyLabel->hide();
-    // lets get the account
     DatabaseReaderWriter* db = DatabaseReaderWriter::Instance();
     Account* pCurrentAcount = db -> getAccountInstance();
-    //Account *pCurrentAcount = ref;//new Account();
 
     if(pCurrentAcount->isSpendingsEmpty() == true && pCurrentAcount->isIncomeEmpty() == true)
         ui->emptyLabel->show();
@@ -166,23 +151,6 @@ void mainDashboard::updateUi()
     spendingsBarSet->setLabel(spendingLabel);
     budgetLeftBarSet->setLabel(budgetLeftLabel);
 
-    //budgetLeftBarSet->replace(0, pCurrentAcount->getSpendings());
-    // we got rid of spendings, we can use getTotalSpendingsFromAllCategories()
-    // but we need to add transactions to our categories first or we could hardcode something
-
-    // Now we will call methods in Account and update the series
-    // First lets clear the series
-    //    m_pieSeries->clear();
-    //    int numExpenses = pCurrentAcount->getNumExpenses();
-    //    for(int i=0; i<numExpenses; ++i)
-    //    {
-    //        Expense *pExpense = pCurrentAcount->getExpense(i);
-    //        m_pieSeries->add(pCurrentAcount->getFirstExpense());
-    //        m_pieSeries->append(pExpense->getCategoryName(), pExpense->getTotalExpense());
-    //    }
-
-    // Now lets do the same for the series
-
     spendSeries->clear();
     catSeries->clear();
 
@@ -193,8 +161,6 @@ void mainDashboard::updateUi()
     spendingsBreakdown->legend()->setAlignment(Qt::AlignRight);
 
     QStringList categories = pCurrentAcount->getSpendingCategories();
-//    QStringList transactions = pCurrentAcount->getSpendingTransactions();
-
 
     spendSeries= new QtCharts::QPieSeries();
     spendSeries->setName("Spendings Breakdown");
@@ -226,10 +192,6 @@ void mainDashboard::updateUi()
     spendBreakdownChartView->showNormal();
 
 }
-
-
-
-
 
 void mainDashboard::on_spendingsButton_clicked()
 {
@@ -272,7 +234,6 @@ void mainDashboard::on_updateBudgetButton_clicked()
 {
     updateBudgetWindow.show();
     updateBudgetWindow.setWindowTitle("Update Budget");
-
 }
 
 void mainDashboard::on_calculatorButton_clicked()

@@ -29,6 +29,7 @@ void updateBudgetDialog::on_okButton_clicked()
     else
     {
         currentAccount->setBudget(ui->budgetEntered->value());
+        db->updateMonthlyBudget();
         ui->budgetWarning->hide();
         this->hide();
     }

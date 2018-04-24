@@ -60,8 +60,10 @@ public:
     int getTotaNumberOfTransactions(QString &type)const;
     bool verifyNumber(int input);          //will make sure inputs are not negative
     int getBudget()const;
-    int getIncome()const ;
+    int getIncome()const;
     int getSavings()const;
+    bool isSpendingsEmpty() const;
+    bool isIncomeEmpty() const;
     void invokeUi();
     mainDashboard* getDash(); //this is the only way to send the type when editing a transaction
 

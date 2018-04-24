@@ -49,8 +49,10 @@ void Account::addTransactions(QString category, QString tName, QString tDate, QS
     if(type == "Expenses")
         spendings.push_back(t);
     else
+    {
         income.push_back(t);
-    //db->addTransaction(category, tName, tDate, type, amount);
+        setIncome(monthlyIncome+amount);
+    }
     emit accountModified();
 
 }
@@ -61,8 +63,11 @@ void Account::removeTransactions(int index, QString &type)
     if(type == "Expenses")
         spendings.remove(index);
     else
+    {
+        setIncome(monthlyIncome-income[index].getTransactionAmount());
         income.remove(index);
-   // db->removeTransaction(index, type);
+    }
+        // db->removeTransaction(index, type);
     emit accountModified();
 }
 //Author: Alex Shershnov
@@ -82,6 +87,7 @@ void Account::editTransactions(QString category, QString tName, QString tDate, Q
         income[index].setTransactionCategory(category);
         income[index].setTransactionDate(tDate);
         income[index].setTransactionName(tName);
+        setIncome(monthlyIncome+amount);
     }
     //db->editTransaction(category, tName, tDate, type, amount, index);
     emit accountModified();
@@ -293,6 +299,17 @@ bool Account::setSaving(int savings)
         }
     return failure;
 }
+
+bool Account::isSpendingsEmpty() const
+{
+    return spendings.isEmpty();
+}
+
+bool Account::isIncomeEmpty() const
+{
+    return income.isEmpty();
+}
+
 int Account::getSavings() const
 {
     return monthlySavings;

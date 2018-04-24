@@ -20,7 +20,16 @@ DatabaseReaderWriter* DatabaseReaderWriter::Instance()
 DatabaseReaderWriter::DatabaseReaderWriter()
 {
     mydb = QSqlDatabase::addDatabase("QSQLITE");
-    mydb.setDatabaseName("C:/sqlite2/QtEzBudget.db");
+    mydb.setDatabaseName("/Users/elainejoymutuc/Downloads/QtEzBudget (2).db");
+}
+
+void DatabaseReaderWriter::newUser(QString username, QString password) //int income, int budget
+{
+    QSqlQuery qry;
+    //QString i = QString::number(income);
+    //QString b = QString::number(budget);
+    //qry.exec("insert into users values('"+username+"','"+password+"','"+i+"', '"+b+"')");
+    qry.exec("insert into users values('"+username+"','"+password+"')");
 }
 
 bool DatabaseReaderWriter::databaseLoginCheck(QString username, QString password)
@@ -155,6 +164,27 @@ void DatabaseReaderWriter::updateProfile(int income, int budget, int savings)
     QString sav = QString::number(savings);
     QSqlQuery qry;
     qry.exec("update users set monthlyIncome='"+inc+"', monthlySavings='"+sav+"', monthlyBudget='"+budg+"'");
+}
+
+void DatabaseReaderWriter::updateMonthlyBudget()
+{
+    QSqlQuery bg;
+    QString budget = QString::number(c_account -> getBudget());
+    updateMonthlySavings();
+    bg.exec("update users set monthlyBudget='"+budget+"'"); //where name ='"+user+"'");
+}
+void DatabaseReaderWriter::updateMonthlyIncome()
+{
+    QSqlQuery bg;
+    QString income = QString::number(c_account -> getIncome());
+    updateMonthlySavings();
+    bg.exec("update users set monthlyIncome='"+income+"'"); //where name ='"+user+"'");
+}
+void DatabaseReaderWriter::updateMonthlySavings()
+{
+    QSqlQuery bg;
+    QString savings = QString::number(c_account -> getSavings());
+    bg.exec("update users set monthlySavings='"+savings+"' where name ='"+user+"'");
 }
 
 void DatabaseReaderWriter::addTransaction(QString category, QString name, QString date, QString type, int amount)

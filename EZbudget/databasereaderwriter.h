@@ -26,6 +26,7 @@ protected:
     DatabaseReaderWriter();
 public:
     static DatabaseReaderWriter* Instance();
+    void newUser(QString username, QString password);
     bool databaseLoginCheck(QString username, QString password);
     bool checkConnection();
     void loadProfile();
@@ -34,6 +35,10 @@ public:
     void removeTransaction(int rowIndex, QString type);
     void editTransaction(QString category, QString name, QString date, QString type, int amount, int index);
     void updateProfile(int income, int budget, int savings);
+
+    void updateMonthlyBudget();
+    void updateMonthlyIncome();
+    void updateMonthlySavings();
 
 
     Account* getAccountInstance();
