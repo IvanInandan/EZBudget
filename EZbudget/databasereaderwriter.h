@@ -30,6 +30,7 @@ public:
     bool databaseLoginCheck(QString username, QString password);
     bool checkConnection();
     void loadProfile();
+    bool checkUserExists(QString username);
 
     void addTransaction(QString category, QString name, QString date, QString type, int amount);
     void removeTransaction(int rowIndex, QString type);

@@ -166,6 +166,24 @@ void DatabaseReaderWriter::updateProfile(int income, int budget, int savings)
     qry.exec("update users set monthlyIncome='"+inc+"', monthlySavings='"+sav+"', monthlyBudget='"+budg+"'");
 }
 
+bool DatabaseReaderWriter::checkUserExists(QString username)
+{
+    QSqlQuery qry;
+    int count = 0;
+    if(qry.exec("select name from users where name ='"+username+"'"))
+    {
+        while(qry.next())
+        {
+            count++;
+        }
+        if(count > 0)
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+}
 void DatabaseReaderWriter::updateMonthlyBudget()
 {
     QSqlQuery bg;

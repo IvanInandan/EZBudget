@@ -15,11 +15,11 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
-#include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -29,7 +29,7 @@ QT_BEGIN_NAMESPACE
 class Ui_createNewAccount
 {
 public:
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout_3;
     QLabel *label_5;
     QHBoxLayout *horizontalLayout;
@@ -38,9 +38,9 @@ public:
     QLabel *label_2;
     QLabel *label_3;
     QVBoxLayout *verticalLayout_2;
-    QLineEdit *lineEdit;
-    QLineEdit *lineEdit_3;
-    QLineEdit *lineEdit_2;
+    QLineEdit *newUsername;
+    QLineEdit *newPassword;
+    QLineEdit *newRePassword;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_4;
     QComboBox *comboBox;
@@ -50,21 +50,24 @@ public:
     QSpacerItem *horizontalSpacer_4;
     QHBoxLayout *horizontalLayout_4;
     QSpacerItem *horizontalSpacer_2;
-    QDialogButtonBox *buttonBox;
+    QHBoxLayout *horizontalLayout_5;
+    QPushButton *cancelButton;
+    QPushButton *okButton;
     QSpacerItem *horizontalSpacer_3;
+    QLabel *warningLabel;
 
     void setupUi(QDialog *createNewAccount)
     {
         if (createNewAccount->objectName().isEmpty())
             createNewAccount->setObjectName(QStringLiteral("createNewAccount"));
         createNewAccount->resize(625, 418);
-        widget = new QWidget(createNewAccount);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(90, 70, 441, 331));
-        verticalLayout_3 = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(createNewAccount);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(90, 30, 441, 331));
+        verticalLayout_3 = new QVBoxLayout(layoutWidget);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
-        label_5 = new QLabel(widget);
+        label_5 = new QLabel(layoutWidget);
         label_5->setObjectName(QStringLiteral("label_5"));
 
         verticalLayout_3->addWidget(label_5);
@@ -73,7 +76,7 @@ public:
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        label = new QLabel(widget);
+        label = new QLabel(layoutWidget);
         label->setObjectName(QStringLiteral("label"));
         QFont font;
         font.setFamily(QStringLiteral("Segoe Print"));
@@ -82,7 +85,7 @@ public:
 
         verticalLayout->addWidget(label);
 
-        label_2 = new QLabel(widget);
+        label_2 = new QLabel(layoutWidget);
         label_2->setObjectName(QStringLiteral("label_2"));
         QFont font1;
         font1.setFamily(QStringLiteral("Segoe Print"));
@@ -92,7 +95,7 @@ public:
 
         verticalLayout->addWidget(label_2);
 
-        label_3 = new QLabel(widget);
+        label_3 = new QLabel(layoutWidget);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setFont(font);
 
@@ -103,22 +106,22 @@ public:
 
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        lineEdit = new QLineEdit(widget);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        newUsername = new QLineEdit(layoutWidget);
+        newUsername->setObjectName(QStringLiteral("newUsername"));
 
-        verticalLayout_2->addWidget(lineEdit);
+        verticalLayout_2->addWidget(newUsername);
 
-        lineEdit_3 = new QLineEdit(widget);
-        lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
-        lineEdit_3->setEchoMode(QLineEdit::PasswordEchoOnEdit);
+        newPassword = new QLineEdit(layoutWidget);
+        newPassword->setObjectName(QStringLiteral("newPassword"));
+        newPassword->setEchoMode(QLineEdit::Password);
 
-        verticalLayout_2->addWidget(lineEdit_3);
+        verticalLayout_2->addWidget(newPassword);
 
-        lineEdit_2 = new QLineEdit(widget);
-        lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
-        lineEdit_2->setEchoMode(QLineEdit::PasswordEchoOnEdit);
+        newRePassword = new QLineEdit(layoutWidget);
+        newRePassword->setObjectName(QStringLiteral("newRePassword"));
+        newRePassword->setEchoMode(QLineEdit::Password);
 
-        verticalLayout_2->addWidget(lineEdit_2);
+        verticalLayout_2->addWidget(newRePassword);
 
 
         horizontalLayout->addLayout(verticalLayout_2);
@@ -128,13 +131,13 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        label_4 = new QLabel(widget);
+        label_4 = new QLabel(layoutWidget);
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setFont(font);
 
         horizontalLayout_2->addWidget(label_4);
 
-        comboBox = new QComboBox(widget);
+        comboBox = new QComboBox(layoutWidget);
         comboBox->addItem(QString());
         comboBox->addItem(QString());
         comboBox->addItem(QString());
@@ -152,7 +155,7 @@ public:
 
         horizontalLayout_3->addItem(horizontalSpacer);
 
-        lineEdit_4 = new QLineEdit(widget);
+        lineEdit_4 = new QLineEdit(layoutWidget);
         lineEdit_4->setObjectName(QStringLiteral("lineEdit_4"));
 
         horizontalLayout_3->addWidget(lineEdit_4);
@@ -170,11 +173,20 @@ public:
 
         horizontalLayout_4->addItem(horizontalSpacer_2);
 
-        buttonBox = new QDialogButtonBox(widget);
-        buttonBox->setObjectName(QStringLiteral("buttonBox"));
-        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
+        cancelButton = new QPushButton(layoutWidget);
+        cancelButton->setObjectName(QStringLiteral("cancelButton"));
 
-        horizontalLayout_4->addWidget(buttonBox);
+        horizontalLayout_5->addWidget(cancelButton);
+
+        okButton = new QPushButton(layoutWidget);
+        okButton->setObjectName(QStringLiteral("okButton"));
+
+        horizontalLayout_5->addWidget(okButton);
+
+
+        horizontalLayout_4->addLayout(horizontalLayout_5);
 
         horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -183,6 +195,14 @@ public:
 
         verticalLayout_3->addLayout(horizontalLayout_4);
 
+        warningLabel = new QLabel(createNewAccount);
+        warningLabel->setObjectName(QStringLiteral("warningLabel"));
+        warningLabel->setGeometry(QRect(210, 370, 311, 31));
+        QFont font2;
+        font2.setPointSize(12);
+        font2.setBold(true);
+        font2.setWeight(75);
+        warningLabel->setFont(font2);
 
         retranslateUi(createNewAccount);
 
@@ -202,6 +222,9 @@ public:
         comboBox->setItemText(2, QApplication::translate("createNewAccount", "What is your favorite color?", nullptr));
         comboBox->setItemText(3, QApplication::translate("createNewAccount", "What is the name of your first pet?", nullptr));
 
+        cancelButton->setText(QApplication::translate("createNewAccount", "Cancel", nullptr));
+        okButton->setText(QApplication::translate("createNewAccount", "OK", nullptr));
+        warningLabel->setText(QApplication::translate("createNewAccount", "[+]Status", nullptr));
     } // retranslateUi
 
 };

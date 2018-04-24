@@ -2,6 +2,7 @@
 #define CREATENEWACCOUNT_H
 
 #include <QDialog>
+#include "databasereaderwriter.h"
 
 namespace Ui {
 class createNewAccount;
@@ -15,8 +16,14 @@ public:
     explicit createNewAccount(QWidget *parent = 0);
     ~createNewAccount();
 
+private slots:
+    void on_okButton_clicked();
+
+    void on_cancelButton_clicked();
+
 private:
     Ui::createNewAccount *ui;
+    DatabaseReaderWriter* db = DatabaseReaderWriter::Instance();
 };
 
 #endif // CREATENEWACCOUNT_H
