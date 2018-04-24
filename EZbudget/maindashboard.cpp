@@ -1,31 +1,5 @@
 #include "maindashboard.h"
 #include "ui_maindashboard.h"
-#include "spendingsbreakdownchart.h"
-#include "spendingsbreakdownslice.h"
-#include "tablewidget.h"
-#include <QApplication>
-#include <QTableWidget>
-#include "databasereaderwriter.h"
-#include "account.h"
-#include "transaction.h"
-#include "calculator.h"
-using namespace std;
-
-#include <QtWidgets/QApplication>
-#include <QtWidgets/QMainWindow>
-#include <QtCore/QRandomGenerator>
-#include <QtCharts/QChartView>
-#include <QtCharts/QPieSeries>
-#include <QtCharts/QPieSlice>
-#include <QtCharts/QBarSeries>
-#include <QtCharts/QBarSet>
-#include <QtCharts/QLegend>
-#include <QtCharts/QBarCategoryAxis>
-#include <QtCharts/QValueAxis>
-#include <QtCharts/QHorizontalBarSeries>
-#include <QtCharts/QHorizontalPercentBarSeries>
-
-using namespace QtCharts;
 
 mainDashboard::mainDashboard(QWidget *parent) :
     QMainWindow(parent),
@@ -33,8 +7,9 @@ mainDashboard::mainDashboard(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle("My Dashboard");
-//    Calculator calc;
-//    calc.showFullScreen();
+
+    setStyleSheet("QMainWindow {background: #a9e5aa}");
+
     {
         //bar chart: spendings vs budget left
         spendingsBarSet = new QBarSet("Spendings");
@@ -110,8 +85,6 @@ mainDashboard::mainDashboard(QWidget *parent) :
 
     }
 
-    DatabaseReaderWriter* db = DatabaseReaderWriter::Instance();
-    Account* pCurrentAcount = db -> getAccountInstance();
     QObject::connect(pCurrentAcount, SIGNAL(accountModified()),this, SLOT(updateUi()));
 }
 
@@ -122,9 +95,6 @@ mainDashboard::~mainDashboard()
 
 void mainDashboard::updateUi()
 {
-    DatabaseReaderWriter* db = DatabaseReaderWriter::Instance();
-    Account* pCurrentAcount = db -> getAccountInstance();
-
     if(pCurrentAcount->isSpendingsEmpty() == true && pCurrentAcount->isIncomeEmpty() == true)
         ui->emptyLabel->show();
     else
@@ -240,5 +210,4 @@ void mainDashboard::on_calculatorButton_clicked()
 {
     calc.show();
 }
-
 

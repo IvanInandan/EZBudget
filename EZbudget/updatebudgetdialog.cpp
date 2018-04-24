@@ -21,9 +21,6 @@ void updateBudgetDialog::on_okButton_clicked()
 //    /*QStringList lst = budgetEntered.split(" ");
 //    int value = lst[1].toInt()*/;
 
-    DatabaseReaderWriter *db = DatabaseReaderWriter::Instance();
-    Account *currentAccount = db->getAccountInstance();
-
     if(ui->budgetEntered->value() > currentAccount->getIncome())
         ui->budgetWarning->show();
     else

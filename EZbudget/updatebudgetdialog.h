@@ -2,6 +2,8 @@
 #define UPDATEBUDGETDIALOG_H
 
 #include <QDialog>
+#include "databasereaderwriter.h"
+#include "account.h"
 
 namespace Ui {
 class updateBudgetDialog;
@@ -25,6 +27,9 @@ private slots:
 
 private:
     Ui::updateBudgetDialog *ui;
+
+    DatabaseReaderWriter *db = DatabaseReaderWriter::Instance();
+    Account *currentAccount = db->getAccountInstance();
 };
 
 #endif // UPDATEBUDGETDIALOG_H

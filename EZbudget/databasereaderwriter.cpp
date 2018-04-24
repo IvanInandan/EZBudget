@@ -26,10 +26,8 @@ DatabaseReaderWriter::DatabaseReaderWriter()
 void DatabaseReaderWriter::newUser(QString username, QString password) //int income, int budget
 {
     QSqlQuery qry;
-    //QString i = QString::number(income);
-    //QString b = QString::number(budget);
-    //qry.exec("insert into users values('"+username+"','"+password+"','"+i+"', '"+b+"')");
-    qry.exec("insert into users values('"+username+"','"+password+"')");
+    QString i = QString::number(0);
+    qry.exec("insert into users values('"+username+"','"+password+"','"+i+"', '"+i+"','"+i+"')");
 }
 
 bool DatabaseReaderWriter::databaseLoginCheck(QString username, QString password)
