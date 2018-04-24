@@ -7,6 +7,7 @@
 #include <QtCharts/QPieSeries>
 #include "tablewidget.h"
 #include "updatebudgetdialog.h"
+#include "calculator.h"
 //class QPieSeries;
 //class QBarSet;
 
@@ -36,6 +37,9 @@ private slots:
 
     void on_updateBudgetButton_clicked();
 
+    void on_calculatorButton_clicked();
+
+
 private:
     Ui::mainDashboard *ui;
     //QBarSet *m_set;
@@ -50,6 +54,8 @@ private:
     tableWidget incomeTable;
     int flag;
     updateBudgetDialog updateBudgetWindow;
+    Calculator calc;
+
 };
 
 #endif // MAINDASHBOARD_H
