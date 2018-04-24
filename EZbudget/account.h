@@ -20,7 +20,6 @@
 #include "tablewidget.h"
 #include "transaction.h"
 
-
 //#include "maindashboard.h"
 
 

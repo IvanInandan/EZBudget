@@ -37,8 +37,8 @@ mainDashboard::mainDashboard(QWidget *parent) :
         spendingsBarSet = new QBarSet("Spendings");
         budgetLeftBarSet = new QBarSet("Budget Left");
 
-        spendingsBarSet->append(5);
-        budgetLeftBarSet->append(10);
+        spendingsBarSet->append(0);             //show nothing initially
+        budgetLeftBarSet->append(0);
 
         spendingsBarSet->setLabel("Spendings");
         budgetLeftBarSet->setLabel("Budget Left");
@@ -81,12 +81,8 @@ mainDashboard::mainDashboard(QWidget *parent) :
 
         //catSeries = new QPieSeries(); //take this out
 
-        QStringList transactions = {
-                    "T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8", "T9", "T10", "T11", "T12"
-        };
-        QStringList categories = {
-            "Bills", "Gas", "Food", "Entertainment"
-        };
+        QStringList transactions = {"Transaction"};
+        QStringList categories = {"Transaction"};
         /*
         QStringList categories = pCurrentAcount->getSpendingCategories();
         for(QString category : categories)
@@ -104,7 +100,7 @@ mainDashboard::mainDashboard(QWidget *parent) :
             catSeries->setName("Spendings - " + category);
 
             for (const QString &transaction : transactions)
-                catSeries->append(new spendingsBreakdownSlice(QRandomGenerator::global()->bounded(1000), transaction, spendSeries));
+                catSeries->append(new spendingsBreakdownSlice(1, transaction, spendSeries));
 
             QObject::connect(catSeries, &QPieSeries::clicked, spendingsBreakdown, &spendingsBreakDownChart::handleSliceClicked);
 
@@ -134,6 +130,7 @@ mainDashboard::~mainDashboard()
 
 void mainDashboard::updateUi()
 {
+    //ui->emptyLabel->hide();
     // lets get the account
     DatabaseReaderWriter* db = DatabaseReaderWriter::Instance();
     Account* pCurrentAcount = db -> getAccountInstance();
@@ -226,68 +223,7 @@ void mainDashboard::updateUi()
     spendBreakdownChartView->setGeometry(ui->spendingChartPlaceholder->geometry());
     spendBreakdownChartView->showNormal();
 
-
-//    for (const QString &name : names) {
-//        QPieSeries *series = new QPieSeries(&window);
-//        series->setName("Sales by month - " + name);
-
-//        for (const QString &month : months)
-//            *series << new DrilldownSlice(QRandomGenerator::global()->bounded(1000), month, yearSeries);
-
-//        QObject::connect(series, &QPieSeries::clicked, chart, &DrilldownChart::handleSliceClicked);
-
-//        *yearSeries << new DrilldownSlice(series->sum(), name, series);
-//    }
-
-//    QObject::connect(yearSeries, &QPieSeries::clicked, chart, &DrilldownChart::handleSliceClicked);
-
-//    chart->changeSeries(yearSeries);
-
-//    QChartView *chartView = new QChartView(chart);
-
-    }
-
-    //for(int i = 0; i < pCurrentAcount->get)
-    //spendingsBreakDownChart *spendingsBreakdown = new spendingsBreakDownChart();
-
-//    for(int i = 0; i < pCurrentAcount->get(); i++)
-//    {
-//        QString pCategoryTitle= pCurrentAcount->getCategoryTitle(i);
-//        categories << pCategoryTitle;
-//        int pCategoryTotal = pCurrentAcount->getTotalFromOneCategory(i);
-//        spendSeries->append(new spendingsBreakdownSlice(pCategoryTotal, pCategoryTitle, catSeries));
-//        //for(int i = 0; i < pCurrentAcount)
-//    }
-
-    //in progress
-
-//    for (QString &category : categories) {
-//        catSeries = new QPieSeries();
-//        catSeries->setName("Spendings - " + category);
-
-//        for (QString &transaction : transactions)
-//            for(int i = 0; i < pCurrentAcount->getTotaNumberOfTransactions(qExpenses); i++)
-//            catSeries->append(new spendingsBreakdownSlice(pCurrentAcount->getTotalFromTransaction(i, qExpenses), transaction, spendSeries));
-
-//        QObject::connect(catSeries, &QPieSeries::clicked, spendingsBreakdown, &spendingsBreakDownChart::handleSliceClicked);
-
-//        spendSeries->append(new spendingsBreakdownSlice(pCurrentAcount->getTotalFromOneCategory(category, qExpenses), category, catSeries));
-//    }
-
-//    QObject::connect(spendSeries, &QPieSeries::clicked, spendingsBreakdown, &spendingsBreakDownChart::handleSliceClicked);
-//    spendingsBreakdown->changeSeries(spendSeries);
-
-    //    for (const QString &category : categories) {
-    //        catSeries = new QPieSeries();
-    //        //catSeries->setName("Spendings by Category " + name);
-
-    //        //for (const QString &month : months)
-    //        //    catSeries->append(new spendingsBreakdownSlice(QRandomGenerator::global()->bounded(1000), month, spendSeries));
-
-    //        //QObject::connect(catSeries, &QPieSeries::clicked, spendingsBreakdown, &spendingsBreakDownChart::handleSliceClicked);
-
-    //        spendSeries->append(new spendingsBreakdownSlice(13, category, catSeries));
-    //    }
+}
 
 
 

@@ -7,6 +7,7 @@ updateBudgetDialog::updateBudgetDialog(QWidget *parent) :
     ui(new Ui::updateBudgetDialog)
 {
     ui->setupUi(this);
+    ui->budgetWarning->hide();
 }
 
 updateBudgetDialog::~updateBudgetDialog()
@@ -23,10 +24,16 @@ void updateBudgetDialog::on_okButton_clicked()
     DatabaseReaderWriter *db = DatabaseReaderWriter::Instance();
     Account *currentAccount = db->getAccountInstance();
 
-    currentAccount->setBudget(ui->budgetEntered->value());
+    if(ui->budgetEntered->value() > currentAccount->getIncome())
+        ui->budgetWarning->show();
+    else
+    {
+        currentAccount->setBudget(ui->budgetEntered->value());
+        ui->budgetWarning->hide();
+        this->hide();
+    }
 
 //     db -> saveProfile();
-    this->hide();
 }
 
 int updateBudgetDialog::updateBudget() const

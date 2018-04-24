@@ -26,47 +26,51 @@ QT_BEGIN_NAMESPACE
 class Ui_updateBudgetDialog
 {
 public:
-    QLabel *label;
-    QLabel *label_2;
-    QWidget *widget;
+    QLabel *budgetPrompt;
+    QLabel *dollarSign;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout_2;
     QPushButton *cancelButton;
     QPushButton *okButton;
     QDoubleSpinBox *budgetEntered;
+    QLabel *budgetWarning;
 
     void setupUi(QDialog *updateBudgetDialog)
     {
         if (updateBudgetDialog->objectName().isEmpty())
             updateBudgetDialog->setObjectName(QStringLiteral("updateBudgetDialog"));
-        updateBudgetDialog->resize(390, 111);
-        label = new QLabel(updateBudgetDialog);
-        label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(12, 12, 205, 16));
-        label_2 = new QLabel(updateBudgetDialog);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(13, 43, 16, 16));
-        widget = new QWidget(updateBudgetDialog);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(160, 70, 228, 32));
-        horizontalLayout_2 = new QHBoxLayout(widget);
+        updateBudgetDialog->resize(489, 111);
+        budgetPrompt = new QLabel(updateBudgetDialog);
+        budgetPrompt->setObjectName(QStringLiteral("budgetPrompt"));
+        budgetPrompt->setGeometry(QRect(12, 12, 205, 16));
+        dollarSign = new QLabel(updateBudgetDialog);
+        dollarSign->setObjectName(QStringLiteral("dollarSign"));
+        dollarSign->setGeometry(QRect(13, 43, 16, 16));
+        layoutWidget = new QWidget(updateBudgetDialog);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(300, 70, 164, 32));
+        horizontalLayout_2 = new QHBoxLayout(layoutWidget);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        cancelButton = new QPushButton(widget);
+        cancelButton = new QPushButton(layoutWidget);
         cancelButton->setObjectName(QStringLiteral("cancelButton"));
 
         horizontalLayout_2->addWidget(cancelButton);
 
-        okButton = new QPushButton(widget);
+        okButton = new QPushButton(layoutWidget);
         okButton->setObjectName(QStringLiteral("okButton"));
 
         horizontalLayout_2->addWidget(okButton);
 
         budgetEntered = new QDoubleSpinBox(updateBudgetDialog);
         budgetEntered->setObjectName(QStringLiteral("budgetEntered"));
-        budgetEntered->setGeometry(QRect(30, 40, 351, 24));
+        budgetEntered->setGeometry(QRect(30, 40, 441, 24));
         budgetEntered->setAutoFillBackground(false);
         budgetEntered->setButtonSymbols(QAbstractSpinBox::NoButtons);
         budgetEntered->setMaximum(1e+41);
+        budgetWarning = new QLabel(updateBudgetDialog);
+        budgetWarning->setObjectName(QStringLiteral("budgetWarning"));
+        budgetWarning->setGeometry(QRect(30, 80, 244, 16));
 
         retranslateUi(updateBudgetDialog);
 
@@ -76,10 +80,11 @@ public:
     void retranslateUi(QDialog *updateBudgetDialog)
     {
         updateBudgetDialog->setWindowTitle(QApplication::translate("updateBudgetDialog", "Dialog", nullptr));
-        label->setText(QApplication::translate("updateBudgetDialog", "Please enter your desired budget:", nullptr));
-        label_2->setText(QApplication::translate("updateBudgetDialog", "$", nullptr));
+        budgetPrompt->setText(QApplication::translate("updateBudgetDialog", "Please enter your desired budget:", nullptr));
+        dollarSign->setText(QApplication::translate("updateBudgetDialog", "$", nullptr));
         cancelButton->setText(QApplication::translate("updateBudgetDialog", "Cancel", nullptr));
         okButton->setText(QApplication::translate("updateBudgetDialog", "OK", nullptr));
+        budgetWarning->setText(QApplication::translate("updateBudgetDialog", "Please enter budget within your income.", nullptr));
     } // retranslateUi
 
 };

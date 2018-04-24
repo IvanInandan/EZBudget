@@ -39,7 +39,7 @@ public:
     QPushButton *incomeButton;
     QWidget *spendSaveChartPlaceholder;
     QPushButton *updateBudgetButton;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QVBoxLayout *verticalLayout;
     QLabel *budgetLabel;
@@ -49,6 +49,7 @@ public:
     QLabel *updateBudgetLeftLabel;
     QLabel *updateCurrentIncomeLeftLabel;
     QLabel *updateCurrentSavingsLabel;
+    QLabel *emptyLabel;
     QMenuBar *menuBar;
     QMenu *menuSettings;
     QToolBar *mainToolBar;
@@ -82,10 +83,10 @@ public:
         updateBudgetButton = new QPushButton(centralWidget);
         updateBudgetButton->setObjectName(QStringLiteral("updateBudgetButton"));
         updateBudgetButton->setGeometry(QRect(810, 20, 141, 32));
-        widget = new QWidget(centralWidget);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(20, 0, 251, 91));
-        horizontalLayout = new QHBoxLayout(widget);
+        layoutWidget = new QWidget(centralWidget);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(20, 0, 251, 91));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
@@ -93,17 +94,17 @@ public:
         verticalLayout = new QVBoxLayout();
         verticalLayout->setSpacing(6);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        budgetLabel = new QLabel(widget);
+        budgetLabel = new QLabel(layoutWidget);
         budgetLabel->setObjectName(QStringLiteral("budgetLabel"));
 
         verticalLayout->addWidget(budgetLabel);
 
-        budgetLabel_2 = new QLabel(widget);
+        budgetLabel_2 = new QLabel(layoutWidget);
         budgetLabel_2->setObjectName(QStringLiteral("budgetLabel_2"));
 
         verticalLayout->addWidget(budgetLabel_2);
 
-        budgetLabel_3 = new QLabel(widget);
+        budgetLabel_3 = new QLabel(layoutWidget);
         budgetLabel_3->setObjectName(QStringLiteral("budgetLabel_3"));
 
         verticalLayout->addWidget(budgetLabel_3);
@@ -114,17 +115,17 @@ public:
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        updateBudgetLeftLabel = new QLabel(widget);
+        updateBudgetLeftLabel = new QLabel(layoutWidget);
         updateBudgetLeftLabel->setObjectName(QStringLiteral("updateBudgetLeftLabel"));
 
         verticalLayout_2->addWidget(updateBudgetLeftLabel);
 
-        updateCurrentIncomeLeftLabel = new QLabel(widget);
+        updateCurrentIncomeLeftLabel = new QLabel(layoutWidget);
         updateCurrentIncomeLeftLabel->setObjectName(QStringLiteral("updateCurrentIncomeLeftLabel"));
 
         verticalLayout_2->addWidget(updateCurrentIncomeLeftLabel);
 
-        updateCurrentSavingsLabel = new QLabel(widget);
+        updateCurrentSavingsLabel = new QLabel(layoutWidget);
         updateCurrentSavingsLabel->setObjectName(QStringLiteral("updateCurrentSavingsLabel"));
 
         verticalLayout_2->addWidget(updateCurrentSavingsLabel);
@@ -132,6 +133,9 @@ public:
 
         horizontalLayout->addLayout(verticalLayout_2);
 
+        emptyLabel = new QLabel(centralWidget);
+        emptyLabel->setObjectName(QStringLiteral("emptyLabel"));
+        emptyLabel->setGeometry(QRect(240, 50, 551, 51));
         mainDashboard->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(mainDashboard);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -163,7 +167,7 @@ public:
         actionLog_Out->setText(QApplication::translate("mainDashboard", "Log Out", nullptr));
         actionQuit->setText(QApplication::translate("mainDashboard", "Quit", nullptr));
         spendingsButton->setText(QApplication::translate("mainDashboard", "Spendings", nullptr));
-        incomeButton->setText(QApplication::translate("mainDashboard", "Income/Savings", nullptr));
+        incomeButton->setText(QApplication::translate("mainDashboard", "Income", nullptr));
         updateBudgetButton->setText(QApplication::translate("mainDashboard", "Update Budget", nullptr));
         budgetLabel->setText(QApplication::translate("mainDashboard", "<html><head/><body><p><span style=\" font-size:12pt;\">Budget Left:</span></p></body></html>", nullptr));
         budgetLabel_2->setText(QApplication::translate("mainDashboard", "<html><head/><body><p><span style=\" font-size:12pt;\">Current Income:</span></p></body></html>", nullptr));
@@ -171,6 +175,7 @@ public:
         updateBudgetLeftLabel->setText(QApplication::translate("mainDashboard", "TextLabel", nullptr));
         updateCurrentIncomeLeftLabel->setText(QApplication::translate("mainDashboard", "TextLabel", nullptr));
         updateCurrentSavingsLabel->setText(QApplication::translate("mainDashboard", "TextLabel", nullptr));
+        emptyLabel->setText(QApplication::translate("mainDashboard", "It's looking a little empty. Click on the Spendings or Income buttons to see your cash flow!", nullptr));
         menuSettings->setTitle(QApplication::translate("mainDashboard", "Settings", nullptr));
     } // retranslateUi
 

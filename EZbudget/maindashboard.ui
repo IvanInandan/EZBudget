@@ -47,7 +47,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Income/Savings</string>
+     <string>Income</string>
     </property>
    </widget>
    <widget class="QWidget" name="spendSaveChartPlaceholder" native="true">
@@ -73,7 +73,7 @@
      <string>Update Budget</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -134,6 +134,19 @@
       </layout>
      </item>
     </layout>
+   </widget>
+   <widget class="QLabel" name="emptyLabel">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>50</y>
+      <width>551</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>It's looking a little empty. Click on the Spendings or Income buttons to see your cash flow!</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
