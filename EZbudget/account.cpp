@@ -51,7 +51,7 @@ void Account::addTransactions(QString category, QString tName, QString tDate, QS
     else
     {
         income.push_back(t);
-        setIncome(monthlyIncome+amount);
+        //setIncome(monthlyIncome+amount);
     }
     emit accountModified();
 
@@ -64,7 +64,7 @@ void Account::removeTransactions(int index, QString &type)
         spendings.remove(index);
     else
     {
-        setIncome(monthlyIncome-income[index].getTransactionAmount());
+        //setIncome(monthlyIncome-income[index].getTransactionAmount());
         income.remove(index);
     }
         // db->removeTransaction(index, type);
@@ -87,7 +87,7 @@ void Account::editTransactions(QString category, QString tName, QString tDate, Q
         income[index].setTransactionCategory(category);
         income[index].setTransactionDate(tDate);
         income[index].setTransactionName(tName);
-        setIncome(monthlyIncome+amount);
+        //setIncome(monthlyIncome+amount);
     }
     //db->editTransaction(category, tName, tDate, type, amount, index);
     emit accountModified();
@@ -241,10 +241,10 @@ bool Account::verifyNumber(int input)
 
     return success;
 }
-
+/*
 /*PURPOSE: It will set the income to what the user inputted for income
  * Author: Jose
- * */
+ *
 bool Account::setIncome(int i)
 {
     if(verifyNumber(i) == success && monthlyBudget != i)
@@ -255,6 +255,8 @@ bool Account::setIncome(int i)
         }
     return failure;
 }
+*/
+
 /* PURPOSE: It will set the monthly budget, informs a slot of the change and returns success
  * if certain conditions are met.
  * Otherwise returns failure.
@@ -271,6 +273,7 @@ bool Account::setBudget(int b)
         {
             monthlyBudget = b;
             emit accountModified();
+            db ->updateMonthlyBudget();
             return success;
         }
     return failure;
@@ -284,7 +287,7 @@ bool Account::setBudget(int b)
  * Author: Jose Quirarte
  * Date: 2/24/18
  *
- * */
+ *
 
 bool Account::setSaving(int savings)
 {
@@ -299,6 +302,7 @@ bool Account::setSaving(int savings)
         }
     return failure;
 }
+*/
 
 bool Account::isSpendingsEmpty() const
 {
@@ -312,7 +316,7 @@ bool Account::isIncomeEmpty() const
 
 int Account::getSavings() const
 {
-    return monthlySavings;
+    return (monthlyIncome - monthlyBudget);
 }
 int Account::getBudget() const
 {
@@ -320,7 +324,10 @@ int Account::getBudget() const
 }
 int Account::getIncome() const
 {
-    return monthlyIncome;
+    string income = "Income";
+    QString qIncome = QString::fromStdString(income);
+
+    return getTotalFromType(qIncome);
 }
 
 mainDashboard* Account::getDash()

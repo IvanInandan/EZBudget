@@ -76,8 +76,8 @@ public:
 public slots:
     //setters
     bool setBudget(int b);
-    bool setSaving(int savings);
-    bool setIncome(int i);
+    //bool setSaving(int savings);
+    //bool setIncome(int i);
     void editTransactions(QString category, QString tName, QString tDate, QString &type, int amount, int index);
     void addTransactions(QString category, QString tName, QString tDate, QString &type, int amount);
     void removeTransactions(int index, QString &type);
