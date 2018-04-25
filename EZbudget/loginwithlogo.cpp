@@ -11,7 +11,7 @@ loginWithLogo::loginWithLogo(QWidget *parent) :
     setMinimumSize(600, 600);
     setStyleSheet("QMainWindow {background: #a9e5aa}");
     this->setWindowTitle("EZBudget");
-    this->setWindowIcon(QIcon("C:/Users/sekos/Downloads/IMG_20180417_171012_152.jpg"));
+    this->setWindowIcon(QIcon("C:/sqlite2/photo_2018-04-24_15-26-23.jpg"));
     if(!db->checkConnection())
         ui->status_label->setText("Failed to open database");
     else

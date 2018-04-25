@@ -20,7 +20,7 @@ DatabaseReaderWriter* DatabaseReaderWriter::Instance()
 DatabaseReaderWriter::DatabaseReaderWriter()
 {
     mydb = QSqlDatabase::addDatabase("QSQLITE");
-    mydb.setDatabaseName("C:/Users/qrrt_/Documents/GitHub/EZBudget/EZbudget/QtEzBudget.db");
+    mydb.setDatabaseName("C:/sqlite2/QtEzBudget.db");
 }
 
 void DatabaseReaderWriter::newUser(QString username, QString password) //int income, int budget
@@ -61,16 +61,16 @@ void DatabaseReaderWriter::loadProfile()
 {
     int income, budget, savings;
     QSqlQuery qry1, qry2, qry3;
-//    qry1.exec("select * from users where name='"+user + "'");
-//    {
-//        while(qry1.next())
-//        {
-//           income = qry1.value(2).toString().toInt();
-//           budget = qry1.value(3).toString().toInt();
-//           savings = qry1.value(4).toString().toInt();
-//        }
-//    }
-    //c_account ->setBudget(budget);
+    qry1.exec("select * from users where name='"+user + "'");
+    {
+        while(qry1.next())
+        {
+           income = qry1.value(2).toString().toInt();
+           budget = qry1.value(3).toString().toInt();
+           savings = qry1.value(4).toString().toInt();
+        }
+    }
+    c_account ->setBudget(budget);
     //c_account ->setIncome(income);
     //c_account ->setSaving(savings);
 
@@ -116,7 +116,7 @@ void DatabaseReaderWriter::loadProfile()
             c_account -> addTransactions(category, name, date, t, amount);
         }
       }
-      c_account->setBudget(0);
+      //c_account->setBudget(0);
       c_account->invokeUi();
 
 //    mainDash = new mainDashboard();

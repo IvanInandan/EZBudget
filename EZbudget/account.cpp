@@ -269,11 +269,11 @@ bool Account::setBudget(int b)
 {
     //we dont want m_budget and b to be the same in case of cyclic connections to avoid infinite looping
     //and we also want to make sure b is positive
-    if(verifyNumber(b) == success && monthlyBudget != b)
+    if(verifyNumber(b) == success)// && monthlyBudget != b)
         {
             monthlyBudget = b;
             emit accountModified();
-            db ->updateMonthlyBudget();
+            //db ->updateMonthlyBudget();
             return success;
         }
     return failure;
