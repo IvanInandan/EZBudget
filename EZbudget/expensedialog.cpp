@@ -7,6 +7,7 @@ ExpenseDialog::ExpenseDialog(QWidget *parent) :
 {
     ui->setupUi(this);
     setMinimumWidth(600);
+    ui->transactionDateEdit->setDate(QDate::currentDate());
 }
 
 ExpenseDialog::~ExpenseDialog()

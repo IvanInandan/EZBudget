@@ -12,6 +12,7 @@ editTransaction::editTransaction(QWidget *parent) :
     ui->setupUi(this);
     ui->buttonBox->button(QDialogButtonBox::Ok)->setText("Save Edit");
     ui->buttonBox->button(QDialogButtonBox::Cancel)->setText("Cancel Edit");
+    ui->transactionDateEdit->setDate(QDate::currentDate());
 }
 
 editTransaction::~editTransaction()

@@ -242,7 +242,7 @@ bool Account::verifyNumber(int input)
     return success;
 }
 /*
-/*PURPOSE: It will set the income to what the user inputted for income
+PURPOSE: It will set the income to what the user inputted for income
  * Author: Jose
  *
 bool Account::setIncome(int i)
