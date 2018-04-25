@@ -316,7 +316,9 @@ bool Account::isIncomeEmpty() const
 
 int Account::getSavings() const
 {
-    return (monthlyIncome - monthlyBudget);
+    string income = "Income";
+    QString qIncome = QString::fromStdString(income);
+    return (getTotalFromType(qIncome) - monthlyBudget);
 }
 int Account::getBudget() const
 {
