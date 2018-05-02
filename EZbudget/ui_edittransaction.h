@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'edittransaction.ui'
 **
-** Created by: Qt User Interface Compiler version 5.10.1
+** Created by: Qt User Interface Compiler version 5.10.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -53,10 +53,10 @@ public:
     {
         if (editTransaction->objectName().isEmpty())
             editTransaction->setObjectName(QStringLiteral("editTransaction"));
-        editTransaction->resize(556, 128);
+        editTransaction->resize(618, 122);
         layoutWidget = new QWidget(editTransaction);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(30, 10, 564, 76));
+        layoutWidget->setGeometry(QRect(20, 25, 571, 71));
         verticalLayout_5 = new QVBoxLayout(layoutWidget);
         verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
         verticalLayout_5->setContentsMargins(0, 0, 0, 0);
@@ -118,7 +118,7 @@ public:
         transactionAmountEdit = new QDoubleSpinBox(layoutWidget);
         transactionAmountEdit->setObjectName(QStringLiteral("transactionAmountEdit"));
         transactionAmountEdit->setButtonSymbols(QAbstractSpinBox::NoButtons);
-        transactionAmountEdit->setDecimals(7);
+        transactionAmountEdit->setDecimals(3);
         transactionAmountEdit->setMaximum(1e+7);
 
         verticalLayout_4->addWidget(transactionAmountEdit);

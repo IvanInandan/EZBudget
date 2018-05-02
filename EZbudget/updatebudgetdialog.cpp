@@ -7,6 +7,8 @@ updateBudgetDialog::updateBudgetDialog(QWidget *parent) :
     ui(new Ui::updateBudgetDialog)
 {
     ui->setupUi(this);
+    int budget = currentAccount->getBudget();
+    ui->budgetEntered->setValue(budget);
     ui->budgetWarning->hide();
 }
 
@@ -31,7 +33,6 @@ void updateBudgetDialog::on_okButton_clicked()
         this->hide();
     }
 
-//     db -> saveProfile();
 }
 
 int updateBudgetDialog::updateBudget() const

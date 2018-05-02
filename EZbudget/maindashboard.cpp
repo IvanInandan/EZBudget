@@ -211,3 +211,14 @@ void mainDashboard::on_calculatorButton_clicked()
     calc.show();
 }
 
+
+void mainDashboard::on_actionLog_Out_triggered()
+{
+    this->close();
+    newLogin.show();
+}
+
+void mainDashboard::on_actionQuit_triggered()
+{
+    this->close();
+}

@@ -8,6 +8,9 @@ loginWithLogo::loginWithLogo(QWidget *parent) :
     ui(new Ui::loginWithLogo)
 {
     ui->setupUi(this);
+    QPixmap pix("/Users/elainejoymutuc/Downloads/2018-04-24 17.49.22.jpg");
+    ui->logo->setPixmap(pix);
+
     setMinimumSize(600, 600);
     setStyleSheet("QMainWindow {background: #a9e5aa}");
     this->setWindowTitle("EZBudget");

@@ -19,6 +19,7 @@
 #include "category.h"
 #include "tablewidget.h"
 #include "transaction.h"
+//#include "loginwithlogo.h"
 
 //#include "maindashboard.h"
 

@@ -49,14 +49,14 @@ public:
     QLabel *updateCurrentIncomeLeftLabel;
     QLabel *updateCurrentSavingsLabel;
     QLabel *emptyLabel;
-    QWidget *widget;
+    QWidget *layoutWidget1;
     QVBoxLayout *verticalLayout_3;
     QPushButton *calculatorButton;
     QPushButton *updateBudgetButton;
-    QMenuBar *menuBar;
-    QMenu *menuSettings;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
+    QMenuBar *menuBar;
+    QMenu *menuSettings;
 
     void setupUi(QMainWindow *mainDashboard)
     {
@@ -136,37 +136,37 @@ public:
         emptyLabel = new QLabel(centralWidget);
         emptyLabel->setObjectName(QStringLiteral("emptyLabel"));
         emptyLabel->setGeometry(QRect(210, 80, 551, 51));
-        widget = new QWidget(centralWidget);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(820, 20, 134, 66));
-        verticalLayout_3 = new QVBoxLayout(widget);
+        layoutWidget1 = new QWidget(centralWidget);
+        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(820, 20, 134, 66));
+        verticalLayout_3 = new QVBoxLayout(layoutWidget1);
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setContentsMargins(11, 11, 11, 11);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
-        calculatorButton = new QPushButton(widget);
+        calculatorButton = new QPushButton(layoutWidget1);
         calculatorButton->setObjectName(QStringLiteral("calculatorButton"));
 
         verticalLayout_3->addWidget(calculatorButton);
 
-        updateBudgetButton = new QPushButton(widget);
+        updateBudgetButton = new QPushButton(layoutWidget1);
         updateBudgetButton->setObjectName(QStringLiteral("updateBudgetButton"));
 
         verticalLayout_3->addWidget(updateBudgetButton);
 
         mainDashboard->setCentralWidget(centralWidget);
-        menuBar = new QMenuBar(mainDashboard);
-        menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 973, 22));
-        menuSettings = new QMenu(menuBar);
-        menuSettings->setObjectName(QStringLiteral("menuSettings"));
-        mainDashboard->setMenuBar(menuBar);
         mainToolBar = new QToolBar(mainDashboard);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
         mainDashboard->addToolBar(Qt::TopToolBarArea, mainToolBar);
         statusBar = new QStatusBar(mainDashboard);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         mainDashboard->setStatusBar(statusBar);
+        menuBar = new QMenuBar(mainDashboard);
+        menuBar->setObjectName(QStringLiteral("menuBar"));
+        menuBar->setGeometry(QRect(0, 0, 973, 22));
+        menuSettings = new QMenu(menuBar);
+        menuSettings->setObjectName(QStringLiteral("menuSettings"));
+        mainDashboard->setMenuBar(menuBar);
 
         menuBar->addAction(menuSettings->menuAction());
         menuSettings->addAction(actionUser_Settings);

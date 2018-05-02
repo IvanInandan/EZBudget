@@ -41,7 +41,7 @@
      <rect>
       <x>100</x>
       <y>270</y>
-      <width>421</width>
+      <width>428</width>
       <height>251</height>
      </rect>
     </property>
@@ -218,6 +218,25 @@
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QLabel" name="logo">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>80</y>
+      <width>271</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../../../Downloads/2018-04-24 17.49.22.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -225,7 +244,7 @@
      <x>0</x>
      <y>0</y>
      <width>631</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

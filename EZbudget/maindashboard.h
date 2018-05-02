@@ -27,6 +27,7 @@
 #include "calculator.h"
 #include "spendingsbreakdownchart.h"
 #include "spendingsbreakdownslice.h"
+#include "loginwithlogo.h"
 
 using namespace std;
 using namespace QtCharts;
@@ -58,6 +59,10 @@ private slots:
     void on_calculatorButton_clicked();
 
 
+    void on_actionLog_Out_triggered();
+
+    void on_actionQuit_triggered();
+
 private:
     Ui::mainDashboard *ui;
 
@@ -76,6 +81,7 @@ private:
 
     updateBudgetDialog updateBudgetWindow;
     Calculator calc;
+    loginWithLogo newLogin;
 
 };
 

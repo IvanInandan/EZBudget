@@ -51,6 +51,8 @@ public:
     QPushButton *resetPassword;
     QPushButton *forgotPassword;
     QLabel *status_label;
+    QLabel *label_3;
+    QLabel *logo;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -69,7 +71,7 @@ public:
         label_4->setScaledContents(true);
         layoutWidget = new QWidget(centralwidget);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(100, 270, 421, 251));
+        layoutWidget->setGeometry(QRect(100, 270, 428, 251));
         verticalLayout_4 = new QVBoxLayout(layoutWidget);
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
         verticalLayout_4->setContentsMargins(0, 0, 0, 0);
@@ -181,10 +183,20 @@ public:
 
         verticalLayout_4->addWidget(status_label);
 
+        label_3 = new QLabel(centralwidget);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(170, 60, 301, 171));
+        label_3->setPixmap(QPixmap(QString::fromUtf8("../../../../../../sqlite2/photo_2018-04-24_15-26-23.jpg")));
+        label_3->setScaledContents(true);
+        logo = new QLabel(centralwidget);
+        logo->setObjectName(QStringLiteral("logo"));
+        logo->setGeometry(QRect(180, 80, 271, 131));
+        logo->setPixmap(QPixmap(QString::fromUtf8("../../../../Downloads/2018-04-24 17.49.22.jpg")));
+        logo->setScaledContents(true);
         loginWithLogo->setCentralWidget(centralwidget);
         menubar = new QMenuBar(loginWithLogo);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 631, 17));
+        menubar->setGeometry(QRect(0, 0, 631, 22));
         loginWithLogo->setMenuBar(menubar);
         statusbar = new QStatusBar(loginWithLogo);
         statusbar->setObjectName(QStringLiteral("statusbar"));
@@ -206,6 +218,8 @@ public:
         resetPassword->setText(QApplication::translate("loginWithLogo", "Reset Password", nullptr));
         forgotPassword->setText(QApplication::translate("loginWithLogo", "Forgot Password", nullptr));
         status_label->setText(QApplication::translate("loginWithLogo", "<html><head/><body><p><span style=\" color:#ffffff;\">[+]Status</span></p></body></html>", nullptr));
+        label_3->setText(QString());
+        logo->setText(QString());
     } // retranslateUi
 
 };
