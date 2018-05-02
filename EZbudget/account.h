@@ -6,7 +6,7 @@
  * Author: Jose Quirarte
  * Date: 2/24/18
  *
- * Edited by Alex Shershnov on 4/2/2018
+ * Edited by Alex Shershnov on 5/2/2018
  * */
 
 
@@ -19,10 +19,6 @@
 #include "category.h"
 #include "tablewidget.h"
 #include "transaction.h"
-//#include "loginwithlogo.h"
-
-//#include "maindashboard.h"
-
 
 class mainDashboard;
 
@@ -33,7 +29,6 @@ class Account : public QObject
 private:
     int monthlyIncome;                     //monthly income
     int monthlyBudget;                     //stores monthly budget
-    //int savingsPercentage;                 //will be used to calculate monthly savings
     int monthlySavings;                    //stores monthly savings
 
     QVector<Transaction> spendings;

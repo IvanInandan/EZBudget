@@ -14,9 +14,8 @@
 #include <QtSql>
 #include <QFileInfo>
 #include <iostream>
-#include "account.h"// was <Account.h>
+#include "account.h"
 #include "transaction.h"
-//#include "maindashboard.h"
 
 class Account;
 
@@ -38,18 +37,14 @@ public:
     void updateProfile(int income, int budget, int savings);
 
     void updateMonthlyBudget();
-    void updateMonthlyIncome();
-    void updateMonthlySavings();
-
 
     Account* getAccountInstance();
+    void removeAccountAccountInstance();
 private:
     QString user;
     static DatabaseReaderWriter* _instance;
     QSqlDatabase mydb;
     Account *c_account = new Account();
-    Transaction temp;
-    //mainDashboard *mainDash;
 };
 
 #endif // DATABASEREADERWRITER_H
