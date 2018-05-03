@@ -31,7 +31,6 @@ SOURCES += \
     maindashboard.cpp \
     spendingsbreakdownchart.cpp \
     spendingsbreakdownslice.cpp \
-    login.cpp \
     databasereaderwriter.cpp \
     expensedialog.cpp \
     removedialog.cpp \
@@ -55,7 +54,6 @@ HEADERS += \
     expensedialog.h \
     removedialog.h \
     tablewidget.h \
-    login.h \
     ui_expensedialog.h \
     ui_removedialog.h \
     ui_tablewidget.h \
@@ -72,7 +70,6 @@ FORMS += \
     maindashboard.ui \
     expensedialog.ui \
     maindashboard.ui \
-    login.ui \
     removedialog.ui \
     tablewidget.ui \
     rowselection.ui \
