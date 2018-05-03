@@ -8,6 +8,7 @@ Button::Button(const QString &text, QWidget *parent)
 {
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
     setText(text);
+    //setStyleSheet("QWidget {background: #a9e5aa}");
 }
 //! [0]
 

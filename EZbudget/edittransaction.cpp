@@ -13,6 +13,7 @@ editTransaction::editTransaction(QWidget *parent) :
     ui->buttonBox->button(QDialogButtonBox::Ok)->setText("Save Edit");
     ui->buttonBox->button(QDialogButtonBox::Cancel)->setText("Cancel Edit");
     ui->transactionDateEdit->setDate(QDate::currentDate());
+    setStyleSheet("QDialog {background: #a9e5aa}");
 }
 
 editTransaction::~editTransaction()

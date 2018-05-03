@@ -9,6 +9,7 @@
 Calculator::Calculator(QWidget *parent)
     : QWidget(parent)
 {
+    setStyleSheet("QWidget {background: #a9e5aa}");
     sumInMemory = 0.0;
     sumSoFar = 0.0;
     factorSoFar = 0.0;

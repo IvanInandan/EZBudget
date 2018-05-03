@@ -19,6 +19,7 @@ tableWidget::tableWidget(QWidget *parent) :
     setMinimumSize(800, 500);
     setMaximumSize(800, 500);
     setWindowTitle("Transactions");
+    setStyleSheet("QWidget {background: #a9e5aa}");
 }
 
 tableWidget::~tableWidget()

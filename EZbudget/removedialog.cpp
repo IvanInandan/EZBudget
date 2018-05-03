@@ -7,6 +7,7 @@ RemoveDialog::RemoveDialog(QWidget *parent) :
     ui(new Ui::RemoveDialog)
 {
     ui->setupUi(this);
+    setStyleSheet("QDialog {background: #a9e5aa}");
 }
 
 RemoveDialog::~RemoveDialog()

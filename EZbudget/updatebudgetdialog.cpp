@@ -10,6 +10,7 @@ updateBudgetDialog::updateBudgetDialog(QWidget *parent) :
     int budget = currentAccount->getBudget();
     ui->budgetEntered->setValue(budget);
     ui->budgetWarning->hide();
+    setStyleSheet("QDialog {background: #a9e5aa}");
 }
 
 updateBudgetDialog::~updateBudgetDialog()

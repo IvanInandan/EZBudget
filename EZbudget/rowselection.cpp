@@ -10,6 +10,7 @@ rowSelection::rowSelection(QWidget *parent) :
     ui->setupUi(this);
     ui->buttonBox->button(QDialogButtonBox::Ok)->setText("Edit Row");
     ui->buttonBox->button(QDialogButtonBox::Cancel)->setText("Cancel");
+    setStyleSheet("QDialog {background: #a9e5aa}");
 }
 
 rowSelection::~rowSelection()
