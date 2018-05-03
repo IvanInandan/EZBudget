@@ -39,7 +39,7 @@ public:
     void updateMonthlyBudget();
 
     Account* getAccountInstance();
-    void removeAccountAccountInstance();
+    void removeAccountInstance();
 private:
     QString user;
     static DatabaseReaderWriter* _instance;

@@ -202,7 +202,7 @@ Account* DatabaseReaderWriter::getAccountInstance()
     return c_account;
 }
 //Delete the current instance of an account
-void DatabaseReaderWriter::removeAccountAccountInstance()
+void DatabaseReaderWriter::removeAccountInstance()
 {
     c_account = NULL;
     delete c_account;

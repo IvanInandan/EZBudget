@@ -215,11 +215,12 @@ void mainDashboard::on_calculatorButton_clicked()
 void mainDashboard::on_actionLog_Out_triggered()
 {
     this->close();
-    db->removeAccountAccountInstance();
+    db->removeAccountInstance();
     newLogin.show();
 }
 
 void mainDashboard::on_actionQuit_triggered()
 {
+    db->removeAccountInstance();
     this->close();
 }
