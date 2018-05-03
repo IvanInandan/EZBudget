@@ -21,7 +21,7 @@ bool Account::success = true;
 Account::Account()
 {
 
-        //connect(this, SIGNAL(spendingsTableChanged(QString,QString,QString,float)), ,SLOT(updateSpendingsUi(QString,QString,QString,float)));
+
 }
 
 //Author:Alex Shershnov
@@ -51,7 +51,6 @@ void Account::addTransactions(QString category, QString tName, QString tDate, QS
     else
     {
         income.push_back(t);
-        //setIncome(monthlyIncome+amount);
     }
     emit accountModified();
 
@@ -64,10 +63,8 @@ void Account::removeTransactions(int index, QString &type)
         spendings.remove(index);
     else
     {
-        //setIncome(monthlyIncome-income[index].getTransactionAmount());
         income.remove(index);
     }
-        // db->removeTransaction(index, type);
     emit accountModified();
 }
 //Author: Alex Shershnov
@@ -87,9 +84,7 @@ void Account::editTransactions(QString category, QString tName, QString tDate, Q
         income[index].setTransactionCategory(category);
         income[index].setTransactionDate(tDate);
         income[index].setTransactionName(tName);
-        //setIncome(monthlyIncome+amount);
     }
-    //db->editTransaction(category, tName, tDate, type, amount, index);
     emit accountModified();
 }
 //Author:Alex Shershnov
@@ -241,21 +236,7 @@ bool Account::verifyNumber(int input)
 
     return success;
 }
-/*
-PURPOSE: It will set the income to what the user inputted for income
- * Author: Jose
- *
-bool Account::setIncome(int i)
-{
-    if(verifyNumber(i) == success && monthlyBudget != i)
-        {
-            monthlyIncome = i;
-            emit accountModified();
-            return success;
-        }
-    return failure;
-}
-*/
+
 
 /* PURPOSE: It will set the monthly budget, informs a slot of the change and returns success
  * if certain conditions are met.
@@ -278,31 +259,6 @@ bool Account::setBudget(int b)
         }
     return failure;
 }
-/* PURPOSE: It will set monthly savings to the product of
- * monthly budget and savingsPercent (after savingsPercent has been converted),
- * it informs a slot of the change, and returns success if certain conditions are met;
- * otherwise returns failure.
- *
- * PARAMETER: savingsPercent is the percentage of the budget the user wants to save
- * Author: Jose Quirarte
- * Date: 2/24/18
- *
- *
-
-bool Account::setSaving(int savings)
-{
-
-    //we dont new_savings to be the same in case of cyclic connections to avoid infinte looping
-    //and we also want to make sure new_savings is positive
-    if(monthlySavings != savings && verifyNumber(savings) == success)
-        {
-            monthlySavings = savings;
-            emit accountModified();
-            return success;
-        }
-    return failure;
-}
-*/
 
 bool Account::isSpendingsEmpty() const
 {

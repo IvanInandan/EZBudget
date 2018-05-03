@@ -72,18 +72,14 @@ public:
 public slots:
     //setters
     bool setBudget(int b);
-    //bool setSaving(int savings);
-    //bool setIncome(int i);
     void editTransactions(QString category, QString tName, QString tDate, QString &type, int amount, int index);
     void addTransactions(QString category, QString tName, QString tDate, QString &type, int amount);
     void removeTransactions(int index, QString &type);
 
-    //void setCategory(int index, Category &section);             //makes changes made to categories permanent
 
 signals:
     //the following function will send out a signal to inform diagrams to update themselves
     void accountModified();
-    //void spendingsTableChanged(QString transacCategory, QString transacName, QString transacDate, float amount);
 };
 
 #endif // ACCOUNT_H

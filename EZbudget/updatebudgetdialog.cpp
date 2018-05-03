@@ -19,10 +19,6 @@ updateBudgetDialog::~updateBudgetDialog()
 
 void updateBudgetDialog::on_okButton_clicked()
 {
-//    QString budgetEntered = ui->budgetEntered->text();
-//    /*QStringList lst = budgetEntered.split(" ");
-//    int value = lst[1].toInt()*/;
-
     if(ui->budgetEntered->value() > currentAccount->getIncome())
         ui->budgetWarning->show();
     else

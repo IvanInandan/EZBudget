@@ -19,13 +19,6 @@ public:
     QString transactionCategory() const;
     QDate transactionDate() const;
     double transactionAmount()const;
-    //QString transactionType();//const; // Check
-
-//public slots:
-    //void saveChangestoExpenditures(QString transacCategory, QString transacName, QString transacDate, QString transacType, float amount, int row);
-
-//signals:
-  // void saveChanges(QString transactionCategory, QString transactionName, QString transactionDate, double transactionAmount);
 
 private slots:
 

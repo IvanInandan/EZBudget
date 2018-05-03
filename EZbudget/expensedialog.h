@@ -29,7 +29,6 @@ private slots:
 
     void on_buttonBox_rejected();
 
-  //  void on_transactionTypeEdit_activated(const QString &arg1);
 
 private:
     Ui::ExpenseDialog *ui;

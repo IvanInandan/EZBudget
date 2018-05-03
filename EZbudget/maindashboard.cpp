@@ -139,11 +139,8 @@ void mainDashboard::updateUi()
     {
         catSeries = new QPieSeries();
         catSeries->setName("Spendings - " + category);
-        // You now have a category name
         QList<Transaction> transactions = pCurrentAcount->getSpendingTransactions(category);
-        // You now have all the transactions for that specific category
-        // You need to have a loop here that goes through the transactions and does something
-        // ...
+
         for(Transaction trans : transactions)
             catSeries->append(new spendingsBreakdownSlice(trans.getTransactionAmount(),trans.getTransactionName(),spendSeries));
 
@@ -169,19 +166,10 @@ void mainDashboard::on_spendingsButton_clicked()
     spendingsTable.show();
     spendingsTable.setWindowTitle("Expenses");
 
-    //Account* currentAccount = new Account;
-    //currentAccount = currentAccount->thisAcc();
-
-    //DatabaseReaderWriter *db = DatabaseReaderWriter::Instance();
-    //Account *currentAccount = db->getAccountInstance();
-    //If there are transactions in the vector & no data in the
-    //table, the ui will be updated.
 
     if(spendingsTable.getRowCount() == 0)
     {spendingsTable.updateUi(spendingsTable.windowTitle());}
 
-    //if(currentAccount->getExpenditureSize() == 0)
-    //{spendingsTable.setWindowTitle("0 in Vector");}
 }
 
 

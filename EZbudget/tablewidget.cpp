@@ -28,8 +28,6 @@ tableWidget::~tableWidget()
 
 void tableWidget::on_addTransactionButton_clicked()
 {
-    //Account *currentAccount = new Account();
-    // currentAccount->thisAcc();
 
     DatabaseReaderWriter *db = DatabaseReaderWriter::Instance();
     Account *currentAccount = db->getAccountInstance();
@@ -47,13 +45,11 @@ void tableWidget::on_addTransactionButton_clicked()
     if (res == QDialog::Rejected)
         return;
 
-    //ed.setWindowTitle("Add Transaction");
     transacName = ed.transactionName();
     transacDate = ed.transactionDate().toString("M/dd/yy");
     transacAmount = ed.transactionAmount();
     transacCategory = ed.transactionCategory();
     transacType = windowTitle();
-    // transacType = ed.transactionType(); // Check
 
     ui->tableView->insertRow(ui->tableView->rowCount());
     ui->tableView->setItem(row, NAME,
@@ -87,19 +83,6 @@ void tableWidget::on_removeTransactionButton_clicked()
         return;
     }
 
-    //Account *currentAccount = new Account;
-    // currentAccount->thisAcc();
-
-    //    QItemSelectionModel *rowCheck = ui->tableView->selectionModel();
-    //    QModelIndexList selectedRowCheck = rowCheck->selectedRows();
-    //    if(selectedRowCheck.size()!=1)
-    //    {
-    //        qDebug() << "ERROR: No rows selected";
-    //        QMessageBox rowError;
-    //        rowError.setText("No rows have been selected!");
-    //        rowError.exec();
-    //        return;
-    //    }
 
     QItemSelectionModel *select = ui->tableView->selectionModel();
     QModelIndexList selectedRows = select->selectedRows();
@@ -112,20 +95,6 @@ void tableWidget::on_removeTransactionButton_clicked()
     int transacRow = index.row();
     qDebug() << "Row is " << transacRow;
 
-    /*
-    int rem, transacRow;
-
-    RemoveDialog rd(this);
-    rem = rd.exec();
-
-    if(rem == QDialog::Rejected)
-        return;
-
-
-    rd.setWindowTitle("Remove Transaction");
-
-    transacRow = rd.removeRowNumber();
-    */
 
     ui->tableView->removeRow(transacRow);
 
@@ -135,10 +104,6 @@ void tableWidget::on_removeTransactionButton_clicked()
         transacType = "Expenses";
     }
 
-    else
-    {
-        //  transactionType = "Spendings";
-    }
     currentAccount->removeTransactions(transacRow, transacType);
     db -> removeTransaction(transacRow, transacType);
 }
@@ -160,29 +125,6 @@ void tableWidget::on_editTransactionButton_clicked()
         return;
     }
 
-    /*
-    int rowEdit, transacRow;
-
-    rowSelection row(this);
-    rowEdit = row.exec();
-
-    if(rowEdit == QDialog::Rejected)
-            return;
-
-   row.setWindowTitle("Edit Transaction");
-   transacRow = row.editRowNumber();
-*/
-    //   QItemSelectionModel *rowCheck = ui->tableView->selectionModel();
-    //   QModelIndexList selectedRowCheck = rowCheck->selectedRows();
-    //   if(selectedRowCheck.size()!=1)
-    //   {
-    //       qDebug() << "ERROR: No rows selected";
-    //       QMessageBox rowError;
-    //       rowError.setText("No rows have been selected!");
-    //       rowError.exec();
-    //       return;
-    //   }
-
     int editPass;
     editTransaction edit(this);
     editPass = edit.exec();
@@ -194,7 +136,7 @@ void tableWidget::on_editTransactionButton_clicked()
     QString transacDate = edit.transactionDate().toString("M/dd/yy");
     QString transacCategory = edit.transactionCategory();
     double transacAmount = edit.transactionAmount();
-    //QString transacType = ui->tableView->windowTitle();
+
 
     // Changes UI Display of Table ------------------------------------------------------
 
@@ -211,15 +153,13 @@ void tableWidget::on_editTransactionButton_clicked()
     qDebug() << "Row is " << transacRow;
 
 
-    //ui->tableView->insertRow(transacRow);
     ui->tableView->setItem(transacRow, NAME,
                            new QTableWidgetItem(transacName));
     ui->tableView->setItem(transacRow, CATEGORY,
                            new QTableWidgetItem(transacCategory));
     ui->tableView->setItem(transacRow, DATE,
                            new QTableWidgetItem(transacDate));
-    //   ui->tableViews->setItem(transacType, TYPE,
-    //                           new QTableWidgetItem(transacType));
+
     ui->tableView->setItem(transacRow, AMOUNT,
                            new QTableWidgetItem(QString::number(transacAmount)));
 
@@ -229,31 +169,17 @@ void tableWidget::on_editTransactionButton_clicked()
         transactionType = "Expenses";
     }
 
-    else
-    {
-        //  transactionType = "Spendings";
-    }
 
     qDebug() << "Transaction Type: " << transactionType << "\n";
 
     currentAccount->editTransactions(transacCategory, transacName, transacDate, transactionType, transacAmount, transacRow); // Edits Account
     db->editTransaction(transacCategory, transacName, transacDate, transactionType, transacAmount, transacRow);  // Edits Database
 
-    // ---------------------------------------------------------------------------------
-
-    // Save into Database: [WORKS WHEN DATABASE FUNCTION 'SAVEPROFILE' IS PUSHED]
-    //db -> saveProfile(); // Saves changes made to the account into the database
-    //ui->tableView->removeRow(transacRow-1);
-    // ----------------------------------------------------------------------------------
-
 
 }
 
 void tableWidget::updateUi(QString type)
 {
-    //Account *currentAccount = new Account;
-    //currentAccount-> thisAcc();
-
     DatabaseReaderWriter *db = DatabaseReaderWriter::Instance();
     Account *currentAccount = db->getAccountInstance();
     QString transacName, transacDate, transacCategory;
@@ -278,12 +204,3 @@ int tableWidget::getRowCount()
 {
     return ui->tableView->rowCount();
 }
-
-
-/*void tableWidget::removeFromExpenditures(int index)
-{
-    Account *currentAccount = new Account;
-    currentAccount->thisAcc();
-
-    currentAccount->removeFromExpenditureTransaction(index);
-}*/

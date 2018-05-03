@@ -25,14 +25,5 @@ int rowSelection::editRowNumber()
 
 void rowSelection::on_buttonBox_accepted()
 {
-/*
-    int editPass;
-    editTransaction edit(this);
-    editPass = edit.exec();
 
-    if(editPass == QDialog::Rejected)
-        return;
-
-    edit.setWindowTitle("Edit Transaction");
-*/
 }
