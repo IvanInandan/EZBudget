@@ -28,7 +28,6 @@ SOURCES += \
         main.cpp \
         account.cpp \
     transaction.cpp \
-    category.cpp \
     maindashboard.cpp \
     spendingsbreakdownchart.cpp \
     spendingsbreakdownslice.cpp \
@@ -38,12 +37,17 @@ SOURCES += \
     removedialog.cpp \
     tablewidget.cpp \
     rowselection.cpp \
-    edittransaction.cpp
+    edittransaction.cpp \
+    updatebudgetdialog.cpp \
+    button.cpp \
+    createnewaccount.cpp \
+    loginwithlogo.cpp \
+    forgotpassword.cpp \
+    calculator.cpp
 
 HEADERS += \
         account.h \
     transaction.h \
-    category.h \
     spendingsbreakdownchart.h \
     spendingsbreakdownslice.h \
     databasereaderwriter.h \
@@ -56,7 +60,13 @@ HEADERS += \
     ui_removedialog.h \
     ui_tablewidget.h \
     rowselection.h \
-    edittransaction.h
+    edittransaction.h \
+    updatebudgetdialog.h \
+    calculator.h \
+    createnewaccount.h \
+    loginwithlogo.h \
+    forgotpassword.h \
+    button.h
 
 FORMS += \
     maindashboard.ui \
@@ -66,10 +76,14 @@ FORMS += \
     removedialog.ui \
     tablewidget.ui \
     rowselection.ui \
-    edittransaction.ui
-
+    edittransaction.ui \
+    createnewaccount.ui \
+    loginwithlogo.ui \
+    forgotpassword.ui \
+    updatebudgetdialog.ui
 
 target.path = $$[QT_INSTALL_EXAMPLES]/charts/donutchart
+target.path = $$[QT_INSTALL_EXAMPLES]/widgets/widgets/calculator
 INSTALLS += target
 
 SUBDIRS += \

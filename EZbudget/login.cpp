@@ -14,6 +14,7 @@ login::login(QWidget *parent) :
 {
 
     ui->setupUi(this);
+    this->setWindowTitle("EZBudget");
 
     if(!db->checkConnection())
         ui->label->setText("Failed to open database");

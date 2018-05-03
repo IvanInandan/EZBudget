@@ -7,6 +7,7 @@ ExpenseDialog::ExpenseDialog(QWidget *parent) :
 {
     ui->setupUi(this);
     setMinimumWidth(600);
+    ui->transactionDateEdit->setDate(QDate::currentDate());
 }
 
 ExpenseDialog::~ExpenseDialog()
@@ -35,12 +36,12 @@ double ExpenseDialog::transactionAmount() const
     return ui->transactionAmountEdit->value();
 }
 
-/*
-QString ExpenseDialog::transactionType() const
-{
-    return ui->transactionType->currentText();
-}
-*/
+
+//QString ExpenseDialog::transactionType() const
+//{
+//    return ui->transacType->currentText();
+//}
+
 
 void ExpenseDialog::on_buttonBox_accepted()
 {

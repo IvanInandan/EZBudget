@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'expensedialog.ui'
 **
-** Created by: Qt User Interface Compiler version 5.11.0
+** Created by: Qt User Interface Compiler version 5.10.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -11,12 +11,15 @@
 
 #include <QtCore/QDate>
 #include <QtCore/QVariant>
+#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDateEdit>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QDoubleSpinBox>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QVBoxLayout>
@@ -137,7 +140,7 @@ public:
         transactionNameLabel->setText(QApplication::translate("ExpenseDialog", "<html><head/><body><p align=\"center\"><span style=\" color:#030303;\">Name</span></p></body></html>", nullptr));
         transactionCategoryLabel->setText(QApplication::translate("ExpenseDialog", "<html><head/><body><p align=\"center\">Category</p></body></html>", nullptr));
         transactionDateLabel->setText(QApplication::translate("ExpenseDialog", "<html><head/><body><p align=\"center\">Date</p></body></html>", nullptr));
-        transactionDateEdit->setDisplayFormat(QApplication::translate("ExpenseDialog", "M/dd/yy", nullptr));
+        transactionDateEdit->setDisplayFormat(QApplication::translate("ExpenseDialog", "M/dd/yyyy", nullptr));
         transactionAmountLabel->setText(QApplication::translate("ExpenseDialog", "<html><head/><body><p align=\"center\">Amount</p></body></html>", nullptr));
     } // retranslateUi
 
