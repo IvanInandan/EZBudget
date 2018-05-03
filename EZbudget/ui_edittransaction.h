@@ -56,7 +56,7 @@ public:
         editTransaction->resize(618, 122);
         layoutWidget = new QWidget(editTransaction);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(20, 25, 571, 71));
+        layoutWidget->setGeometry(QRect(20, 25, 571, 96));
         verticalLayout_5 = new QVBoxLayout(layoutWidget);
         verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
         verticalLayout_5->setContentsMargins(0, 0, 0, 0);
@@ -118,8 +118,8 @@ public:
         transactionAmountEdit = new QDoubleSpinBox(layoutWidget);
         transactionAmountEdit->setObjectName(QStringLiteral("transactionAmountEdit"));
         transactionAmountEdit->setButtonSymbols(QAbstractSpinBox::NoButtons);
-        transactionAmountEdit->setDecimals(3);
-        transactionAmountEdit->setMaximum(1e+7);
+        transactionAmountEdit->setDecimals(0);
+        transactionAmountEdit->setMaximum(1e+32);
 
         verticalLayout_4->addWidget(transactionAmountEdit);
 

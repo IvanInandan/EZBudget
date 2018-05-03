@@ -19,7 +19,7 @@
      <x>20</x>
      <y>25</y>
      <width>571</width>
-     <height>71</height>
+     <height>96</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -86,10 +86,10 @@
            <enum>QAbstractSpinBox::NoButtons</enum>
           </property>
           <property name="decimals">
-           <number>3</number>
+           <number>0</number>
           </property>
           <property name="maximum">
-           <double>9999999.000000000000000</double>
+           <double>100000000000000005366162204393472.000000000000000</double>
           </property>
          </widget>
         </item>

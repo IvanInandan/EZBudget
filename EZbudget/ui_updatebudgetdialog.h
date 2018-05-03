@@ -67,6 +67,7 @@ public:
         budgetEntered->setGeometry(QRect(30, 40, 441, 24));
         budgetEntered->setAutoFillBackground(false);
         budgetEntered->setButtonSymbols(QAbstractSpinBox::NoButtons);
+        budgetEntered->setDecimals(0);
         budgetEntered->setMaximum(1e+41);
         budgetWarning = new QLabel(updateBudgetDialog);
         budgetWarning->setObjectName(QStringLiteral("budgetWarning"));

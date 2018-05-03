@@ -20,7 +20,7 @@ DatabaseReaderWriter* DatabaseReaderWriter::Instance()
 DatabaseReaderWriter::DatabaseReaderWriter()
 {
     mydb = QSqlDatabase::addDatabase("QSQLITE");
-    mydb.setDatabaseName("C:/sqlite2/QtEzBudget.db");
+    mydb.setDatabaseName("/Users/elainejoymutuc/Documents/qtprojects/EZBudget/QtEzBudget.db");
 }
 //Create a new user
 void DatabaseReaderWriter::newUser(QString username, QString password) //int income, int budget
