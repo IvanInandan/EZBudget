@@ -4,7 +4,7 @@
  * the use of slots and signals.
  *
  * Author: Jose Quirarte
- * Date: 2/24/18
+ * Date: 2/24/2018
  *
  * Edited by Alex Shershnov on 5/2/2018
  * */
